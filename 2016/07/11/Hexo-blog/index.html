@@ -84,22 +84,22 @@
 
 
 
-<meta name="description" content="#前言#初次使用hexo搭建博客，因为对github也不是很熟，网上找了不少资料，花了一个星期才把整个流程，包括后续更新修改搞明白，记录下来，方便查阅，后续有新的经验再更新。
+<meta name="description" content="前言初次使用hexo搭建博客，因为对github也不是很熟，网上找了不少资料，花了一个星期才把整个流程，包括后续更新修改搞明白，记录下来，方便查阅，后续有新的经验再更新。
 Git下载并安装Git，设置用户名邮件地址。已初始化过的忽略此处
-Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github账号下创建一个新的仓库，且命名为 username.githu">
+Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github账号下创建一个新的仓库，且命名为 username.github.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo Blog搭建流程">
 <meta property="og:url" content="http://yoursite.com/2016/07/11/Hexo-blog/index.html">
 <meta property="og:site_name" content="GGirl">
-<meta property="og:description" content="#前言#初次使用hexo搭建博客，因为对github也不是很熟，网上找了不少资料，花了一个星期才把整个流程，包括后续更新修改搞明白，记录下来，方便查阅，后续有新的经验再更新。
+<meta property="og:description" content="前言初次使用hexo搭建博客，因为对github也不是很熟，网上找了不少资料，花了一个星期才把整个流程，包括后续更新修改搞明白，记录下来，方便查阅，后续有新的经验再更新。
 Git下载并安装Git，设置用户名邮件地址。已初始化过的忽略此处
-Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github账号下创建一个新的仓库，且命名为 username.githu">
-<meta property="og:updated_time" content="2016-07-11T08:09:45.755Z">
+Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github账号下创建一个新的仓库，且命名为 username.github.">
+<meta property="og:updated_time" content="2016-07-11T08:29:37.149Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo Blog搭建流程">
-<meta name="twitter:description" content="#前言#初次使用hexo搭建博客，因为对github也不是很熟，网上找了不少资料，花了一个星期才把整个流程，包括后续更新修改搞明白，记录下来，方便查阅，后续有新的经验再更新。
+<meta name="twitter:description" content="前言初次使用hexo搭建博客，因为对github也不是很熟，网上找了不少资料，花了一个星期才把整个流程，包括后续更新修改搞明白，记录下来，方便查阅，后续有新的经验再更新。
 Git下载并安装Git，设置用户名邮件地址。已初始化过的忽略此处
-Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github账号下创建一个新的仓库，且命名为 username.githu">
+Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github账号下创建一个新的仓库，且命名为 username.github.">
 
 
 
@@ -321,23 +321,18 @@ Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github
       
 
       
-        <p>#前言#<br>初次使用hexo搭建博客，因为对github也不是很熟，网上找了不少资料，花了一个星期才把整个流程，包括后续更新修改搞明白，记录下来，方便查阅，后续有新的经验再更新。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>初次使用hexo搭建博客，因为对github也不是很熟，网上找了不少资料，花了一个星期才把整个流程，包括后续更新修改搞明白，记录下来，方便查阅，后续有新的经验再更新。</p>
 <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p>下载并安装Git，设置用户名邮件地址。<br>已初始化过的忽略此处</p>
 <h1 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h1><p>要使用<a href="https://github.com/" target="_blank" rel="external">GitHub Pages</a> + <a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a>搭建免费的博客,需要在自己的Github账号下创建一个新的仓库，且命名为 username.github.io（username是你的账号名)。  </p>
-<p>注：网上很多文章里面，直接写在GitHub账号下创建一个新的仓库即可，最终就可以通过 http(s)://username.github.io 方式访问，这种方法是不正确的，详细区别请了解GitHub Pages的两种类型，User/Organization Pages 和 Project Pages。</p>
+<p>注：网上很多文章里面，直接写在GitHub账号下创建一个新的仓库即可，最终就可以通过 http(s)://username.github.io 方式访问，这种方法是不正确的，详细区别请了解GitHub Pages的两种类型，User/Organization Pages 和 Project Pages。<br><a id="more"></a></p>
 <h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><ol>
-<li><p>保证电脑中已经安装Node.js和Git  </p>
-</li>
-<li><p>开始Hexo安装，找到安装的Git，点击Git Bash，输入<code>$ npm install -g hexo-cli</code>。此时，安装完后可以在对应目录下找到安装的程序</p>
-</li>
-<li><p>在想放置该博客目标的文件夹下，右击选择 Git Bash here,输入 <code>$ hexo init</code>，此处也可以在任意地方键入<code>$ hexo init &lt;folder&gt;</code>,此处<folder>指放置代码的位置，不输入默认为当前文件夹下。</folder></p>
-</li>
-<li><p>接着，键入<code>$ npm install</code>  ，此处是安装依赖包。</p>
-</li>
-<li><p>此时，键入<code>$ hexo server</code>,即可在浏览器中通过<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>看到初始化效果了。</p>
-</li>
+<li>保证电脑中已经安装Node.js和Git  </li>
+<li>开始Hexo安装，找到安装的Git，点击Git Bash，输入<code>$ npm install -g hexo-cli</code>。此时，安装完后可以在对应目录下找到安装的程序</li>
+<li>在想放置该博客目标的文件夹下，右击选择 Git Bash here,输入 <code>$ hexo init</code>，此处也可以在任意地方键入<code>$ hexo init &lt;folder&gt;</code>,此处<folder>指放置代码的位置，不输入默认为当前文件夹下。</folder></li>
+<li>接着，键入<code>$ npm install</code>  ，此处是安装依赖包。</li>
+<li>此时，键入<code>$ hexo server</code>,即可在浏览器中通过<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>看到初始化效果了。</li>
 </ol>
-<p>至此，就搭建好了最基础的本地的Hexo网站了。</p>
+<p>至此，就搭建好了最基础的本地的Hexo网站了。<br><!---readmore-----></p>
 <h1 id="Github-Hexo"><a href="#Github-Hexo" class="headerlink" title="Github+Hexo"></a>Github+Hexo</h1><p>最终目标是要通过Hexo搭建一个别人可以看到的网站，所以需要和之前的Github一起，修改安装其他内容。</p>
 <p>找到刚刚文件夹下面的 _config.yml 文件，该文件是网站的基本配置，包括标题，副标题，作者，语言等信息，可以根据自己需求修改。此处重点是要修改deploy处，找到deploy：，修改为下面这样：</p>
 <pre><code>deploy:
@@ -510,7 +505,7 @@ Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git"><span class="nav-number">1.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Github"><span class="nav-number">2.</span> <span class="nav-text">Github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo"><span class="nav-number">3.</span> <span class="nav-text">Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Github-Hexo"><span class="nav-number">4.</span> <span class="nav-text">Github+Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo日常使用"><span class="nav-number">5.</span> <span class="nav-text">Hexo日常使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git"><span class="nav-number">2.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Github"><span class="nav-number">3.</span> <span class="nav-text">Github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo"><span class="nav-number">4.</span> <span class="nav-text">Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Github-Hexo"><span class="nav-number">5.</span> <span class="nav-text">Github+Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo日常使用"><span class="nav-number">6.</span> <span class="nav-text">Hexo日常使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">7.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
           </div>
         </section>
