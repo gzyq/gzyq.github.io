@@ -1,7 +1,7 @@
 ---
 title: 待整理学习目录
-date: 2016-07-11 14:37:30
-tags: [note，html5，移动端]
+date: 2016-07-12 10:37:30
+tags: [note,html5,移动端,JS]
 categories: todo
 comments: false
 ---
