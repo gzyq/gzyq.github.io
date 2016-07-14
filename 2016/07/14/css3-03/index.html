@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="note,html5,移动端,JS," />
+  <meta name="keywords" content="note,动画,css3," />
 
 
 
@@ -84,22 +84,28 @@
 
 
 
-<meta name="description" content="学习地址收录：
-Git使用：http://www.open-open.com/lib/view/open1332904495999.html  
-移动端注意点：http://www.open-open.com/lib/view/open1460446039388.html#articleHeader1">
+<meta name="description" content="提升移动端CSS3动画体验的主要方法：
+尽可能多的利用硬件能力，如使用3D变形来开启GPU加速-webkit-transform: translate3d(0, 0, 0);
+-moz-transform: translate3d(0, 0, 0);
+-ms-transform: translate3d(0, 0, 0);
+transform: translate3d(0, 0, 0);">
 <meta property="og:type" content="article">
-<meta property="og:title" content="待整理学习目录">
-<meta property="og:url" content="http://yoursite.com/2016/07/12/JulyToLearn/index.html">
+<meta property="og:title" content="css3动画优化">
+<meta property="og:url" content="http://yoursite.com/2016/07/14/css3-03/index.html">
 <meta property="og:site_name" content="GGirl">
-<meta property="og:description" content="学习地址收录：
-Git使用：http://www.open-open.com/lib/view/open1332904495999.html  
-移动端注意点：http://www.open-open.com/lib/view/open1460446039388.html#articleHeader1">
-<meta property="og:updated_time" content="2016-07-12T06:53:48.974Z">
+<meta property="og:description" content="提升移动端CSS3动画体验的主要方法：
+尽可能多的利用硬件能力，如使用3D变形来开启GPU加速-webkit-transform: translate3d(0, 0, 0);
+-moz-transform: translate3d(0, 0, 0);
+-ms-transform: translate3d(0, 0, 0);
+transform: translate3d(0, 0, 0);">
+<meta property="og:updated_time" content="2016-07-14T08:30:02.591Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="待整理学习目录">
-<meta name="twitter:description" content="学习地址收录：
-Git使用：http://www.open-open.com/lib/view/open1332904495999.html  
-移动端注意点：http://www.open-open.com/lib/view/open1460446039388.html#articleHeader1">
+<meta name="twitter:title" content="css3动画优化">
+<meta name="twitter:description" content="提升移动端CSS3动画体验的主要方法：
+尽可能多的利用硬件能力，如使用3D变形来开启GPU加速-webkit-transform: translate3d(0, 0, 0);
+-moz-transform: translate3d(0, 0, 0);
+-ms-transform: translate3d(0, 0, 0);
+transform: translate3d(0, 0, 0);">
 
 
 
@@ -120,9 +126,9 @@ Git使用：http://www.open-open.com/lib/view/open1332904495999.html
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/07/12/JulyToLearn/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/07/14/css3-03/"/>
 
-  <title> 待整理学习目录 | GGirl </title>
+  <title> css3动画优化 | GGirl </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -262,7 +268,7 @@ Git使用：http://www.open-open.com/lib/view/open1332904495999.html
             
             
               
-                待整理学习目录
+                css3动画优化
               
             
           </h1>
@@ -274,8 +280,8 @@ Git使用：http://www.open-open.com/lib/view/open1332904495999.html
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-12T10:37:30+08:00" content="2016-07-12">
-              2016-07-12
+            <time itemprop="dateCreated" datetime="2016-07-14T21:25:02+08:00" content="2016-07-14">
+              2016-07-14
             </time>
           </span>
 
@@ -288,8 +294,8 @@ Git使用：http://www.open-open.com/lib/view/open1332904495999.html
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/todo/" itemprop="url" rel="index">
-                    <span itemprop="name">todo</span>
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
                   </a>
                 </span>
 
@@ -319,15 +325,42 @@ Git使用：http://www.open-open.com/lib/view/open1332904495999.html
       
 
       
-        <p>学习地址收录：</p>
-<p>Git使用：<a href="http://www.open-open.com/lib/view/open1332904495999.html" target="_blank" rel="external">http://www.open-open.com/lib/view/open1332904495999.html </a> </p>
-<p>移动端注意点：<br><a href="http://www.open-open.com/lib/view/open1460446039388.html#articleHeader1" target="_blank" rel="external">http://www.open-open.com/lib/view/open1460446039388.html#articleHeader1</a><br><a id="more"></a><br>js方面：</p>
-<p>作用域<br>原型链<br>继承<br>闭包<br>函数</p>
-<p>Ajax的使用：</p>
-<ul>
-<li>jquery</li>
-<li>原生js</li>
-</ul>
+        <p>提升移动端CSS3动画体验的主要方法：</p>
+<h4 id="尽可能多的利用硬件能力，如使用3D变形来开启GPU加速"><a href="#尽可能多的利用硬件能力，如使用3D变形来开启GPU加速" class="headerlink" title="尽可能多的利用硬件能力，如使用3D变形来开启GPU加速"></a>尽可能多的利用硬件能力，如使用3D变形来开启GPU加速</h4><pre><code>-webkit-transform: translate3d(0, 0, 0);
+-moz-transform: translate3d(0, 0, 0);
+-ms-transform: translate3d(0, 0, 0);
+transform: translate3d(0, 0, 0);   
+</code></pre><a id="more"></a> 
+<p>如动画过程有闪烁（通常发生在动画开始的时候），可以尝试下面的Hack：</p>
+<pre><code>-webkit-backface-visibility: hidden;
+-moz-backface-visibility: hidden;
+-ms-backface-visibility: hidden;
+backface-visibility: hidden;
+
+-webkit-perspective: 1000;
+-moz-perspective: 1000;
+-ms-perspective: 1000;
+perspective: 1000; 
+</code></pre><p>注：3D变形会消耗更多的内存与功耗，应确实有性能问题时才去使用它，兼在权衡<br>如下面一个元素通过translate3d右移500px的动画流畅度会明显优于使用left属性：    </p>
+<pre><code>#ball-1 {
+  transition: -webkit-transform .5s ease;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+#ball-1.slidein {
+  -webkit-transform: translate3d(500px, 0, 0);
+}
+
+
+#ball-2 {
+  transition: left .5s ease;
+  left: 0;
+}
+#ball-2.slidein {
+  left: 500px;
+}  
+</code></pre><h4 id="尽可能少的使用box-shadows与gradients"><a href="#尽可能少的使用box-shadows与gradients" class="headerlink" title="尽可能少的使用box-shadows与gradients"></a>尽可能少的使用box-shadows与gradients</h4><h4 id="尽可能的让动画元素不在文档流中，以减少重排"><a href="#尽可能的让动画元素不在文档流中，以减少重排" class="headerlink" title="尽可能的让动画元素不在文档流中，以减少重排"></a>尽可能的让动画元素不在文档流中，以减少重排</h4><pre><code>position: fixed;  
+position: absolute;   
+</code></pre><p>position在做动画时，还是会用top,left值变换形成动画，但是在top,left变换时仍旧会重排，目前动画方面不会触发重排和重绘的只有opacity，transform  </p>
 
       
     </div>
@@ -351,11 +384,9 @@ Git使用：http://www.open-open.com/lib/view/open1332904495999.html
           
             <a href="/tags/note/" rel="tag">#note</a>
           
-            <a href="/tags/html5/" rel="tag">#html5</a>
+            <a href="/tags/动画/" rel="tag">#动画</a>
           
-            <a href="/tags/移动端/" rel="tag">#移动端</a>
-          
-            <a href="/tags/JS/" rel="tag">#JS</a>
+            <a href="/tags/css3/" rel="tag">#css3</a>
           
         </div>
       
@@ -364,16 +395,16 @@ Git使用：http://www.open-open.com/lib/view/open1332904495999.html
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/11/Hexo-blog/" rel="next" title="Hexo Blog搭建流程">
-                <i class="fa fa-chevron-left"></i> Hexo Blog搭建流程
+              <a href="/2016/07/13/css3-01/" rel="next" title="H5实现动画">
+                <i class="fa fa-chevron-left"></i> H5实现动画
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/07/12/h5-01/" rel="prev" title="移动端注意点总结（一）">
-                移动端注意点总结（一） <i class="fa fa-chevron-right"></i>
+              <a href="/2016/07/14/hexo-use/" rel="prev" title="Hexo使用">
+                Hexo使用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -484,7 +515,7 @@ Git使用：http://www.open-open.com/lib/view/open1332904495999.html
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#尽可能多的利用硬件能力，如使用3D变形来开启GPU加速"><span class="nav-number">1.</span> <span class="nav-text">尽可能多的利用硬件能力，如使用3D变形来开启GPU加速</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#尽可能少的使用box-shadows与gradients"><span class="nav-number">2.</span> <span class="nav-text">尽可能少的使用box-shadows与gradients</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#尽可能的让动画元素不在文档流中，以减少重排"><span class="nav-number">3.</span> <span class="nav-text">尽可能的让动画元素不在文档流中，以减少重排</span></a></li></ol></div>
             
           </div>
         </section>
