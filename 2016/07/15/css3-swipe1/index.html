@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo,note," />
+  <meta name="keywords" content="note,css3,动画,H5," />
 
 
 
@@ -84,22 +84,28 @@
 
 
 
-<meta name="description" content="前言初次使用hexo搭建博客，因为对github也不是很熟，网上找了不少资料，花了一个星期才把整个流程，包括后续更新修改搞明白，记录下来，方便查阅，后续有新的经验再更新。
-Git下载并安装Git，设置用户名邮件地址。已初始化过的忽略此处
-Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github账号下创建一个新的仓库，且命名为 username.github.">
+<meta name="description" content="swiper插件：http://www.swiper.com.cn/slides插件：http://slidesjs.com/slip插件： https://github.com/binnng/slip.js  
+http://tid.tenpay.com/labs/dikamon/dikamon.html  
+
+拖拽翻屏：页面随手指拖动而移动，手指松开（touchend）后翻页  
+滑动翻屏：页">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo Blog搭建流程">
-<meta property="og:url" content="http://yoursite.com/2016/07/11/Hexo-blog/index.html">
+<meta property="og:title" content="H5滑屏">
+<meta property="og:url" content="http://yoursite.com/2016/07/15/css3-swipe1/index.html">
 <meta property="og:site_name" content="GGirl">
-<meta property="og:description" content="前言初次使用hexo搭建博客，因为对github也不是很熟，网上找了不少资料，花了一个星期才把整个流程，包括后续更新修改搞明白，记录下来，方便查阅，后续有新的经验再更新。
-Git下载并安装Git，设置用户名邮件地址。已初始化过的忽略此处
-Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github账号下创建一个新的仓库，且命名为 username.github.">
-<meta property="og:updated_time" content="2016-07-11T09:10:37.424Z">
+<meta property="og:description" content="swiper插件：http://www.swiper.com.cn/slides插件：http://slidesjs.com/slip插件： https://github.com/binnng/slip.js  
+http://tid.tenpay.com/labs/dikamon/dikamon.html  
+
+拖拽翻屏：页面随手指拖动而移动，手指松开（touchend）后翻页  
+滑动翻屏：页">
+<meta property="og:updated_time" content="2016-07-18T08:00:38.353Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo Blog搭建流程">
-<meta name="twitter:description" content="前言初次使用hexo搭建博客，因为对github也不是很熟，网上找了不少资料，花了一个星期才把整个流程，包括后续更新修改搞明白，记录下来，方便查阅，后续有新的经验再更新。
-Git下载并安装Git，设置用户名邮件地址。已初始化过的忽略此处
-Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github账号下创建一个新的仓库，且命名为 username.github.">
+<meta name="twitter:title" content="H5滑屏">
+<meta name="twitter:description" content="swiper插件：http://www.swiper.com.cn/slides插件：http://slidesjs.com/slip插件： https://github.com/binnng/slip.js  
+http://tid.tenpay.com/labs/dikamon/dikamon.html  
+
+拖拽翻屏：页面随手指拖动而移动，手指松开（touchend）后翻页  
+滑动翻屏：页">
 
 
 
@@ -120,9 +126,9 @@ Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/07/11/Hexo-blog/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/07/15/css3-swipe1/"/>
 
-  <title> Hexo Blog搭建流程 | GGirl </title>
+  <title> H5滑屏 | GGirl </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -262,7 +268,7 @@ Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github
             
             
               
-                Hexo Blog搭建流程
+                H5滑屏
               
             
           </h1>
@@ -274,8 +280,8 @@ Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-11T14:37:30+08:00" content="2016-07-11">
-              2016-07-11
+            <time itemprop="dateCreated" datetime="2016-07-15T20:26:59+08:00" content="2016-07-15">
+              2016-07-15
             </time>
           </span>
 
@@ -301,8 +307,6 @@ Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github
           
 
           
-            
-          
 
           
 
@@ -321,38 +325,17 @@ Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>初次使用hexo搭建博客，因为对github也不是很熟，网上找了不少资料，花了一个星期才把整个流程，包括后续更新修改搞明白，记录下来，方便查阅，后续有新的经验再更新。</p>
-<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p>下载并安装Git，设置用户名邮件地址。<br>已初始化过的忽略此处</p>
-<h1 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h1><p>要使用<a href="https://github.com/" target="_blank" rel="external">GitHub Pages</a> + <a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a>搭建免费的博客,需要在自己的Github账号下创建一个新的仓库，且命名为 username.github.io（username是你的账号名)。  </p>
-<p>注：网上很多文章里面，直接写在GitHub账号下创建一个新的仓库即可，最终就可以通过 http(s)://username.github.io 方式访问，这种方法是不正确的，详细区别请了解GitHub Pages的两种类型，User/Organization Pages 和 Project Pages。<br><a id="more"></a></p>
-<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><ol>
-<li>保证电脑中已经安装Node.js和Git  </li>
-<li>开始Hexo安装，找到安装的Git，点击Git Bash，输入<code>$ npm install -g hexo-cli</code>。此时，安装完后可以在对应目录下找到安装的程序</li>
-<li>在想放置该博客目标的文件夹下，右击选择 Git Bash here,输入 <code>$ hexo init</code>，此处也可以在任意地方键入<code>$ hexo init &lt;folder&gt;</code>,此处<folder>指放置代码的位置，不输入默认为当前文件夹下。</folder></li>
-<li>接着，键入<code>$ npm install</code>  ，此处是安装依赖包。</li>
-<li>此时，键入<code>$ hexo server</code>,即可在浏览器中通过<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>看到初始化效果了。</li>
-</ol>
-<p>至此，就搭建好了最基础的本地的Hexo网站了。<br><!---readmore-----></p>
-<h1 id="Github-Hexo"><a href="#Github-Hexo" class="headerlink" title="Github+Hexo"></a>Github+Hexo</h1><p>最终目标是要通过Hexo搭建一个别人可以看到的网站，所以需要和之前的Github一起，修改安装其他内容。</p>
-<p>找到刚刚文件夹下面的 _config.yml 文件，该文件是网站的基本配置，包括标题，副标题，作者，语言等信息，可以根据自己需求修改。此处重点是要修改deploy处，找到deploy：，修改为下面这样：</p>
-<pre><code>deploy:
-    type： git 
-    repository: git@github.com:username/username.github.io.git  
-    branch: master
-</code></pre><p>因为需要把Hexo部署到GitHub上，需要安装一个插件：<br>  <code>$ npm install hexo-deployer-git --save</code>  </p>
-<p>安装完成后，可以执行 $ hexo generate ,此时会生成一个public文件夹，里面是编译后的网站页面。  </p>
-<p>再输入<code>$ hexo deploy</code> ，即可完成在Github上部署。  </p>
-<p>此时，通过浏览器键入：username.github.io就可以看到效果了。</p>
-<p>注：</p>
-<ol>
-<li>在配置deploy时注意，冒号：后面都有空格；</li>
-<li>再向Github提交过程中，可能出现没有SSH key的情况，重新按步骤设置<a href="https://help.github.com/articles/generating-an-ssh-key/" target="_blank" rel="external">SSH key</a> 即可；</li>
-<li>此时，在Github中看到是public文件下的内容，如果想在Github上部署前的源代码，即hexo其他内容，需要通过git add，commit等步骤提交。</li>
-</ol>
-<h1 id="Hexo日常使用"><a href="#Hexo日常使用" class="headerlink" title="Hexo日常使用"></a>Hexo日常使用</h1><p>参考网上多数教程里面优化部署，在hexo使用过程中，我是在github里面建立了两个分支，master和blog，master主要安置的内容是public，即网站及时更新后的内容，blog里面是源码，比较方便。  </p>
-<p>在日常修改或者添加文章等操作后，通过git status查找文件变化，git add，git commit以及git push origin blog后，再在blog分支下，进行hexo generate，hexo deploy操作以更新master里面的内容，再刷新username.github.io即可看到修改效果，同时也保证了再github中记录了文件变化更新。</p>
-<p>如果更换电脑后，需要git clone 源代码到本地后再进行其他操作。  </p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="http://blog.fens.me/hexo-blog-github/" target="_blank" rel="external">Hexo在github上构建免费的Web应用</a><br><a href="http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more" target="_blank" rel="external">GitHub Pages + Hexo搭建博客</a></p>
+        <p>swiper插件：<a href="http://www.swiper.com.cn/" target="_blank" rel="external">http://www.swiper.com.cn/</a><br>slides插件：<a href="http://slidesjs.com/" target="_blank" rel="external">http://slidesjs.com/</a><br>slip插件： <a href="https://github.com/binnng/slip.js" target="_blank" rel="external">https://github.com/binnng/slip.js</a>  </p>
+<p><a href="http://tid.tenpay.com/labs/dikamon/dikamon.html" target="_blank" rel="external">http://tid.tenpay.com/labs/dikamon/dikamon.html</a>  </p>
+<ul>
+<li>拖拽翻屏：页面随手指拖动而移动，手指松开（touchend）后翻页  </li>
+<li><p>滑动翻屏：页面不随手指拖动而移动，手指松开（touchend）后翻页    </p>
+<p>通过touchstart、touchmove、touchend 三个事件加上css3的3d变化效果配合，实现滑动切换图片  </p>
+<p>拖拽翻屏：通过touch事件来设置transform：translate3d（x，y，z）的参数，并在滑动结束（touchend）设置一个最小滑动距离minRange，该距离范围内的滑动，translate3d的参数等于touchmove的滑动距离，当大于minRange时， 则触发下一页（或上一页）的整体滑动，translate3d的X或Y的参数也就是视窗的宽（横向滑动时）或者高（纵向滑动时）<br>translate3d可以主动开启手机GPU加速渲染，页面滑动更流畅</p>
+</li>
+</ul>
+<p>ontouchend:手指离开屏幕时，计算屏幕最终停留在哪一页。</p>
+<p>参考：<a href="http://www.cnblogs.com/onepixel/p/5300445.html?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io" target="_blank" rel="external">H5单页面手势滑屏切换原理</a>  </p>
 
       
     </div>
@@ -374,9 +357,13 @@ Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag">#hexo</a>
-          
             <a href="/tags/note/" rel="tag">#note</a>
+          
+            <a href="/tags/css3/" rel="tag">#css3</a>
+          
+            <a href="/tags/动画/" rel="tag">#动画</a>
+          
+            <a href="/tags/H5/" rel="tag">#H5</a>
           
         </div>
       
@@ -385,16 +372,16 @@ Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/01/the_Best_of_us/" rel="next" title="最好的我们">
-                <i class="fa fa-chevron-left"></i> 最好的我们
+              <a href="/2016/07/15/css3-04/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/07/12/JulyToLearn/" rel="prev" title="待整理学习目录">
-                待整理学习目录 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/07/16/css3-02/" rel="prev" title="css3动画">
+                css3动画 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -419,10 +406,6 @@ Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -509,7 +492,7 @@ Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git"><span class="nav-number">2.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Github"><span class="nav-number">3.</span> <span class="nav-text">Github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo"><span class="nav-number">4.</span> <span class="nav-text">Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Github-Hexo"><span class="nav-number">5.</span> <span class="nav-text">Github+Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo日常使用"><span class="nav-number">6.</span> <span class="nav-text">Hexo日常使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">7.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>

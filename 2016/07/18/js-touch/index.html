@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo,note," />
+  <meta name="keywords" content="note，hexo，学习" />
 
 
 
@@ -84,22 +84,28 @@
 
 
 
-<meta name="description" content="前言初次使用hexo搭建博客，因为对github也不是很熟，网上找了不少资料，花了一个星期才把整个流程，包括后续更新修改搞明白，记录下来，方便查阅，后续有新的经验再更新。
-Git下载并安装Git，设置用户名邮件地址。已初始化过的忽略此处
-Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github账号下创建一个新的仓库，且命名为 username.github.">
+<meta name="description" content="title: 移动端JS触摸事件date: 2016/7/16 21:11:22tags: [note,JS,移动端]categories: note
+comments: false触摸事件： （都会冒泡，也可以取消）  
+
+touchstart——当手指触碰屏幕时候发生。不管当前有多少只手指
+touchmove——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用event的preven">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo Blog搭建流程">
-<meta property="og:url" content="http://yoursite.com/2016/07/11/Hexo-blog/index.html">
+<meta property="og:title" content="GGirl">
+<meta property="og:url" content="http://yoursite.com/2016/07/18/js-touch/index.html">
 <meta property="og:site_name" content="GGirl">
-<meta property="og:description" content="前言初次使用hexo搭建博客，因为对github也不是很熟，网上找了不少资料，花了一个星期才把整个流程，包括后续更新修改搞明白，记录下来，方便查阅，后续有新的经验再更新。
-Git下载并安装Git，设置用户名邮件地址。已初始化过的忽略此处
-Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github账号下创建一个新的仓库，且命名为 username.github.">
-<meta property="og:updated_time" content="2016-07-11T09:10:37.424Z">
+<meta property="og:description" content="title: 移动端JS触摸事件date: 2016/7/16 21:11:22tags: [note,JS,移动端]categories: note
+comments: false触摸事件： （都会冒泡，也可以取消）  
+
+touchstart——当手指触碰屏幕时候发生。不管当前有多少只手指
+touchmove——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用event的preven">
+<meta property="og:updated_time" content="2016-07-19T02:06:18.006Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo Blog搭建流程">
-<meta name="twitter:description" content="前言初次使用hexo搭建博客，因为对github也不是很熟，网上找了不少资料，花了一个星期才把整个流程，包括后续更新修改搞明白，记录下来，方便查阅，后续有新的经验再更新。
-Git下载并安装Git，设置用户名邮件地址。已初始化过的忽略此处
-Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github账号下创建一个新的仓库，且命名为 username.github.">
+<meta name="twitter:title" content="GGirl">
+<meta name="twitter:description" content="title: 移动端JS触摸事件date: 2016/7/16 21:11:22tags: [note,JS,移动端]categories: note
+comments: false触摸事件： （都会冒泡，也可以取消）  
+
+touchstart——当手指触碰屏幕时候发生。不管当前有多少只手指
+touchmove——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用event的preven">
 
 
 
@@ -120,9 +126,9 @@ Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/07/11/Hexo-blog/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/07/18/js-touch/"/>
 
-  <title> Hexo Blog搭建流程 | GGirl </title>
+  <title>  | GGirl </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -262,7 +268,7 @@ Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github
             
             
               
-                Hexo Blog搭建流程
+                
               
             
           </h1>
@@ -274,30 +280,11 @@ Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-11T14:37:30+08:00" content="2016-07-11">
-              2016-07-11
+            <time itemprop="dateCreated" datetime="2016-07-18T11:26:59+08:00" content="2016-07-18">
+              2016-07-18
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/note/" itemprop="url" rel="index">
-                    <span itemprop="name">note</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
@@ -321,39 +308,104 @@ Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>初次使用hexo搭建博客，因为对github也不是很熟，网上找了不少资料，花了一个星期才把整个流程，包括后续更新修改搞明白，记录下来，方便查阅，后续有新的经验再更新。</p>
-<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p>下载并安装Git，设置用户名邮件地址。<br>已初始化过的忽略此处</p>
-<h1 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h1><p>要使用<a href="https://github.com/" target="_blank" rel="external">GitHub Pages</a> + <a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a>搭建免费的博客,需要在自己的Github账号下创建一个新的仓库，且命名为 username.github.io（username是你的账号名)。  </p>
-<p>注：网上很多文章里面，直接写在GitHub账号下创建一个新的仓库即可，最终就可以通过 http(s)://username.github.io 方式访问，这种方法是不正确的，详细区别请了解GitHub Pages的两种类型，User/Organization Pages 和 Project Pages。<br><a id="more"></a></p>
-<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><ol>
-<li>保证电脑中已经安装Node.js和Git  </li>
-<li>开始Hexo安装，找到安装的Git，点击Git Bash，输入<code>$ npm install -g hexo-cli</code>。此时，安装完后可以在对应目录下找到安装的程序</li>
-<li>在想放置该博客目标的文件夹下，右击选择 Git Bash here,输入 <code>$ hexo init</code>，此处也可以在任意地方键入<code>$ hexo init &lt;folder&gt;</code>,此处<folder>指放置代码的位置，不输入默认为当前文件夹下。</folder></li>
-<li>接着，键入<code>$ npm install</code>  ，此处是安装依赖包。</li>
-<li>此时，键入<code>$ hexo server</code>,即可在浏览器中通过<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>看到初始化效果了。</li>
+        <hr>
+<p>title: 移动端JS触摸事件<br>date: 2016/7/16 21:11:22<br>tags: [note,JS,移动端]<br>categories: note</p>
+<h2 id="comments-false"><a href="#comments-false" class="headerlink" title="comments: false"></a>comments: false</h2><h2 id="触摸事件："><a href="#触摸事件：" class="headerlink" title="触摸事件："></a>触摸事件：</h2><p> （都会冒泡，也可以取消）  </p>
+<ul>
+<li>touchstart——当手指触碰屏幕时候发生。不管当前有多少只手指</li>
+<li>touchmove——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用event的preventDefault()可以阻止默认情况的发生：阻止页面滚动  </li>
+<li>touchend——当手指离开屏幕时触发  </li>
+<li>touchcancel——当系统停止跟踪触摸时候会触发。例如在触摸过程中突然页面alert()一个提示框，此时会触发该事件，这个事件比较少用（例如电话接入或者弹出信息。一般用在游戏：玩着的时候，突然来电话了，就触发touchcancel事件暂停游戏、存档等操作。）</li>
+</ul>
+<h2 id="跟踪触摸的属性-："><a href="#跟踪触摸的属性-：" class="headerlink" title="跟踪触摸的属性 ："></a>跟踪触摸的属性 ：</h2><ul>
+<li>touches：当前跟踪的触摸操作的Touch对象的数组，即屏幕上所有手指的信息  </li>
+<li>targetTouches：特定于事件目标的Touch对象的数组，即手指在目标区域的手指信息  </li>
+<li>changedTouches：自上次触摸以来发生了什么改变的Touch对象的数组，即最近一次触发该事件的手指信息   </li>
+</ul>
+<p>注：touchend时，touches与targetTouches信息会被删除，changedTouches保存的最后一次的信息，最好用于计算手指信息  </p>
+<h2 id="每个Touch对象的属性-："><a href="#每个Touch对象的属性-：" class="headerlink" title="每个Touch对象的属性 ："></a>每个Touch对象的属性 ：</h2><ul>
+<li>target：触摸的DOM节点目标 </li>
+<li>identifier：表示触摸的唯一ID   </li>
+<li>clientX：触摸目标在<b style="color:red;">视口</b>中的X坐标  （触摸点相对浏览器窗口的位置，client不包含滚动距离）</li>
+<li>clientY：触摸目标在<b style="color:red;">视口</b>中的Y坐标   </li>
+<li>pageX：触摸目标在<b style="color:red;">页面</b>中的X坐标  （触摸点相对于页面的位置，包含滚动距离） </li>
+<li>pageY：触摸目标在<b style="color:red;">页面</b>中的Y坐标  </li>
+<li>screenX：触摸目标在<b style="color:red;">屏幕</b>中的X坐标  （触摸点相对于屏幕的位置）</li>
+<li>screenY：触摸目标在<b style="color:red;">屏幕</b>中的Y坐标</li>
+<li>radiusX：画出大约相当于手指形状的椭圆形，椭圆形的两个半径中x</li>
+<li>radiusY：画出大约相当于手指形状的椭圆形，椭圆形的两个半径中y</li>
+<li>rotationAngle：画出大约相当于手指形状的椭圆形，旋转角度。</li>
+</ul>
+<pre><code>e.target;   //触摸元素为p，则返回[object HTMLParagraphElemet]，目标内容
+            //触摸元素为div,则返回[object HTMLDivElemet]
+</code></pre><h2 id="触摸事件的响应顺序"><a href="#触摸事件的响应顺序" class="headerlink" title="触摸事件的响应顺序"></a>触摸事件的响应顺序</h2><ol>
+<li>ontouchstart   </li>
+<li>ontouchmove   </li>
+<li>ontouchend   </li>
+<li>onclick    </li>
 </ol>
-<p>至此，就搭建好了最基础的本地的Hexo网站了。<br><!---readmore-----></p>
-<h1 id="Github-Hexo"><a href="#Github-Hexo" class="headerlink" title="Github+Hexo"></a>Github+Hexo</h1><p>最终目标是要通过Hexo搭建一个别人可以看到的网站，所以需要和之前的Github一起，修改安装其他内容。</p>
-<p>找到刚刚文件夹下面的 _config.yml 文件，该文件是网站的基本配置，包括标题，副标题，作者，语言等信息，可以根据自己需求修改。此处重点是要修改deploy处，找到deploy：，修改为下面这样：</p>
-<pre><code>deploy:
-    type： git 
-    repository: git@github.com:username/username.github.io.git  
-    branch: master
-</code></pre><p>因为需要把Hexo部署到GitHub上，需要安装一个插件：<br>  <code>$ npm install hexo-deployer-git --save</code>  </p>
-<p>安装完成后，可以执行 $ hexo generate ,此时会生成一个public文件夹，里面是编译后的网站页面。  </p>
-<p>再输入<code>$ hexo deploy</code> ，即可完成在Github上部署。  </p>
-<p>此时，通过浏览器键入：username.github.io就可以看到效果了。</p>
-<p>注：</p>
-<ol>
-<li>在配置deploy时注意，冒号：后面都有空格；</li>
-<li>再向Github提交过程中，可能出现没有SSH key的情况，重新按步骤设置<a href="https://help.github.com/articles/generating-an-ssh-key/" target="_blank" rel="external">SSH key</a> 即可；</li>
-<li>此时，在Github中看到是public文件下的内容，如果想在Github上部署前的源代码，即hexo其他内容，需要通过git add，commit等步骤提交。</li>
-</ol>
-<h1 id="Hexo日常使用"><a href="#Hexo日常使用" class="headerlink" title="Hexo日常使用"></a>Hexo日常使用</h1><p>参考网上多数教程里面优化部署，在hexo使用过程中，我是在github里面建立了两个分支，master和blog，master主要安置的内容是public，即网站及时更新后的内容，blog里面是源码，比较方便。  </p>
-<p>在日常修改或者添加文章等操作后，通过git status查找文件变化，git add，git commit以及git push origin blog后，再在blog分支下，进行hexo generate，hexo deploy操作以更新master里面的内容，再刷新username.github.io即可看到修改效果，同时也保证了再github中记录了文件变化更新。</p>
-<p>如果更换电脑后，需要git clone 源代码到本地后再进行其他操作。  </p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="http://blog.fens.me/hexo-blog-github/" target="_blank" rel="external">Hexo在github上构建免费的Web应用</a><br><a href="http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more" target="_blank" rel="external">GitHub Pages + Hexo搭建博客</a></p>
+<h2 id="移动端click屏幕产生200-300-ms的延迟响应"><a href="#移动端click屏幕产生200-300-ms的延迟响应" class="headerlink" title="移动端click屏幕产生200-300 ms的延迟响应"></a>移动端click屏幕产生200-300 ms的延迟响应</h2><h2 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h2><p>手指在滑动整个屏幕时，会影响浏览器的行为，比如滚动和缩放。所以在调用touch事件时，要注意禁止缩放和滚动。</p>
+<p><strong>1.禁止缩放</strong></p>
+<p>通过meta元标签来设置。</p>
+<meta name="viewport" content="target-densitydpi=320,width=640,user-scalable=no">
 
+<p><strong>2.禁止滚动</strong></p>
+<p>preventDefault是阻止默认行为，touch事件的默认行为就是滚动。</p>
+<p>event.preventDefault();    </p>
+<h2 id="DEMO："><a href="#DEMO：" class="headerlink" title="DEMO："></a>DEMO：</h2><pre><code>&lt;div id=&apos;demo&apos;&gt;&lt;/div&gt;
+&lt;div class=&apos;slide&apos;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;2&lt;/li&gt;
+        &lt;li&gt;3&lt;/li&gt;
+        &lt;li&gt;4&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+var moveX = 0,px = 0;            
+document.getElementsByClassName(&apos;slide&apos;)[0].addEventListener(&apos;touchstart&apos;, function(e) {
+
+       console.log(e.target); //[object HTMLDivElemet]            
+    console.log(e.changedTouches[0]); //包含所有信息
+
+    document.getElementById(&quot;demo&quot;).innerHTML = &apos;触摸开始&apos;;
+
+    var cx = e.touches[0].clientX;
+    console.log(&apos;touchstart&apos; + cx);
+
+    px = e.touches[0].pageX;
+    console.log(px);
+
+    var sx = e.touches[0].screenX;
+    console.log(sx);
+});
+
+document.getElementsByClassName(&apos;slide&apos;)[0].addEventListener(&apos;touchmove&apos;, function(e) {
+    e.preventDefault();
+
+    console.log(e.changedTouches[0]);
+    document.getElementById(&quot;demo&quot;).innerHTML = &apos;触摸移动中&apos;;
+
+    moveX = e.touches[0].pageX - px;
+    console.log(movex);
+
+    if(moveX &gt; 50) {
+        console.log(&apos;触摸移动过程中，此刻大于50&apos;);
+    } else {
+        console.log(&apos;触摸移动过程中，此刻小于50&apos;);
+    }
+});
+
+document.getElementsByClassName(&apos;slide&apos;)[0].addEventListener(&apos;touchend&apos;, function(e) {
+    document.getElementById(&quot;demo&quot;).innerHTML = &apos;结束&apos; + &apos;end&apos;;
+    console.log(moveX);
+
+    if(moveX &gt; 20) {
+        console.log(&apos;结束时大于20&apos;);
+    } else {
+        console.log(&apos;结束时小于20&apos;);
+    }
+});
+</code></pre>
       
     </div>
 
@@ -372,29 +424,21 @@ Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/hexo/" rel="tag">#hexo</a>
-          
-            <a href="/tags/note/" rel="tag">#note</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/01/the_Best_of_us/" rel="next" title="最好的我们">
-                <i class="fa fa-chevron-left"></i> 最好的我们
+              <a href="/2016/07/18/mouse/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/07/12/JulyToLearn/" rel="prev" title="待整理学习目录">
-                待整理学习目录 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/07/19/mvc-note/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -509,7 +553,7 @@ Github要使用GitHub Pages + Hexo搭建免费的博客,需要在自己的Github
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git"><span class="nav-number">2.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Github"><span class="nav-number">3.</span> <span class="nav-text">Github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo"><span class="nav-number">4.</span> <span class="nav-text">Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Github-Hexo"><span class="nav-number">5.</span> <span class="nav-text">Github+Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo日常使用"><span class="nav-number">6.</span> <span class="nav-text">Hexo日常使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">7.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#comments-false"><span class="nav-number">1.</span> <span class="nav-text">comments: false</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#触摸事件："><span class="nav-number">2.</span> <span class="nav-text">触摸事件：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跟踪触摸的属性-："><span class="nav-number">3.</span> <span class="nav-text">跟踪触摸的属性 ：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#每个Touch对象的属性-："><span class="nav-number">4.</span> <span class="nav-text">每个Touch对象的属性 ：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#触摸事件的响应顺序"><span class="nav-number">5.</span> <span class="nav-text">触摸事件的响应顺序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移动端click屏幕产生200-300-ms的延迟响应"><span class="nav-number">6.</span> <span class="nav-text">移动端click屏幕产生200-300 ms的延迟响应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意："><span class="nav-number">7.</span> <span class="nav-text">注意：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DEMO："><span class="nav-number">8.</span> <span class="nav-text">DEMO：</span></a></li></ol></div>
             
           </div>
         </section>
