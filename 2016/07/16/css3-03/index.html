@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="note,动画,html5，css3," />
+  <meta name="keywords" content="note,css3,动画," />
 
 
 
@@ -84,18 +84,28 @@
 
 
 
-<meta name="description" content="H5动画方法一：GIF方法二：逐帧动画">
+<meta name="description" content="提升移动端CSS3动画体验的主要方法：
+尽可能多的利用硬件能力，如使用3D变形来开启GPU加速-webkit-transform: translate3d(0, 0, 0);
+-moz-transform: translate3d(0, 0, 0);
+-ms-transform: translate3d(0, 0, 0);
+transform: translate3d(0, 0, 0);">
 <meta property="og:type" content="article">
-<meta property="og:title" content="H5实现动画">
-<meta property="og:url" content="http://yoursite.com/2016/07/13/css3-01/index.html">
+<meta property="og:title" content="css3动画优化">
+<meta property="og:url" content="http://yoursite.com/2016/07/16/css3-03/index.html">
 <meta property="og:site_name" content="GGirl">
-<meta property="og:description" content="H5动画方法一：GIF方法二：逐帧动画">
-<meta property="og:image" content="http://yoursite.com/imgs/h5-dh.png">
-<meta property="og:updated_time" content="2016-07-20T07:34:23.627Z">
+<meta property="og:description" content="提升移动端CSS3动画体验的主要方法：
+尽可能多的利用硬件能力，如使用3D变形来开启GPU加速-webkit-transform: translate3d(0, 0, 0);
+-moz-transform: translate3d(0, 0, 0);
+-ms-transform: translate3d(0, 0, 0);
+transform: translate3d(0, 0, 0);">
+<meta property="og:updated_time" content="2016-07-20T07:56:42.573Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="H5实现动画">
-<meta name="twitter:description" content="H5动画方法一：GIF方法二：逐帧动画">
-<meta name="twitter:image" content="http://yoursite.com/imgs/h5-dh.png">
+<meta name="twitter:title" content="css3动画优化">
+<meta name="twitter:description" content="提升移动端CSS3动画体验的主要方法：
+尽可能多的利用硬件能力，如使用3D变形来开启GPU加速-webkit-transform: translate3d(0, 0, 0);
+-moz-transform: translate3d(0, 0, 0);
+-ms-transform: translate3d(0, 0, 0);
+transform: translate3d(0, 0, 0);">
 
 
 
@@ -116,9 +126,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/07/13/css3-01/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/07/16/css3-03/"/>
 
-  <title> H5实现动画 | GGirl </title>
+  <title> css3动画优化 | GGirl </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -258,7 +268,7 @@
             
             
               
-                H5实现动画
+                css3动画优化
               
             
           </h1>
@@ -270,8 +280,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-13T21:25:02+08:00" content="2016-07-13">
-              2016-07-13
+            <time itemprop="dateCreated" datetime="2016-07-16T21:25:12+08:00" content="2016-07-16">
+              2016-07-16
             </time>
           </span>
 
@@ -315,23 +325,42 @@
       
 
       
-        <h2 id="H5动画"><a href="#H5动画" class="headerlink" title="H5动画"></a>H5动画</h2><h3 id="方法一：GIF"><a href="#方法一：GIF" class="headerlink" title="方法一：GIF"></a>方法一：GIF</h3><h3 id="方法二：逐帧动画"><a href="#方法二：逐帧动画" class="headerlink" title="方法二：逐帧动画"></a>方法二：逐帧动画</h3><a id="more"></a>
-<p>逐帧动画即是利用一张等间距的动画分解逐帧图片，由js脚本模拟编写或是使用css3新属性step()制作而成<br>做一个逐帧动画必不可缺的就是需要一张等间距的“动画分解逐帧图片.png”，再通过JavaScript脚本或CSS3 animation的过度函数step() 来控制图片的background-position，二者结合就可以快速输出一个逐帧动画<br>参考：<a href="http://w.benbun.com/momo/shaibingxiang/" target="_blank" rel="external">http://w.benbun.com/momo/shaibingxiang/</a>  </p>
-<h3 id="方法三：css3"><a href="#方法三：css3" class="headerlink" title="方法三：css3"></a>方法三：css3</h3><h4 id="CSS3的动画三大属性：Transform-变形，Transition-过渡，和Animation-动画"><a href="#CSS3的动画三大属性：Transform-变形，Transition-过渡，和Animation-动画" class="headerlink" title="CSS3的动画三大属性：Transform 变形，Transition 过渡，和Animation 动画"></a>CSS3的动画三大属性：Transform 变形，Transition 过渡，和Animation 动画</h4><p>Transform 变形：拥有 rotate 旋转 skew 扭曲 scale 缩放 translate 移动 matrix 矩阵变形五大特效，罗斯的例子中，便是对充分结合了这几个变化特效的产物。  </p>
-<p>Transition 过渡：拥有修改执行变换的属性，时长，速率和延迟时间的能力，大家都很熟悉的贝塞尔曲线，也是归属于transition的设定之下的。</p>
-<p>Animation 动画：若将Transform解释为动作，Transition解释为过渡，那么Animation则是连续的几个动作，即动画。Animation可以我们设定keyframes的值，让元素在一段时间内完成多个动作  </p>
-<h3 id="方法四：SVG"><a href="#方法四：SVG" class="headerlink" title="方法四：SVG"></a>方法四：SVG</h3><p>擅长于线条的动画<br>SVG，可缩放矢量图形（Scalable Vector Graphics）， 是被存成了 XML 格式的图像，它有一些特别的地方：</p>
-<ul>
-<li>可被多种工具读取和修改（比如记事本）</li>
-<li>尺寸更小，可压缩性更强</li>
-<li>矢量</li>
-<li>纯粹的 XML</li>
-</ul>
-<h3 id="方法五：Canvas"><a href="#方法五：Canvas" class="headerlink" title="方法五：Canvas"></a>方法五：Canvas</h3><p>HTML5 的新元素 <canvas>，类似画板，拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法。</canvas></p>
-<h3 id="方法六：Flash-gt-Canvas"><a href="#方法六：Flash-gt-Canvas" class="headerlink" title="方法六：Flash-&gt;Canvas"></a>方法六：Flash-&gt;Canvas</h3><p>通过Flash cc制作复杂又精细的动画，导成Canvas文件，动画中的交互操作，依赖Create.js的脚步库完成。</p>
-<h3 id="方法七：video"><a href="#方法七：video" class="headerlink" title="方法七：video"></a>方法七：video</h3><h3 id="方法八：JavaScript"><a href="#方法八：JavaScript" class="headerlink" title="方法八：JavaScript"></a>方法八：JavaScript</h3><p>所有的动画特效都离不开Javascript的支持 </p>
-<p><img src="imgs/h5-dh.png" alt=""></p>
-<p>来源网站：<a href="https://isux.tencent.com/h5active.html" target="_blank" rel="external">H5动效的常见制作手法</a></p>
+        <p>提升移动端CSS3动画体验的主要方法：</p>
+<h4 id="尽可能多的利用硬件能力，如使用3D变形来开启GPU加速"><a href="#尽可能多的利用硬件能力，如使用3D变形来开启GPU加速" class="headerlink" title="尽可能多的利用硬件能力，如使用3D变形来开启GPU加速"></a>尽可能多的利用硬件能力，如使用3D变形来开启GPU加速</h4><pre><code>-webkit-transform: translate3d(0, 0, 0);
+-moz-transform: translate3d(0, 0, 0);
+-ms-transform: translate3d(0, 0, 0);
+transform: translate3d(0, 0, 0);   
+</code></pre><a id="more"></a> 
+<p>如动画过程有闪烁（通常发生在动画开始的时候），可以尝试下面的Hack：</p>
+<pre><code>-webkit-backface-visibility: hidden;
+-moz-backface-visibility: hidden;
+-ms-backface-visibility: hidden;
+backface-visibility: hidden;
+
+-webkit-perspective: 1000;
+-moz-perspective: 1000;
+-ms-perspective: 1000;
+perspective: 1000; 
+</code></pre><p>注：3D变形会消耗更多的内存与功耗，应确实有性能问题时才去使用它，兼在权衡<br>如下面一个元素通过translate3d右移500px的动画流畅度会明显优于使用left属性：    </p>
+<pre><code>#ball-1 {
+  transition: -webkit-transform .5s ease;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+#ball-1.slidein {
+  -webkit-transform: translate3d(500px, 0, 0);
+}
+
+
+#ball-2 {
+  transition: left .5s ease;
+  left: 0;
+}
+#ball-2.slidein {
+  left: 500px;
+}  
+</code></pre><h4 id="尽可能少的使用box-shadows与gradients"><a href="#尽可能少的使用box-shadows与gradients" class="headerlink" title="尽可能少的使用box-shadows与gradients"></a>尽可能少的使用box-shadows与gradients</h4><h4 id="尽可能的让动画元素不在文档流中，以减少重排"><a href="#尽可能的让动画元素不在文档流中，以减少重排" class="headerlink" title="尽可能的让动画元素不在文档流中，以减少重排"></a>尽可能的让动画元素不在文档流中，以减少重排</h4><pre><code>position: fixed;  
+position: absolute;   
+</code></pre><p>position在做动画时，还是会用top,left值变换形成动画，但是在top,left变换时仍旧会重排，目前动画方面不会触发重排和重绘的只有opacity，transform  </p>
 
       
     </div>
@@ -355,9 +384,9 @@
           
             <a href="/tags/note/" rel="tag">#note</a>
           
-            <a href="/tags/动画/" rel="tag">#动画</a>
+            <a href="/tags/css3/" rel="tag">#css3</a>
           
-            <a href="/tags/html5，css3/" rel="tag">#html5，css3</a>
+            <a href="/tags/动画/" rel="tag">#动画</a>
           
         </div>
       
@@ -366,16 +395,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/12/h5-01/" rel="next" title="移动端注意点总结（一）">
-                <i class="fa fa-chevron-left"></i> 移动端注意点总结（一）
+              <a href="/2016/07/15/css3-02/" rel="next" title="css3动画">
+                <i class="fa fa-chevron-left"></i> css3动画
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/07/14/hexo-use/" rel="prev" title="Hexo使用">
-                Hexo使用 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/07/16/css3-04/" rel="prev" title="CSS3动画帧数科学计算法">
+                CSS3动画帧数科学计算法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -486,7 +515,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#H5动画"><span class="nav-number">1.</span> <span class="nav-text">H5动画</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一：GIF"><span class="nav-number">1.1.</span> <span class="nav-text">方法一：GIF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二：逐帧动画"><span class="nav-number">1.2.</span> <span class="nav-text">方法二：逐帧动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法三：css3"><span class="nav-number">1.3.</span> <span class="nav-text">方法三：css3</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS3的动画三大属性：Transform-变形，Transition-过渡，和Animation-动画"><span class="nav-number">1.3.1.</span> <span class="nav-text">CSS3的动画三大属性：Transform 变形，Transition 过渡，和Animation 动画</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法四：SVG"><span class="nav-number">1.4.</span> <span class="nav-text">方法四：SVG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法五：Canvas"><span class="nav-number">1.5.</span> <span class="nav-text">方法五：Canvas</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法六：Flash-gt-Canvas"><span class="nav-number">1.6.</span> <span class="nav-text">方法六：Flash->Canvas</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法七：video"><span class="nav-number">1.7.</span> <span class="nav-text">方法七：video</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法八：JavaScript"><span class="nav-number">1.8.</span> <span class="nav-text">方法八：JavaScript</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#尽可能多的利用硬件能力，如使用3D变形来开启GPU加速"><span class="nav-number">1.</span> <span class="nav-text">尽可能多的利用硬件能力，如使用3D变形来开启GPU加速</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#尽可能少的使用box-shadows与gradients"><span class="nav-number">2.</span> <span class="nav-text">尽可能少的使用box-shadows与gradients</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#尽可能的让动画元素不在文档流中，以减少重排"><span class="nav-number">3.</span> <span class="nav-text">尽可能的让动画元素不在文档流中，以减少重排</span></a></li></ol></div>
             
           </div>
         </section>

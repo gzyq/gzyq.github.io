@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="note,动画,html5，css3," />
+  <meta name="keywords" content="note，hexo，学习" />
 
 
 
@@ -84,18 +84,28 @@
 
 
 
-<meta name="description" content="H5动画方法一：GIF方法二：逐帧动画">
+<meta name="description" content="title: 移动端JS触摸事件date: 2016-07-18 21:20:09tags: [note,JS,移动端]categories: note
+comments: false触摸事件： （都会冒泡，也可以取消）  
+
+touchstart——当手指触碰屏幕时候发生。不管当前有多少只手指
+touchmove——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用event的preve">
 <meta property="og:type" content="article">
-<meta property="og:title" content="H5实现动画">
-<meta property="og:url" content="http://yoursite.com/2016/07/13/css3-01/index.html">
+<meta property="og:title" content="GGirl">
+<meta property="og:url" content="http://yoursite.com/2016/07/20/js-touch/index.html">
 <meta property="og:site_name" content="GGirl">
-<meta property="og:description" content="H5动画方法一：GIF方法二：逐帧动画">
-<meta property="og:image" content="http://yoursite.com/imgs/h5-dh.png">
-<meta property="og:updated_time" content="2016-07-20T07:34:23.627Z">
+<meta property="og:description" content="title: 移动端JS触摸事件date: 2016-07-18 21:20:09tags: [note,JS,移动端]categories: note
+comments: false触摸事件： （都会冒泡，也可以取消）  
+
+touchstart——当手指触碰屏幕时候发生。不管当前有多少只手指
+touchmove——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用event的preve">
+<meta property="og:updated_time" content="2016-07-20T07:59:20.190Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="H5实现动画">
-<meta name="twitter:description" content="H5动画方法一：GIF方法二：逐帧动画">
-<meta name="twitter:image" content="http://yoursite.com/imgs/h5-dh.png">
+<meta name="twitter:title" content="GGirl">
+<meta name="twitter:description" content="title: 移动端JS触摸事件date: 2016-07-18 21:20:09tags: [note,JS,移动端]categories: note
+comments: false触摸事件： （都会冒泡，也可以取消）  
+
+touchstart——当手指触碰屏幕时候发生。不管当前有多少只手指
+touchmove——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用event的preve">
 
 
 
@@ -116,9 +126,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/07/13/css3-01/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/07/20/js-touch/"/>
 
-  <title> H5实现动画 | GGirl </title>
+  <title>  | GGirl </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -258,7 +268,7 @@
             
             
               
-                H5实现动画
+                
               
             
           </h1>
@@ -270,32 +280,15 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-13T21:25:02+08:00" content="2016-07-13">
-              2016-07-13
+            <time itemprop="dateCreated" datetime="2016-07-20T15:58:49+08:00" content="2016-07-20">
+              2016-07-20
             </time>
           </span>
 
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/note/" itemprop="url" rel="index">
-                    <span itemprop="name">note</span>
-                  </a>
-                </span>
 
-                
-                
-
-              
-            </span>
           
-
+            
           
 
           
@@ -315,24 +308,103 @@
       
 
       
-        <h2 id="H5动画"><a href="#H5动画" class="headerlink" title="H5动画"></a>H5动画</h2><h3 id="方法一：GIF"><a href="#方法一：GIF" class="headerlink" title="方法一：GIF"></a>方法一：GIF</h3><h3 id="方法二：逐帧动画"><a href="#方法二：逐帧动画" class="headerlink" title="方法二：逐帧动画"></a>方法二：逐帧动画</h3><a id="more"></a>
-<p>逐帧动画即是利用一张等间距的动画分解逐帧图片，由js脚本模拟编写或是使用css3新属性step()制作而成<br>做一个逐帧动画必不可缺的就是需要一张等间距的“动画分解逐帧图片.png”，再通过JavaScript脚本或CSS3 animation的过度函数step() 来控制图片的background-position，二者结合就可以快速输出一个逐帧动画<br>参考：<a href="http://w.benbun.com/momo/shaibingxiang/" target="_blank" rel="external">http://w.benbun.com/momo/shaibingxiang/</a>  </p>
-<h3 id="方法三：css3"><a href="#方法三：css3" class="headerlink" title="方法三：css3"></a>方法三：css3</h3><h4 id="CSS3的动画三大属性：Transform-变形，Transition-过渡，和Animation-动画"><a href="#CSS3的动画三大属性：Transform-变形，Transition-过渡，和Animation-动画" class="headerlink" title="CSS3的动画三大属性：Transform 变形，Transition 过渡，和Animation 动画"></a>CSS3的动画三大属性：Transform 变形，Transition 过渡，和Animation 动画</h4><p>Transform 变形：拥有 rotate 旋转 skew 扭曲 scale 缩放 translate 移动 matrix 矩阵变形五大特效，罗斯的例子中，便是对充分结合了这几个变化特效的产物。  </p>
-<p>Transition 过渡：拥有修改执行变换的属性，时长，速率和延迟时间的能力，大家都很熟悉的贝塞尔曲线，也是归属于transition的设定之下的。</p>
-<p>Animation 动画：若将Transform解释为动作，Transition解释为过渡，那么Animation则是连续的几个动作，即动画。Animation可以我们设定keyframes的值，让元素在一段时间内完成多个动作  </p>
-<h3 id="方法四：SVG"><a href="#方法四：SVG" class="headerlink" title="方法四：SVG"></a>方法四：SVG</h3><p>擅长于线条的动画<br>SVG，可缩放矢量图形（Scalable Vector Graphics）， 是被存成了 XML 格式的图像，它有一些特别的地方：</p>
+        <hr>
+<p>title: 移动端JS触摸事件<br>date: 2016-07-18 21:20:09<br>tags: [note,JS,移动端]<br>categories: note</p>
+<h2 id="comments-false"><a href="#comments-false" class="headerlink" title="comments: false"></a>comments: false</h2><h2 id="触摸事件："><a href="#触摸事件：" class="headerlink" title="触摸事件："></a>触摸事件：</h2><p> （都会冒泡，也可以取消）  </p>
 <ul>
-<li>可被多种工具读取和修改（比如记事本）</li>
-<li>尺寸更小，可压缩性更强</li>
-<li>矢量</li>
-<li>纯粹的 XML</li>
+<li>touchstart——当手指触碰屏幕时候发生。不管当前有多少只手指</li>
+<li>touchmove——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用event的preventDefault()可以阻止默认情况的发生：阻止页面滚动  </li>
+<li>touchend——当手指离开屏幕时触发  </li>
+<li>touchcancel——当系统停止跟踪触摸时候会触发。例如在触摸过程中突然页面alert()一个提示框，此时会触发该事件，这个事件比较少用（例如电话接入或者弹出信息。一般用在游戏：玩着的时候，突然来电话了，就触发touchcancel事件暂停游戏、存档等操作。）<a id="more"></a>
+<h2 id="跟踪触摸的属性-："><a href="#跟踪触摸的属性-：" class="headerlink" title="跟踪触摸的属性 ："></a>跟踪触摸的属性 ：</h2></li>
+<li>touches：当前跟踪的触摸操作的Touch对象的数组，即屏幕上所有手指的信息  </li>
+<li>targetTouches：特定于事件目标的Touch对象的数组，即手指在目标区域的手指信息  </li>
+<li>changedTouches：自上次触摸以来发生了什么改变的Touch对象的数组，即最近一次触发该事件的手指信息   </li>
 </ul>
-<h3 id="方法五：Canvas"><a href="#方法五：Canvas" class="headerlink" title="方法五：Canvas"></a>方法五：Canvas</h3><p>HTML5 的新元素 <canvas>，类似画板，拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法。</canvas></p>
-<h3 id="方法六：Flash-gt-Canvas"><a href="#方法六：Flash-gt-Canvas" class="headerlink" title="方法六：Flash-&gt;Canvas"></a>方法六：Flash-&gt;Canvas</h3><p>通过Flash cc制作复杂又精细的动画，导成Canvas文件，动画中的交互操作，依赖Create.js的脚步库完成。</p>
-<h3 id="方法七：video"><a href="#方法七：video" class="headerlink" title="方法七：video"></a>方法七：video</h3><h3 id="方法八：JavaScript"><a href="#方法八：JavaScript" class="headerlink" title="方法八：JavaScript"></a>方法八：JavaScript</h3><p>所有的动画特效都离不开Javascript的支持 </p>
-<p><img src="imgs/h5-dh.png" alt=""></p>
-<p>来源网站：<a href="https://isux.tencent.com/h5active.html" target="_blank" rel="external">H5动效的常见制作手法</a></p>
+<p>注：touchend时，touches与targetTouches信息会被删除，changedTouches保存的最后一次的信息，最好用于计算手指信息  </p>
+<h2 id="每个Touch对象的属性-："><a href="#每个Touch对象的属性-：" class="headerlink" title="每个Touch对象的属性 ："></a>每个Touch对象的属性 ：</h2><ul>
+<li>target：触摸的DOM节点目标 </li>
+<li>identifier：表示触摸的唯一ID   </li>
+<li>clientX：触摸目标在<b style="color:red;">视口</b>中的X坐标  （触摸点相对浏览器窗口的位置，client不包含滚动距离）</li>
+<li>clientY：触摸目标在<b style="color:red;">视口</b>中的Y坐标   </li>
+<li>pageX：触摸目标在<b style="color:red;">页面</b>中的X坐标  （触摸点相对于页面的位置，包含滚动距离） </li>
+<li>pageY：触摸目标在<b style="color:red;">页面</b>中的Y坐标  </li>
+<li>screenX：触摸目标在<b style="color:red;">屏幕</b>中的X坐标  （触摸点相对于屏幕的位置）</li>
+<li>screenY：触摸目标在<b style="color:red;">屏幕</b>中的Y坐标</li>
+<li>radiusX：画出大约相当于手指形状的椭圆形，椭圆形的两个半径中x</li>
+<li>radiusY：画出大约相当于手指形状的椭圆形，椭圆形的两个半径中y</li>
+<li>rotationAngle：画出大约相当于手指形状的椭圆形，旋转角度。</li>
+</ul>
+<pre><code>e.target;   //触摸元素为p，则返回[object HTMLParagraphElemet]，目标内容
+            //触摸元素为div,则返回[object HTMLDivElemet]
+</code></pre><h2 id="触摸事件的响应顺序"><a href="#触摸事件的响应顺序" class="headerlink" title="触摸事件的响应顺序"></a>触摸事件的响应顺序</h2><ol>
+<li>ontouchstart   </li>
+<li>ontouchmove   </li>
+<li>ontouchend   </li>
+<li>onclick    </li>
+</ol>
+<h2 id="移动端click屏幕产生200-300-ms的延迟响应"><a href="#移动端click屏幕产生200-300-ms的延迟响应" class="headerlink" title="移动端click屏幕产生200-300 ms的延迟响应"></a>移动端click屏幕产生200-300 ms的延迟响应</h2><h2 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h2><p>手指在滑动整个屏幕时，会影响浏览器的行为，比如滚动和缩放。所以在调用touch事件时，要注意禁止缩放和滚动。</p>
+<p><strong>1.禁止缩放</strong></p>
+<p>通过meta元标签来设置。</p>
+<meta name="viewport" content="target-densitydpi=320,width=640,user-scalable=no">
 
+<p><strong>2.禁止滚动</strong></p>
+<p>preventDefault是阻止默认行为，touch事件的默认行为就是滚动。</p>
+<p>event.preventDefault();    </p>
+<h2 id="DEMO："><a href="#DEMO：" class="headerlink" title="DEMO："></a>DEMO：</h2><pre><code>&lt;div id=&apos;demo&apos;&gt;&lt;/div&gt;
+&lt;div class=&apos;slide&apos;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;2&lt;/li&gt;
+        &lt;li&gt;3&lt;/li&gt;
+        &lt;li&gt;4&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+var moveX = 0,px = 0;            
+document.getElementsByClassName(&apos;slide&apos;)[0].addEventListener(&apos;touchstart&apos;, function(e) {
+
+       console.log(e.target); //[object HTMLDivElemet]            
+    console.log(e.changedTouches[0]); //包含所有信息
+
+    document.getElementById(&quot;demo&quot;).innerHTML = &apos;触摸开始&apos;;
+
+    var cx = e.touches[0].clientX;
+    console.log(&apos;touchstart&apos; + cx);
+
+    px = e.touches[0].pageX;
+    console.log(px);
+
+    var sx = e.touches[0].screenX;
+    console.log(sx);
+});
+
+document.getElementsByClassName(&apos;slide&apos;)[0].addEventListener(&apos;touchmove&apos;, function(e) {
+    e.preventDefault();
+
+    console.log(e.changedTouches[0]);
+    document.getElementById(&quot;demo&quot;).innerHTML = &apos;触摸移动中&apos;;
+
+    moveX = e.touches[0].pageX - px;
+    console.log(movex);
+
+    if(moveX &gt; 50) {
+        console.log(&apos;触摸移动过程中，此刻大于50&apos;);
+    } else {
+        console.log(&apos;触摸移动过程中，此刻小于50&apos;);
+    }
+});
+
+document.getElementsByClassName(&apos;slide&apos;)[0].addEventListener(&apos;touchend&apos;, function(e) {
+    document.getElementById(&quot;demo&quot;).innerHTML = &apos;结束&apos; + &apos;end&apos;;
+    console.log(moveX);
+
+    if(moveX &gt; 20) {
+        console.log(&apos;结束时大于20&apos;);
+    } else {
+        console.log(&apos;结束时小于20&apos;);
+    }
+});
+</code></pre>
       
     </div>
 
@@ -351,31 +423,21 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/note/" rel="tag">#note</a>
-          
-            <a href="/tags/动画/" rel="tag">#动画</a>
-          
-            <a href="/tags/html5，css3/" rel="tag">#html5，css3</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/12/h5-01/" rel="next" title="移动端注意点总结（一）">
-                <i class="fa fa-chevron-left"></i> 移动端注意点总结（一）
+              <a href="/2016/07/20/mianColorPictures/" rel="next" title="图片主色获取">
+                <i class="fa fa-chevron-left"></i> 图片主色获取
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/07/14/hexo-use/" rel="prev" title="Hexo使用">
-                Hexo使用 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/07/20/mvc-note/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -400,6 +462,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -486,7 +552,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#H5动画"><span class="nav-number">1.</span> <span class="nav-text">H5动画</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一：GIF"><span class="nav-number">1.1.</span> <span class="nav-text">方法一：GIF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二：逐帧动画"><span class="nav-number">1.2.</span> <span class="nav-text">方法二：逐帧动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法三：css3"><span class="nav-number">1.3.</span> <span class="nav-text">方法三：css3</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS3的动画三大属性：Transform-变形，Transition-过渡，和Animation-动画"><span class="nav-number">1.3.1.</span> <span class="nav-text">CSS3的动画三大属性：Transform 变形，Transition 过渡，和Animation 动画</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法四：SVG"><span class="nav-number">1.4.</span> <span class="nav-text">方法四：SVG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法五：Canvas"><span class="nav-number">1.5.</span> <span class="nav-text">方法五：Canvas</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法六：Flash-gt-Canvas"><span class="nav-number">1.6.</span> <span class="nav-text">方法六：Flash->Canvas</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法七：video"><span class="nav-number">1.7.</span> <span class="nav-text">方法七：video</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法八：JavaScript"><span class="nav-number">1.8.</span> <span class="nav-text">方法八：JavaScript</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#comments-false"><span class="nav-number">1.</span> <span class="nav-text">comments: false</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#触摸事件："><span class="nav-number">2.</span> <span class="nav-text">触摸事件：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跟踪触摸的属性-："><span class="nav-number">3.</span> <span class="nav-text">跟踪触摸的属性 ：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#每个Touch对象的属性-："><span class="nav-number">4.</span> <span class="nav-text">每个Touch对象的属性 ：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#触摸事件的响应顺序"><span class="nav-number">5.</span> <span class="nav-text">触摸事件的响应顺序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移动端click屏幕产生200-300-ms的延迟响应"><span class="nav-number">6.</span> <span class="nav-text">移动端click屏幕产生200-300 ms的延迟响应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意："><span class="nav-number">7.</span> <span class="nav-text">注意：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DEMO："><span class="nav-number">8.</span> <span class="nav-text">DEMO：</span></a></li></ol></div>
             
           </div>
         </section>
