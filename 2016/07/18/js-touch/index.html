@@ -98,7 +98,7 @@ comments: false触摸事件： （都会冒泡，也可以取消）
 
 touchstart——当手指触碰屏幕时候发生。不管当前有多少只手指
 touchmove——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用event的preven">
-<meta property="og:updated_time" content="2016-07-19T02:06:18.006Z">
+<meta property="og:updated_time" content="2016-07-20T06:48:31.785Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GGirl">
 <meta name="twitter:description" content="title: 移动端JS触摸事件date: 2016/7/16 21:11:22tags: [note,JS,移动端]categories: note
@@ -315,9 +315,8 @@ touchmove——当手指在屏幕上滑动时连续触发。通常我们再滑�
 <li>touchstart——当手指触碰屏幕时候发生。不管当前有多少只手指</li>
 <li>touchmove——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用event的preventDefault()可以阻止默认情况的发生：阻止页面滚动  </li>
 <li>touchend——当手指离开屏幕时触发  </li>
-<li>touchcancel——当系统停止跟踪触摸时候会触发。例如在触摸过程中突然页面alert()一个提示框，此时会触发该事件，这个事件比较少用（例如电话接入或者弹出信息。一般用在游戏：玩着的时候，突然来电话了，就触发touchcancel事件暂停游戏、存档等操作。）</li>
-</ul>
-<h2 id="跟踪触摸的属性-："><a href="#跟踪触摸的属性-：" class="headerlink" title="跟踪触摸的属性 ："></a>跟踪触摸的属性 ：</h2><ul>
+<li>touchcancel——当系统停止跟踪触摸时候会触发。例如在触摸过程中突然页面alert()一个提示框，此时会触发该事件，这个事件比较少用（例如电话接入或者弹出信息。一般用在游戏：玩着的时候，突然来电话了，就触发touchcancel事件暂停游戏、存档等操作。）<a id="more"></a>
+<h2 id="跟踪触摸的属性-："><a href="#跟踪触摸的属性-：" class="headerlink" title="跟踪触摸的属性 ："></a>跟踪触摸的属性 ：</h2></li>
 <li>touches：当前跟踪的触摸操作的Touch对象的数组，即屏幕上所有手指的信息  </li>
 <li>targetTouches：特定于事件目标的Touch对象的数组，即手指在目标区域的手指信息  </li>
 <li>changedTouches：自上次触摸以来发生了什么改变的Touch对象的数组，即最近一次触发该事件的手指信息   </li>
@@ -507,7 +506,7 @@ document.getElementsByClassName(&apos;slide&apos;)[0].addEventListener(&apos;tou
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
