@@ -1,7 +1,7 @@
 ---
 title: 图片主色获取
 date: 2016/7/20 14:54:18 
-tags: [note,css，插件]
+tags: [note,css,插件]
 categories: note
 comments: false
 ---  
