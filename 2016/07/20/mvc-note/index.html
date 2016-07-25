@@ -92,7 +92,7 @@ comments: false当使用JavaScript 开发应用时，那些经典的设计模式
 <meta property="og:site_name" content="GGirl">
 <meta property="og:description" content="title: MVC的JavaScript Web富应用开发(完整版)-笔记date: 2016-07-19 11:15:32tags: [note,JS,mvc]categories: note
 comments: false当使用JavaScript 开发应用时，那些经典的设计模式和最佳实践被抛在了脑后。开发者往往忽略架构模型，比如 MVC 模型，而常将应用中的 HTML 和 JavaScr">
-<meta property="og:updated_time" content="2016-07-20T08:01:23.998Z">
+<meta property="og:updated_time" content="2016-07-20T09:27:22.994Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GGirl">
 <meta name="twitter:description" content="title: MVC的JavaScript Web富应用开发(完整版)-笔记date: 2016-07-19 11:15:32tags: [note,JS,mvc]categories: note
@@ -396,7 +396,15 @@ container.show();
 </ul>
 <p>给提供服务的资源增加 Last-Modified 头信息也有助于缓存。<br>浏览器在对该资源后续的请求中，就能指定 If-Modified-Since 头信息，这是一个时间戳。<br>如果该资源在最后一次访问之后未被修改，服务器只返回 304 状态码（未修改） 。<br>浏览器仍然可以请求，但服务器却不一定在响应中返回该资源的内容，这可以节省网络时间和带宽</p>
 <p>Last-Modified 的替代方式是 ETag。比较 Etag 就像比较两个文件的哈希值——如果 ETag值不一致，缓存就过期了，必须重新验证。它的工作原理和 Last-Modified 头信息一样。服务器将用 ETag 头信息将该值附加到资源响应中，客户端将用 If-None-Match 头信息检查。</p>
-<h2 id="源码压缩（Minification）"><a href="#源码压缩（Minification）" class="headerlink" title="源码压缩（Minification）"></a>源码压缩（Minification）</h2><p>JavaScript 源码压缩是从脚本文件中删除不必要的字符，它不改变功能。删除的字符包括空白、换行和注释。<br>更好的压缩工具应该能够翻译JavaScript，因此能安全地缩短变量和函数的名字，这样就进一步减少了字符。文件越小越好，因为在网络上传输的数据越少越好</p>
+<h2 id="源码压缩（Minification）"><a href="#源码压缩（Minification）" class="headerlink" title="源码压缩（Minification）"></a>源码压缩（Minification）</h2><p>JavaScript 源码压缩是从脚本文件中删除不必要的字符，它不改变功能。删除的字符包括空白、换行和注释。<br>更好的压缩工具应该能够翻译JavaScript，因此能安全地缩短变量和函数的名字，这样就进一步减少了字符。文件越小越好，因为在网络上传输的数据越少越好。<br>不仅仅可以对 JavaScript 文件进行压缩，样式表和 HTML 文件也可以被压缩。特别是样式表，通常包含了大量冗余的空白。压缩最好能在部署时再完成，因为开发时你不希望调试任何压缩过的代码。<br>如果在生产环境中有一个错误，首先应该尝试在开发环境中复现——你会发现这样更容易调试错误。<br>源码压缩带来额外的好处是让代码晦涩难读。<br>很多源码压缩的工具，建议选择一个带有 JavaScript 引擎、能够翻译代码的工具，如YUI Compressor智能优化源代码。  </p>
+<h2 id="Gzip-压缩"><a href="#Gzip-压缩" class="headerlink" title="Gzip 压缩"></a>Gzip 压缩</h2><p>在 Web 上 Gzip 是最流行并且支持最广泛的压缩方式。它是由 GNU 项目组开发的，在HTTP/1.1 中开始对其支持。<br>Web 客户端通过在发送请求时增加 Accept-Encoding 头信息来标识自己支持的压缩方式：<br>     Accept-Encoding: gzip, deflate  </p>
+<p>如果 web 服务器看到该头信息，并且支持列出的压缩方式，它将会对响应结果进行压缩，并通过 Content-Encoding 头信息标识其压缩方式 ：</p>
+<pre><code>Content-Encoding: gzip 
+</code></pre><p>然后浏览器才能正确地解码， 得到解码后的响应。<br>显然，压缩数据可以减少网络传送时间，但这并没大范围地得以实现。Gzip 通常能减少响应 70% 的体积，巨大的体积缩减极大地加速了网站的加载速度。</p>
+<h2 id="使用-CDN"><a href="#使用-CDN" class="headerlink" title="使用 CDN"></a>使用 CDN</h2><p>内容分发网络（或叫 CDN）为你的站点提供静态资源内容服务，以减少它们的加载时间。</p>
+<p>用户和 web 服务器之间的距离对加载时间有直接的影响。CDN 将你的内容部署在跨越多个地理位置的服务器上，故当用户发起一个请求时，可从就近的服务器得到响应资源（理想情况是在同一个国家中） 。</p>
+<h1 id="Spine类库"><a href="#Spine类库" class="headerlink" title="Spine类库"></a>Spine类库</h1><p>Spine是一个轻量级 JavaScript 应用程序开发库.<br>Spine 将会让你在保证代码干净整洁和耦合松散的前提之下，构建功能全面、丰富的 JavaScript 应用程序.<br>Spine 包含了一个可以继承的类库 Spine.Class 、一个事件模块 Spine.Events 、一个ORM—— Spine.Model ，以及一个控制器类 Spine.Controller 。<br>你自己可以使用其他任何类库，像模板支持或 DOM 库等，用你最熟悉的就可以了。不仅如此，Spine 包含了对jQeury 和 Zepto.js 库特别的支持，它们是对 Spine 的非常好的补充。  </p>
+<h1 id="Backbone类库"><a href="#Backbone类库" class="headerlink" title="Backbone类库"></a>Backbone类库</h1><p>Backbone 是构建 JavaScript 应用程序的一个优秀的类库。它的优美之处在于其简洁。这是一个轻量类库，它覆盖了所有基础的功能，同时提供了最大的灵活性。</p>
 
       
     </div>
@@ -428,6 +436,10 @@ container.show();
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/20/mouse/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -495,7 +507,7 @@ container.show();
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -512,7 +524,7 @@ container.show();
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -541,7 +553,7 @@ container.show();
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#comments-false"><span class="nav-number">1.</span> <span class="nav-text">comments: false</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是-MVC"><span class="nav-number"></span> <span class="nav-text">什么是 MVC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#组成："><span class="nav-number">1.</span> <span class="nav-text">组成：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类"><span class="nav-number">2.</span> <span class="nav-text">类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模型和数据"><span class="nav-number"></span> <span class="nav-text">模型和数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#控制器和状态"><span class="nav-number"></span> <span class="nav-text">控制器和状态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#视图和模板"><span class="nav-number"></span> <span class="nav-text">视图和模板</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#依赖管理"><span class="nav-number"></span> <span class="nav-text">依赖管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用文件"><span class="nav-number"></span> <span class="nav-text">使用文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#部署"><span class="nav-number"></span> <span class="nav-text">部署</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#性能"><span class="nav-number">1.</span> <span class="nav-text">性能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缓存"><span class="nav-number">2.</span> <span class="nav-text">缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源码压缩（Minification）"><span class="nav-number">3.</span> <span class="nav-text">源码压缩（Minification）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#comments-false"><span class="nav-number">1.</span> <span class="nav-text">comments: false</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是-MVC"><span class="nav-number"></span> <span class="nav-text">什么是 MVC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#组成："><span class="nav-number">1.</span> <span class="nav-text">组成：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类"><span class="nav-number">2.</span> <span class="nav-text">类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模型和数据"><span class="nav-number"></span> <span class="nav-text">模型和数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#控制器和状态"><span class="nav-number"></span> <span class="nav-text">控制器和状态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#视图和模板"><span class="nav-number"></span> <span class="nav-text">视图和模板</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#依赖管理"><span class="nav-number"></span> <span class="nav-text">依赖管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用文件"><span class="nav-number"></span> <span class="nav-text">使用文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#部署"><span class="nav-number"></span> <span class="nav-text">部署</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#性能"><span class="nav-number">1.</span> <span class="nav-text">性能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缓存"><span class="nav-number">2.</span> <span class="nav-text">缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源码压缩（Minification）"><span class="nav-number">3.</span> <span class="nav-text">源码压缩（Minification）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gzip-压缩"><span class="nav-number">4.</span> <span class="nav-text">Gzip 压缩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-CDN"><span class="nav-number">5.</span> <span class="nav-text">使用 CDN</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spine类库"><span class="nav-number"></span> <span class="nav-text">Spine类库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Backbone类库"><span class="nav-number"></span> <span class="nav-text">Backbone类库</span></a></div>
             
           </div>
         </section>
