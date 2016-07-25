@@ -5,10 +5,11 @@ tags: [note,css3,动画,H5]
 categories: note
 comments: false
 ---
+
 swiper插件：[http://www.swiper.com.cn/](http://www.swiper.com.cn/)  
 slides插件：[http://slidesjs.com/](http://slidesjs.com/)
 slip插件： https://github.com/binnng/slip.js  
-
+<!-- more -->
  
 - 拖拽翻屏：页面随手指拖动而移动，手指松开（touchend）后翻页  
 - 滑动翻屏：页面不随手指拖动而移动，手指松开（touchend）后翻页    
