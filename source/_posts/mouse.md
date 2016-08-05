@@ -5,6 +5,7 @@ tags: [note,js]
 categories: note
 comments: false
 ---  
+
 鼠标事件：  
 onclick事件：在单击鼠标左键或右键时发生。  
 ondoubleclick事件：在双击鼠标左键时发生。   
