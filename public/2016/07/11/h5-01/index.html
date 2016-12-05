@@ -1,0 +1,648 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="note，html5，移动端," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="##meta基础知识 ##
+H5页面窗口自动调整到设备宽度，并禁止用户缩放页面&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no&amp;quot; /&amp;gt;
+忽略将页面中的数字识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端注意点总结（一）">
+<meta property="og:url" content="http://yoursite.com/2016/07/11/h5-01/index.html">
+<meta property="og:site_name" content="GGirl">
+<meta property="og:description" content="##meta基础知识 ##
+H5页面窗口自动调整到设备宽度，并禁止用户缩放页面&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no&amp;quot; /&amp;gt;
+忽略将页面中的数字识">
+<meta property="og:updated_time" content="2016-07-12T06:46:27.053Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动端注意点总结（一）">
+<meta name="twitter:description" content="##meta基础知识 ##
+H5页面窗口自动调整到设备宽度，并禁止用户缩放页面&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no&amp;quot; /&amp;gt;
+忽略将页面中的数字识">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/07/11/h5-01/"/>
+
+  <title> 移动端注意点总结（一） | GGirl </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">GGirl</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">不是所有坚持都有结果，但是总有一些坚持，能从一寸冰封的土地里，培育出十万朵怒放的蔷薇</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                移动端注意点总结（一）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-11T14:37:30+08:00" content="2016-07-11">
+              2016-07-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>##meta基础知识 ##</p>
+<h4 id="H5页面窗口自动调整到设备宽度，并禁止用户缩放页面"><a href="#H5页面窗口自动调整到设备宽度，并禁止用户缩放页面" class="headerlink" title="H5页面窗口自动调整到设备宽度，并禁止用户缩放页面"></a>H5页面窗口自动调整到设备宽度，并禁止用户缩放页面</h4><pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no&quot; /&gt;
+</code></pre><h4 id="忽略将页面中的数字识别为电话号码"><a href="#忽略将页面中的数字识别为电话号码" class="headerlink" title="忽略将页面中的数字识别为电话号码"></a>忽略将页面中的数字识别为电话号码</h4><pre><code>&lt;meta name=&quot;format-detection&quot; content=&quot;telephone=no&quot; /&gt;
+</code></pre><h4 id="忽略Android平台中对邮箱地址的识别"><a href="#忽略Android平台中对邮箱地址的识别" class="headerlink" title="忽略Android平台中对邮箱地址的识别"></a>忽略Android平台中对邮箱地址的识别</h4><pre><code>&lt;meta name=&quot;format-detection&quot; content=&quot;email=no&quot; /&gt;
+</code></pre><a id="more"></a>
+<h4 id="当网站添加到主屏幕快速启动方式，可隐藏地址栏-仅针对ios的safari"><a href="#当网站添加到主屏幕快速启动方式，可隐藏地址栏-仅针对ios的safari" class="headerlink" title="当网站添加到主屏幕快速启动方式，可隐藏地址栏(仅针对ios的safari)"></a>当网站添加到主屏幕快速启动方式，可隐藏地址栏(仅针对ios的safari)</h4><pre><code>&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot; /&gt;
+&lt;!-- ios7.0版本以后，safari上已看不到效果 --&gt;
+</code></pre><h2 id="viewport模板"><a href="#viewport模板" class="headerlink" title="viewport模板"></a>viewport模板</h2><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;meta content=&quot;width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no&quot; name=&quot;viewport&quot;&gt;
+        &lt;meta content=&quot;yes&quot; name=&quot;apple-mobile-web-app-capable&quot;&gt;
+        &lt;meta content=&quot;black&quot; name=&quot;apple-mobile-web-app-status-bar-style&quot;&gt;
+        &lt;meta content=&quot;telephone=no&quot; name=&quot;format-detection&quot;&gt;
+        &lt;meta content=&quot;email=no&quot; name=&quot;format-detection&quot;&gt;
+        &lt;title&gt;标题栏&lt;/title&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;index.css&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        //这里开始内容
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h2 id="移动端定义字体"><a href="#移动端定义字体" class="headerlink" title="移动端定义字体"></a>移动端定义字体</h2><h4 id="font-family"><a href="#font-family" class="headerlink" title="font-family"></a>font-family</h4><p>中文字体使用系统默认即可，英文用Helvetica<br>参考地址：<a href="http://www.cnblogs.com/PeunZhang/p/3592096.html" target="_blank" rel="external">移动端使用字体的思考</a><br><a href="http://moxfive.xyz/2015/12/09/css-font-family/" target="_blank" rel="external">CSS font-family 网页字体使用小结</a>  </p>
+<h4 id="font-size"><a href="#font-size" class="headerlink" title="font-size"></a>font-size</h4><p><strong>px</strong>：只需要适配少部分手机设备，且分辨率对页面影响不大<br><strong>em</strong>：同下<br><strong>rem</strong>：需要适配各种移动设备，分辨率差别较大的情况  </p>
+<p>单位之间转换推荐工具：<a href="http://pxtoem.com/" target="_blank" rel="external">PXtoEM.com </a>  </p>
+<p><strong>响应式中多用px</strong>：<br>以640视觉稿为例 </p>
+<pre><code>&lt;meta content=&quot;width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no&quot; name=&quot;viewport&quot;&gt;
+
+html{font-size:10px}  
+@media screen and (min-width:321px) and (max-width:375px){html{font-size:11px}}  
+@media screen and (min-width:376px) and (max-width:414px){html{font-size:12px}}
+@media screen and (min-width:415px) and (max-width:639px){html{font-size:15px}}  
+@media screen and (min-width:640px) and (max-width:719px){html{font-size:20px}}  
+@media screen and (min-width:720px) and (max-width:749px){html{font-size:22.5px}}  
+@media screen and (min-width:750px) and (max-width:799px){html{font-size:23.5px}}  
+@media screen and (min-width:800px){html{font-size:25px}}
+</code></pre><p><strong>自适应中多用rem</strong> ： </p>
+<ol>
+<li><p>css方法</p>
+</li>
+<li><p>JS设置</p>
+<pre><code>var size= window.innerWidth&gt;window.innerHeight?window.innerHeight:window.innerWidth;
+document.getElementsByTagName(&apos;html&apos;)[0].style.fontSize = size/ 10 + &apos;px&apos;;
+</code></pre></li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/note，html5，移动端/" rel="tag">#note，html5，移动端</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/01/the_Best_of_us/" rel="next" title="最好的我们">
+                <i class="fa fa-chevron-left"></i> 最好的我们
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/11/JulyToLearn/" rel="prev" title="待整理学习目录">
+                待整理学习目录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.JPG"
+               alt="gzyq" />
+          <p class="site-author-name" itemprop="name">gzyq</p>
+          <p class="site-description motion-element" itemprop="description">郭正瑜琼，hexo博客，学习笔记，其他</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#H5页面窗口自动调整到设备宽度，并禁止用户缩放页面"><span class="nav-number">1.</span> <span class="nav-text">H5页面窗口自动调整到设备宽度，并禁止用户缩放页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#忽略将页面中的数字识别为电话号码"><span class="nav-number">2.</span> <span class="nav-text">忽略将页面中的数字识别为电话号码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#忽略Android平台中对邮箱地址的识别"><span class="nav-number">3.</span> <span class="nav-text">忽略Android平台中对邮箱地址的识别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#当网站添加到主屏幕快速启动方式，可隐藏地址栏-仅针对ios的safari"><span class="nav-number">4.</span> <span class="nav-text">当网站添加到主屏幕快速启动方式，可隐藏地址栏(仅针对ios的safari)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#viewport模板"><span class="nav-number"></span> <span class="nav-text">viewport模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移动端定义字体"><span class="nav-number"></span> <span class="nav-text">移动端定义字体</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#font-family"><span class="nav-number">1.</span> <span class="nav-text">font-family</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#font-size"><span class="nav-number">2.</span> <span class="nav-text">font-size</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">gzyq</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -5,10 +5,7 @@ tags:
 ---
 
 js使用构造函数实例化对象时,带括号和不带括号：
-
-
-![](imgs/newfunc.png)  
-
-![](imgs/newfunc2.png)  
 <!-- more -->
+![](http://i.imgur.com/SCaXxZJ.png)
+![](http://i.imgur.com/7shGIsu.png)
 结论：暂时分析没有区别。

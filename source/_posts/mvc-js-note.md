@@ -1,13 +1,12 @@
 ---
 title: MVC的JavaScript Web富应用开发(完整版)-笔记
-date: 2016-07-19 11:15:32  
+date: 2016-08-04 15:11:14
 tags: [note,JS,mvc]
 categories: note
-comments: false
---- 
+---
 
 当使用JavaScript 开发应用时，那些经典的设计模式和最佳实践被抛在了脑后。开发者往往忽略架构模型，比如 MVC 模型，而常将应用中的 HTML 和 JavaScript 混杂在一起，看着像一个大杂烩。
-
+<!-- more -->
 # 什么是 MVC #
 MVC 是一种设计模式，它将应用划分为 3 个部分 ： 数据（模型） 、展现层（视图）和用户交互层（控制器）。  
 换句话说，一个事件的发生是这样的过程：  

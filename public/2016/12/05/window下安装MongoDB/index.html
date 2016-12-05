@@ -1,0 +1,627 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="MongoDB," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="因为想在node.js搭建的聊天室的基础上，加上数据存储的功能，推荐较多的属MongoDB，所以自己就学习安装了一个MongoDB数据库，将过程记录下来，方便后续回顾总结。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="window下安装MongoDB">
+<meta property="og:url" content="http://yoursite.com/2016/12/05/window下安装MongoDB/index.html">
+<meta property="og:site_name" content="GGirl">
+<meta property="og:description" content="因为想在node.js搭建的聊天室的基础上，加上数据存储的功能，推荐较多的属MongoDB，所以自己就学习安装了一个MongoDB数据库，将过程记录下来，方便后续回顾总结。">
+<meta property="og:image" content="http://i.imgur.com/qiGl0k7.png">
+<meta property="og:image" content="http://i.imgur.com/zZWAl2N.png">
+<meta property="og:image" content="http://i.imgur.com/tPPdc8L.png">
+<meta property="og:image" content="http://i.imgur.com/hd8caH5.png">
+<meta property="og:image" content="http://i.imgur.com/crI8uRM.png">
+<meta property="og:image" content="http://i.imgur.com/GKmQlD0.png">
+<meta property="og:image" content="http://i.imgur.com/T0ZQG0c.png">
+<meta property="og:image" content="http://i.imgur.com/n8d8HzV.png">
+<meta property="og:image" content="http://i.imgur.com/fRMgBCB.png">
+<meta property="og:image" content="http://i.imgur.com/AvwVv45.png">
+<meta property="og:image" content="http://i.imgur.com/e6txJVs.png">
+<meta property="og:updated_time" content="2016-12-05T06:43:10.652Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="window下安装MongoDB">
+<meta name="twitter:description" content="因为想在node.js搭建的聊天室的基础上，加上数据存储的功能，推荐较多的属MongoDB，所以自己就学习安装了一个MongoDB数据库，将过程记录下来，方便后续回顾总结。">
+<meta name="twitter:image" content="http://i.imgur.com/qiGl0k7.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/12/05/window下安装MongoDB/"/>
+
+  <title> window下安装MongoDB | GGirl </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">GGirl</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">不是所有坚持都有结果，但是总有一些坚持，能从一寸冰封的土地里，培育出十万朵怒放的蔷薇</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                window下安装MongoDB
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-05T10:51:10+08:00" content="2016-12-05">
+              2016-12-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>因为想在node.js搭建的聊天室的基础上，加上数据存储的功能，推荐较多的属MongoDB，所以自己就学习安装了一个MongoDB数据库，将过程记录下来，方便后续回顾总结。<br><a id="more"></a></p>
+<h3 id="一、MongoDB下载"><a href="#一、MongoDB下载" class="headerlink" title="一、MongoDB下载"></a>一、MongoDB下载</h3><p>根据自己系统配置，在官网<a href="https://www.mongodb.com/" title="MongoDB官网" target="_blank" rel="external">https://www.mongodb.com/</a>下载相应版本。<br><img src="http://i.imgur.com/qiGl0k7.png" alt=""><br><strong>注意</strong>：选择Download Source时，尽量选择zip格式，同时避免直接点msi安装包（安装包安装时，目录层级较多，稍麻烦）。</p>
+<h3 id="二、MongoDB安装"><a href="#二、MongoDB安装" class="headerlink" title="二、MongoDB安装"></a>二、MongoDB安装</h3><p>1、在D盘（其他盘均可）的根目录下新建一个名为mongodb的文件夹，将下载的压缩包解压至改文件夹内。<br>2、在此文件夹新建data文件夹，用于存放数据库及日志文件。<br><img src="http://i.imgur.com/zZWAl2N.png" alt=""><br>3、data文件下新建db文件夹用来存放数据库，新建log文件夹存放日志文件mongo.log。<br><img src="http://i.imgur.com/tPPdc8L.png" alt=""><br><strong>说明</strong>：一定要在MongoDB服务启动之前，手动创建存放数据库文件的文件夹，即此处的db文件夹，该目录不会自动创建。<br>4、打开CMD命令行，进入安装目录，此处为D:\mongodb，进入D:\mongodb\bin目录<br><img src="http://i.imgur.com/hd8caH5.png" alt=""><br>执行启动MongoDB服务，需要输入<code>mongod.exe --dbpath d:mongodb\data\db</code><br><img src="http://i.imgur.com/crI8uRM.png" alt=""></p>
+<p>可以看到，MongoDB默认连接端口号为27017，此时，在浏览器地址中打开<code>http://localhost:27017/</code>可以看到以下提示，则表示连接成功。<img src="http://i.imgur.com/GKmQlD0.png" alt=""></p>
+<h3 id="三、将MongoDB作为Windows服务启动"><a href="#三、将MongoDB作为Windows服务启动" class="headerlink" title="三、将MongoDB作为Windows服务启动"></a>三、将MongoDB作为Windows服务启动</h3><p>1、在mongodb文件夹下新建mongo.config配置文件<br><img src="http://i.imgur.com/T0ZQG0c.png" alt=""></p>
+<p>其中，mongo.config内容为：<br><img src="http://i.imgur.com/n8d8HzV.png" alt=""></p>
+<pre><code>参数说明：    
+dbpath=D:\mongodb\data\db  //指定MongoDB数据存储路径
+logpath=D:\mongodb\data\log\mongo.log  //MongoDB日志输出文件名称，即日志路径
+</code></pre><p> 2、打开CMD命令行，进入D:\mongodb\bin目录，<br>需要输入 <code>mongod --config D:\mongodb\mongo.config --install --serviceName &quot;MongoDB&quot;</code></p>
+<pre><code>参数说明：
+install：安装MongoDB服务
+serviceName：安装Window服务时使用的服务器名
+</code></pre><p><img src="http://i.imgur.com/fRMgBCB.png" alt=""><br>打开mongo.log就可以看到有详细的日志输入了。<br>3、打开CMD命令行，输入service.msc,就可以看到MongoDB服务了。<br><img src="http://i.imgur.com/AvwVv45.png" alt=""></p>
+<p><img src="http://i.imgur.com/e6txJVs.png" alt=""></p>
+<p>至此，启动服务就成功注册了。</p>
+<h3 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h3><p>虽然很简单的安装，一开始也出现不少问题。如直接安装msi文件，导致目录层级过多，在安装服务时目录名称中包含空格导致不能识别命令，配置文件位置放错，或者在输入命令时不仔细导致错误等，希望以后都够细心注意。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MongoDB/" rel="tag">#MongoDB</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/22/ajaxLearn/" rel="next" title="ajax使用笔记">
+                <i class="fa fa-chevron-left"></i> ajax使用笔记
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.JPG"
+               alt="gzyq" />
+          <p class="site-author-name" itemprop="name">gzyq</p>
+          <p class="site-description motion-element" itemprop="description">郭正瑜琼，hexo博客，学习笔记，其他</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、MongoDB下载"><span class="nav-number">1.</span> <span class="nav-text">一、MongoDB下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、MongoDB安装"><span class="nav-number">2.</span> <span class="nav-text">二、MongoDB安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、将MongoDB作为Windows服务启动"><span class="nav-number">3.</span> <span class="nav-text">三、将MongoDB作为Windows服务启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、总结"><span class="nav-number">4.</span> <span class="nav-text">四、总结</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">gzyq</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

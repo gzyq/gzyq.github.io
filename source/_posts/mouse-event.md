@@ -1,10 +1,9 @@
 ---
-title:鼠标事件
-date: 2016-07-18 23:19:20
-tags: [note,js]
+title: JS鼠标事件
+date: 2016-07-20 21:00:41
+tags: [note]
 categories: note
-comments: false
----  
+---
 
 鼠标事件：  
 onclick事件：在单击鼠标左键或右键时发生。  
@@ -20,4 +19,3 @@ keyboard事件：
 onkeypress事件：按下并释放某个键进时发生。  
 onkeydown事件：按键后（释放该键之前）发生。  
 onkeyup事件：释放某键时发生。  
-

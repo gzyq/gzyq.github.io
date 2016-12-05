@@ -1,10 +1,8 @@
 ---
 title: 移动端JS触摸事件
-date: 2016-07-18 21:20:09 
+date: 2016-07-18 21:36:10
 tags: [note,JS,移动端]
-categories: note
-comments: false
---- 
+---
 
 ## 触摸事件：   
  （都会冒泡，也可以取消）  
