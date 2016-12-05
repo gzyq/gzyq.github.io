@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="MongoDB," />
+  <meta name="keywords" content="note,移动端,JS," />
 
 
 
@@ -84,28 +84,31 @@
 
 
 
-<meta name="description" content="因为想在node.js搭建的聊天室的基础上，加上数据存储的功能，推荐较多的属MongoDB，所以自己就学习安装了一个MongoDB数据库，将过程记录下来，方便后续回顾总结。">
+<meta name="description" content="触摸事件： （都会冒泡，也可以取消）  
+
+touchstart——当手指触碰屏幕时候发生。不管当前有多少只手指
+touchmove——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用event的preventDefault()可以阻止默认情况的发生：阻止页面滚动  
+touchend——当手指离开屏幕时触发  
+touchcancel——当系统停止跟踪触摸时候会触发。例如在触摸过程中突然">
 <meta property="og:type" content="article">
-<meta property="og:title" content="window下安装MongoDB">
-<meta property="og:url" content="http://yoursite.com/2016/12/05/install-MongoDB/index.html">
+<meta property="og:title" content="移动端JS触摸事件">
+<meta property="og:url" content="http://yoursite.com/2016/07/18/js-mobile-touch/index.html">
 <meta property="og:site_name" content="GGirl">
-<meta property="og:description" content="因为想在node.js搭建的聊天室的基础上，加上数据存储的功能，推荐较多的属MongoDB，所以自己就学习安装了一个MongoDB数据库，将过程记录下来，方便后续回顾总结。">
-<meta property="og:image" content="http://i.imgur.com/qiGl0k7.png">
-<meta property="og:image" content="http://i.imgur.com/zZWAl2N.png">
-<meta property="og:image" content="http://i.imgur.com/tPPdc8L.png">
-<meta property="og:image" content="http://i.imgur.com/hd8caH5.png">
-<meta property="og:image" content="http://i.imgur.com/crI8uRM.png">
-<meta property="og:image" content="http://i.imgur.com/GKmQlD0.png">
-<meta property="og:image" content="http://i.imgur.com/T0ZQG0c.png">
-<meta property="og:image" content="http://i.imgur.com/n8d8HzV.png">
-<meta property="og:image" content="http://i.imgur.com/fRMgBCB.png">
-<meta property="og:image" content="http://i.imgur.com/AvwVv45.png">
-<meta property="og:image" content="http://i.imgur.com/e6txJVs.png">
-<meta property="og:updated_time" content="2016-12-05T06:43:10.652Z">
+<meta property="og:description" content="触摸事件： （都会冒泡，也可以取消）  
+
+touchstart——当手指触碰屏幕时候发生。不管当前有多少只手指
+touchmove——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用event的preventDefault()可以阻止默认情况的发生：阻止页面滚动  
+touchend——当手指离开屏幕时触发  
+touchcancel——当系统停止跟踪触摸时候会触发。例如在触摸过程中突然">
+<meta property="og:updated_time" content="2016-12-05T07:07:53.262Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="window下安装MongoDB">
-<meta name="twitter:description" content="因为想在node.js搭建的聊天室的基础上，加上数据存储的功能，推荐较多的属MongoDB，所以自己就学习安装了一个MongoDB数据库，将过程记录下来，方便后续回顾总结。">
-<meta name="twitter:image" content="http://i.imgur.com/qiGl0k7.png">
+<meta name="twitter:title" content="移动端JS触摸事件">
+<meta name="twitter:description" content="触摸事件： （都会冒泡，也可以取消）  
+
+touchstart——当手指触碰屏幕时候发生。不管当前有多少只手指
+touchmove——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用event的preventDefault()可以阻止默认情况的发生：阻止页面滚动  
+touchend——当手指离开屏幕时触发  
+touchcancel——当系统停止跟踪触摸时候会触发。例如在触摸过程中突然">
 
 
 
@@ -126,9 +129,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/05/install-MongoDB/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/07/18/js-mobile-touch/"/>
 
-  <title> window下安装MongoDB | GGirl </title>
+  <title> 移动端JS触摸事件 | GGirl </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -268,7 +271,7 @@
             
             
               
-                window下安装MongoDB
+                移动端JS触摸事件
               
             
           </h1>
@@ -280,30 +283,11 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-05T10:51:10+08:00" content="2016-12-05">
-              2016-12-05
+            <time itemprop="dateCreated" datetime="2016-07-18T21:36:10+08:00" content="2016-07-18">
+              2016-07-18
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/note/" itemprop="url" rel="index">
-                    <span itemprop="name">note</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
@@ -327,24 +311,101 @@
       
 
       
-        <p>因为想在node.js搭建的聊天室的基础上，加上数据存储的功能，推荐较多的属MongoDB，所以自己就学习安装了一个MongoDB数据库，将过程记录下来，方便后续回顾总结。<br><a id="more"></a></p>
-<h3 id="一、MongoDB下载"><a href="#一、MongoDB下载" class="headerlink" title="一、MongoDB下载"></a>一、MongoDB下载</h3><p>根据自己系统配置，在官网<a href="https://www.mongodb.com/" title="MongoDB官网" target="_blank" rel="external">https://www.mongodb.com/</a>下载相应版本。<br><img src="http://i.imgur.com/qiGl0k7.png" alt=""><br><strong>注意</strong>：选择Download Source时，尽量选择zip格式，同时避免直接点msi安装包（安装包安装时，目录层级较多，稍麻烦）。</p>
-<h3 id="二、MongoDB安装"><a href="#二、MongoDB安装" class="headerlink" title="二、MongoDB安装"></a>二、MongoDB安装</h3><p>1、在D盘（其他盘均可）的根目录下新建一个名为mongodb的文件夹，将下载的压缩包解压至改文件夹内。<br>2、在此文件夹新建data文件夹，用于存放数据库及日志文件。<br><img src="http://i.imgur.com/zZWAl2N.png" alt=""><br>3、data文件下新建db文件夹用来存放数据库，新建log文件夹存放日志文件mongo.log。<br><img src="http://i.imgur.com/tPPdc8L.png" alt=""><br><strong>说明</strong>：一定要在MongoDB服务启动之前，手动创建存放数据库文件的文件夹，即此处的db文件夹，该目录不会自动创建。<br>4、打开CMD命令行，进入安装目录，此处为D:\mongodb，进入D:\mongodb\bin目录<br><img src="http://i.imgur.com/hd8caH5.png" alt=""><br>执行启动MongoDB服务，需要输入<code>mongod.exe --dbpath d:mongodb\data\db</code><br><img src="http://i.imgur.com/crI8uRM.png" alt=""></p>
-<p>可以看到，MongoDB默认连接端口号为27017，此时，在浏览器地址中打开<code>http://localhost:27017/</code>可以看到以下提示，则表示连接成功。<img src="http://i.imgur.com/GKmQlD0.png" alt=""></p>
-<h3 id="三、将MongoDB作为Windows服务启动"><a href="#三、将MongoDB作为Windows服务启动" class="headerlink" title="三、将MongoDB作为Windows服务启动"></a>三、将MongoDB作为Windows服务启动</h3><p>1、在mongodb文件夹下新建mongo.config配置文件<br><img src="http://i.imgur.com/T0ZQG0c.png" alt=""></p>
-<p>其中，mongo.config内容为：<br><img src="http://i.imgur.com/n8d8HzV.png" alt=""></p>
-<pre><code>参数说明：    
-dbpath=D:\mongodb\data\db  //指定MongoDB数据存储路径
-logpath=D:\mongodb\data\log\mongo.log  //MongoDB日志输出文件名称，即日志路径
-</code></pre><p> 2、打开CMD命令行，进入D:\mongodb\bin目录，<br>需要输入 <code>mongod --config D:\mongodb\mongo.config --install --serviceName &quot;MongoDB&quot;</code></p>
-<pre><code>参数说明：
-install：安装MongoDB服务
-serviceName：安装Window服务时使用的服务器名
-</code></pre><p><img src="http://i.imgur.com/fRMgBCB.png" alt=""><br>打开mongo.log就可以看到有详细的日志输入了。<br>3、打开CMD命令行，输入service.msc,就可以看到MongoDB服务了。<br><img src="http://i.imgur.com/AvwVv45.png" alt=""></p>
-<p><img src="http://i.imgur.com/e6txJVs.png" alt=""></p>
-<p>至此，启动服务就成功注册了。</p>
-<h3 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h3><p>虽然很简单的安装，一开始也出现不少问题。如直接安装msi文件，导致目录层级过多，在安装服务时目录名称中包含空格导致不能识别命令，配置文件位置放错，或者在输入命令时不仔细导致错误等，希望以后都够细心注意。</p>
+        <h2 id="触摸事件："><a href="#触摸事件：" class="headerlink" title="触摸事件："></a>触摸事件：</h2><p> （都会冒泡，也可以取消）  </p>
+<ul>
+<li>touchstart——当手指触碰屏幕时候发生。不管当前有多少只手指</li>
+<li>touchmove——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用event的preventDefault()可以阻止默认情况的发生：阻止页面滚动  </li>
+<li>touchend——当手指离开屏幕时触发  </li>
+<li>touchcancel——当系统停止跟踪触摸时候会触发。例如在触摸过程中突然页面alert()一个提示框，此时会触发该事件，这个事件比较少用（例如电话接入或者弹出信息。一般用在游戏：玩着的时候，突然来电话了，就触发touchcancel事件暂停游戏、存档等操作。）<a id="more"></a>
+<h2 id="跟踪触摸的属性-："><a href="#跟踪触摸的属性-：" class="headerlink" title="跟踪触摸的属性 ："></a>跟踪触摸的属性 ：</h2></li>
+<li>touches：当前跟踪的触摸操作的Touch对象的数组，即屏幕上所有手指的信息  </li>
+<li>targetTouches：特定于事件目标的Touch对象的数组，即手指在目标区域的手指信息  </li>
+<li>changedTouches：自上次触摸以来发生了什么改变的Touch对象的数组，即最近一次触发该事件的手指信息   </li>
+</ul>
+<p>注：touchend时，touches与targetTouches信息会被删除，changedTouches保存的最后一次的信息，最好用于计算手指信息  </p>
+<h2 id="每个Touch对象的属性-："><a href="#每个Touch对象的属性-：" class="headerlink" title="每个Touch对象的属性 ："></a>每个Touch对象的属性 ：</h2><ul>
+<li>target：触摸的DOM节点目标 </li>
+<li>identifier：表示触摸的唯一ID   </li>
+<li>clientX：触摸目标在<b style="color:red;">视口</b>中的X坐标  （触摸点相对浏览器窗口的位置，client不包含滚动距离）</li>
+<li>clientY：触摸目标在<b style="color:red;">视口</b>中的Y坐标   </li>
+<li>pageX：触摸目标在<b style="color:red;">页面</b>中的X坐标  （触摸点相对于页面的位置，包含滚动距离） </li>
+<li>pageY：触摸目标在<b style="color:red;">页面</b>中的Y坐标  </li>
+<li>screenX：触摸目标在<b style="color:red;">屏幕</b>中的X坐标  （触摸点相对于屏幕的位置）</li>
+<li>screenY：触摸目标在<b style="color:red;">屏幕</b>中的Y坐标</li>
+<li>radiusX：画出大约相当于手指形状的椭圆形，椭圆形的两个半径中x</li>
+<li>radiusY：画出大约相当于手指形状的椭圆形，椭圆形的两个半径中y</li>
+<li>rotationAngle：画出大约相当于手指形状的椭圆形，旋转角度。</li>
+</ul>
+<pre><code>e.target;   //触摸元素为p，则返回[object HTMLParagraphElemet]，目标内容
+            //触摸元素为div,则返回[object HTMLDivElemet]
+</code></pre><h2 id="触摸事件的响应顺序"><a href="#触摸事件的响应顺序" class="headerlink" title="触摸事件的响应顺序"></a>触摸事件的响应顺序</h2><ol>
+<li>ontouchstart   </li>
+<li>ontouchmove   </li>
+<li>ontouchend   </li>
+<li>onclick    </li>
+</ol>
+<h2 id="移动端click屏幕产生200-300-ms的延迟响应"><a href="#移动端click屏幕产生200-300-ms的延迟响应" class="headerlink" title="移动端click屏幕产生200-300 ms的延迟响应"></a>移动端click屏幕产生200-300 ms的延迟响应</h2><h2 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h2><p>手指在滑动整个屏幕时，会影响浏览器的行为，比如滚动和缩放。所以在调用touch事件时，要注意禁止缩放和滚动。</p>
+<p><strong>1.禁止缩放</strong></p>
+<p>通过meta元标签来设置。</p>
+<meta name="viewport" content="target-densitydpi=320,width=640,user-scalable=no">
 
+<p><strong>2.禁止滚动</strong></p>
+<p>preventDefault是阻止默认行为，touch事件的默认行为就是滚动。</p>
+<p>event.preventDefault();    </p>
+<h2 id="DEMO："><a href="#DEMO：" class="headerlink" title="DEMO："></a>DEMO：</h2><pre><code>&lt;div id=&apos;demo&apos;&gt;&lt;/div&gt;
+&lt;div class=&apos;slide&apos;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;2&lt;/li&gt;
+        &lt;li&gt;3&lt;/li&gt;
+        &lt;li&gt;4&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+var moveX = 0,px = 0;            
+document.getElementsByClassName(&apos;slide&apos;)[0].addEventListener(&apos;touchstart&apos;, function(e) {
+
+       console.log(e.target); //[object HTMLDivElemet]            
+    console.log(e.changedTouches[0]); //包含所有信息
+
+    document.getElementById(&quot;demo&quot;).innerHTML = &apos;触摸开始&apos;;
+
+    var cx = e.touches[0].clientX;
+    console.log(&apos;touchstart&apos; + cx);
+
+    px = e.touches[0].pageX;
+    console.log(px);
+
+    var sx = e.touches[0].screenX;
+    console.log(sx);
+});
+
+document.getElementsByClassName(&apos;slide&apos;)[0].addEventListener(&apos;touchmove&apos;, function(e) {
+    e.preventDefault();
+
+    console.log(e.changedTouches[0]);
+    document.getElementById(&quot;demo&quot;).innerHTML = &apos;触摸移动中&apos;;
+
+    moveX = e.touches[0].pageX - px;
+    console.log(movex);
+
+    if(moveX &gt; 50) {
+        console.log(&apos;触摸移动过程中，此刻大于50&apos;);
+    } else {
+        console.log(&apos;触摸移动过程中，此刻小于50&apos;);
+    }
+});
+
+document.getElementsByClassName(&apos;slide&apos;)[0].addEventListener(&apos;touchend&apos;, function(e) {
+    document.getElementById(&quot;demo&quot;).innerHTML = &apos;结束&apos; + &apos;end&apos;;
+    console.log(moveX);
+
+    if(moveX &gt; 20) {
+        console.log(&apos;结束时大于20&apos;);
+    } else {
+        console.log(&apos;结束时小于20&apos;);
+    }
+});
+</code></pre>
       
     </div>
 
@@ -365,7 +426,11 @@ serviceName：安装Window服务时使用的服务器名
       
         <div class="post-tags">
           
-            <a href="/tags/MongoDB/" rel="tag">#MongoDB</a>
+            <a href="/tags/note/" rel="tag">#note</a>
+          
+            <a href="/tags/移动端/" rel="tag">#移动端</a>
+          
+            <a href="/tags/JS/" rel="tag">#JS</a>
           
         </div>
       
@@ -374,13 +439,17 @@ serviceName：安装Window服务时使用的服务器名
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/22/ajaxLearn/" rel="next" title="ajax使用笔记">
-                <i class="fa fa-chevron-left"></i> ajax使用笔记
+              <a href="/2016/07/18/css3-swipe1/" rel="next" title="H5滑屏">
+                <i class="fa fa-chevron-left"></i> H5滑屏
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/20/mianColorPictures/" rel="prev" title="图片主色获取">
+                图片主色获取 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -494,7 +563,7 @@ serviceName：安装Window服务时使用的服务器名
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、MongoDB下载"><span class="nav-number">1.</span> <span class="nav-text">一、MongoDB下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、MongoDB安装"><span class="nav-number">2.</span> <span class="nav-text">二、MongoDB安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、将MongoDB作为Windows服务启动"><span class="nav-number">3.</span> <span class="nav-text">三、将MongoDB作为Windows服务启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、总结"><span class="nav-number">4.</span> <span class="nav-text">四、总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#触摸事件："><span class="nav-number">1.</span> <span class="nav-text">触摸事件：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跟踪触摸的属性-："><span class="nav-number">2.</span> <span class="nav-text">跟踪触摸的属性 ：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#每个Touch对象的属性-："><span class="nav-number">3.</span> <span class="nav-text">每个Touch对象的属性 ：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#触摸事件的响应顺序"><span class="nav-number">4.</span> <span class="nav-text">触摸事件的响应顺序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移动端click屏幕产生200-300-ms的延迟响应"><span class="nav-number">5.</span> <span class="nav-text">移动端click屏幕产生200-300 ms的延迟响应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意："><span class="nav-number">6.</span> <span class="nav-text">注意：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DEMO："><span class="nav-number">7.</span> <span class="nav-text">DEMO：</span></a></li></ol></div>
             
           </div>
         </section>
