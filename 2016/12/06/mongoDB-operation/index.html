@@ -84,12 +84,12 @@
 
 
 
-<meta name="description" content="在MongoDB数据库中，collection(集合)即为通常所说的数据库中的表，文档（document）即数据库中的行,一个database中可以有多个collection（一个数据库可以有多个表），一个collection中又可以有多个document（一个表可以有多行数据）。">
+<meta name="description" content="在MongoDB数据库中，collection(集合)即为通常所说的数据库中的表，文档（document）即数据库中的行,一个database中可以有多个collection（一个数据库可以有多个表），一个collection中又可以有多个document（一个表可以有多行数据）。MongoDB不需要严格遵守先建库，建表等以后再进行各种操作。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mongoDB常用命令行操作">
 <meta property="og:url" content="http://yoursite.com/2016/12/06/mongoDB-operation/index.html">
 <meta property="og:site_name" content="GGirl">
-<meta property="og:description" content="在MongoDB数据库中，collection(集合)即为通常所说的数据库中的表，文档（document）即数据库中的行,一个database中可以有多个collection（一个数据库可以有多个表），一个collection中又可以有多个document（一个表可以有多行数据）。">
+<meta property="og:description" content="在MongoDB数据库中，collection(集合)即为通常所说的数据库中的表，文档（document）即数据库中的行,一个database中可以有多个collection（一个数据库可以有多个表），一个collection中又可以有多个document（一个表可以有多行数据）。MongoDB不需要严格遵守先建库，建表等以后再进行各种操作。">
 <meta property="og:image" content="http://i.imgur.com/SBgUba7.png">
 <meta property="og:image" content="http://i.imgur.com/pjHVQ6F.png">
 <meta property="og:image" content="http://i.imgur.com/TBCRVi8.png">
@@ -99,10 +99,10 @@
 <meta property="og:image" content="http://i.imgur.com/ksaRDO8.png">
 <meta property="og:image" content="http://i.imgur.com/vj4W3b2.png">
 <meta property="og:image" content="http://i.imgur.com/W1w1mKv.png">
-<meta property="og:updated_time" content="2016-12-07T08:44:58.297Z">
+<meta property="og:updated_time" content="2016-12-07T09:01:44.468Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mongoDB常用命令行操作">
-<meta name="twitter:description" content="在MongoDB数据库中，collection(集合)即为通常所说的数据库中的表，文档（document）即数据库中的行,一个database中可以有多个collection（一个数据库可以有多个表），一个collection中又可以有多个document（一个表可以有多行数据）。">
+<meta name="twitter:description" content="在MongoDB数据库中，collection(集合)即为通常所说的数据库中的表，文档（document）即数据库中的行,一个database中可以有多个collection（一个数据库可以有多个表），一个collection中又可以有多个document（一个表可以有多行数据）。MongoDB不需要严格遵守先建库，建表等以后再进行各种操作。">
 <meta name="twitter:image" content="http://i.imgur.com/SBgUba7.png">
 
 
@@ -306,35 +306,22 @@
       
 
       
-        <p>在MongoDB数据库中，collection(集合)即为通常所说的数据库中的表，文档（document）即数据库中的行,一个database中可以有多个collection（一个数据库可以有多个表），一个collection中又可以有多个document（一个表可以有多行数据）。<br><a id="more"></a></p>
-<p>查看当前数据库的集合：show collections<br>查看各collection的状态：db.printCollectionStats()</p>
-<p>MongoDB不需要严格遵守先建库，建表等以后再进行各种操作。</p>
-<h3 id="库操作："><a href="#库操作：" class="headerlink" title="库操作："></a>库操作：</h3><p>查看所有数据库(会显示当前所有数据库的名字和内存大小)：<code>show dbs</code><br><img src="http://i.imgur.com/SBgUba7.png" alt=""><br><strong>说明：</strong>默认存在两个数据库：admin（存放管理员信息的数据库），local（存放replication相关的数据）;其实数据库大小只是粗略情况，不准确，数据很少情况下显示0.000G。</p>
-<p>新建数据库：<code>use &lt;newdbname&gt;</code>（如果数据库不存在，则创建，否则切换至指定数据库）</p>
-<p>查看当前数据库名称：<code>db</code><br><img src="http://i.imgur.com/pjHVQ6F.png" alt=""><br>可以看到，在新建chat数据库后，再一次使用 show dbs查看所有数据库时，并没有我们新建的chat数据库，此时，需要向里面插入一些数据（后面会说到插入），再次查看时就有了新建的chat数据库了。</p>
-<p>删除数据库：<code>db.dropDatabase()</code></p>
-<p>新建表：<code>db.createCollection(&#39;collection&#39;)</code><br><img src="http://i.imgur.com/TBCRVi8.png" alt=""></p>
-<h3 id="插入操作"><a href="#插入操作" class="headerlink" title="插入操作"></a>插入操作</h3><p>注：col为集合名称，即通常说的表名<br>1、<code>db.col.insert(data)</code>;<br><img src="http://i.imgur.com/xuMdd36.png" alt=""><br>2、<code>db.col.save(data)</code>;<br><img src="http://i.imgur.com/EKoLbua.png" alt=""><br><strong>说明：</strong>_id，是默认生成，每行数据都存在，默认为ObjectID</p>
-<p>区别：db.col.insert()方法指定_id字段值，会报错；db.col.save()可以指定_id字段的值，若存在更新相应数据。在不指定_id字段时，两者相同。</p>
-<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><p>删除数据：db.col.remove(条件);<br><img src="http://i.imgur.com/UlNdVUM.png" alt=""><br>删除所有数据：db.col.remove({});<br>删除某个集合：db.<collectionname>.drop()</collectionname></p>
-<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><p>查询表中的数据(非结构化的方式显示所有文档)：db.col.find(条件);<br>查询表中的数据(格式化的方式显示所有文档,易读)：db.col.find().pretty();<br>查询表中的一条数据（返回第一个文档）：db.col.findOne(条件);<br><img src="http://i.imgur.com/ksaRDO8.png" alt=""><br>读取指定数量的数据记录：db.col.find().limit(数量);<br>跳过指定数量的数据记录：db.col.find().skip(数量);<br><strong>查询条件：{key：{$op:value}}</strong><br>比较查询：<br><code>等于：{&lt;key&gt;:&lt;value&gt;}
-小于：{&lt;key&gt;:{$lt：&lt;value&gt;}}
-小于等于：{&lt;key&gt;:{$lte:&lt;value&gt;}}
-大于：{&lt;key&gt;:{$gt:&lt;value&gt;}}
-大于等于：{&lt;key&gt;:{$gte:&lt;value&gt;}}
-不等于：{&lt;key&gt;:{$ne:&lt;value&gt;}}</code></p>
-<p>实例：<br>获取col集合中”likes”大于100的数据<br>db.col.find({likes:{$gt:100}})<br>类似于SQL：Select * from col where likes&gt;100</p>
-<p>获取集合col集合中”likes”大于100，小于200的数据：<br>db.col.find({likes:{$lt:200,$gt:100}})<br>类似于SQL：Select * from col where likes&gt;100 AND likes&lt;200</p>
-<p>多条件查询：<br>可以传入多个键（key），每个键（key）以逗号隔开。<br>{key1:value1,key:value2,…}</p>
-<p>选择查询：<br>{$or:[{key1:value1},{key2:value2}]}</p>
-<p>其他：<br>$type操作符：<br>{key:{$type:number}}<br>常用：Double(1),String(2),Object(3),Array(4),Date(9),Null(10)等<br>实例：<br>查询col集合中title为String类型的数据：<br>db.col.find({“title”:{$type:2}})</p>
+        <p>在MongoDB数据库中，collection(集合)即为通常所说的数据库中的表，文档（document）即数据库中的行,一个database中可以有多个collection（一个数据库可以有多个表），一个collection中又可以有多个document（一个表可以有多行数据）。<br>MongoDB不需要严格遵守先建库，建表等以后再进行各种操作。<br><a id="more"></a></p>
+<h3 id="库操作"><a href="#库操作" class="headerlink" title="库操作"></a>库操作</h3><p>查看所有数据库(会显示当前所有数据库的名字和内存大小)：<code>show dbs</code><br><img src="http://i.imgur.com/SBgUba7.png" alt=""><br><strong>说明：</strong>默认存在两个数据库：admin（存放管理员信息的数据库），local（存放replication相关的数据）;其实数据库大小只是粗略情况，不准确，数据很少情况下显示0.000G。<br>新建数据库：<code>use &lt;newdbname&gt;</code>（如果数据库不存在，则创建，否则切换至指定数据库）<br>查看当前数据库名称：<code>db</code><br><img src="http://i.imgur.com/pjHVQ6F.png" alt=""><br>可以看到，在新建chat数据库后，再一次使用 show dbs查看所有数据库时，并没有我们新建的chat数据库，此时，需要向里面插入一些数据（后面会说到插入），再次查看时就有了新建的chat数据库了。<br>删除数据库：<code>db.dropDatabase()</code><br>新建表：<code>db.createCollection(&#39;collection&#39;)</code><br><img src="http://i.imgur.com/TBCRVi8.png" alt=""></p>
+<h3 id="插入操作"><a href="#插入操作" class="headerlink" title="插入操作"></a>插入操作</h3><p>注：col为此处的集合名称，即通常说的表名<br>1、<code>db.col.insert(data)</code>;<br><img src="http://i.imgur.com/xuMdd36.png" alt=""><br>2、<code>db.col.save(data)</code>;<br><img src="http://i.imgur.com/EKoLbua.png" alt=""><br><strong>说明：</strong>_id，是默认生成，每行数据都存在，默认为ObjectID<br>区别：db.col.insert()方法指定_id字段值，会报错；db.col.save()可以指定_id字段的值，若存在更新相应数据。在不指定_id字段时，两者相同。</p>
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><p>删除数据：<code>db.col.remove(条件)</code><br><img src="http://i.imgur.com/UlNdVUM.png" alt=""><br>删除所有数据：<code>db.col.remove({})</code><br>删除某个集合：<code>db.&lt;collectionName&gt;.drop()</code></p>
+<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><p>查询表中的数据(非结构化的方式显示所有文档)：<code>db.col.find(条件)</code><br>查询表中的数据(格式化的方式显示所有文档,易读)：<code>db.col.find().pretty()</code><br>查询表中的一条数据（返回第一个文档）：<code>db.col.findOne(条件)</code><br><img src="http://i.imgur.com/ksaRDO8.png" alt=""><br>读取指定数量的数据记录：<code>`db.col.find().limit(数量)</code><br>跳过指定数量的数据记录：db.col.find().skip(数量)<code>**查询条件：{key：{$op:value}}**
+比较查询：</code>等于：{<key>:<value>}<br>小于：{<key>:{$lt：<value>}}<br>小于等于：{<key>:{$lte:<value>}}<br>大于：{<key>:{$gt:<value>}}<br>大于等于：{<key>:{$gte:<value>}}<br>不等于：{<key>:{$ne:<value>}}`</value></key></value></key></value></key></value></key></value></key></value></key></p>
+<p>实例：<br>获取col集合中”likes”大于100的数据 <code>db.col.find({likes:{$gt:100}})</code><br>注：类似于SQL：Select * from col where likes&gt;100</p>
+<p>获取集合col集合中”likes”大于100，小于200的数据 <code>db.col.find({likes:{$lt:200,$gt:100}})</code><br>注：类似于SQL：Select * from col where likes&gt;100 AND likes&lt;200</p>
+<p>多条件查询：可以传入多个键（key），每个键（key）以逗号隔开。<br>{key1:value1,key:value2,…}<br>选择查询：{$or:[{key1:value1},{key2:value2}]}<br>其他：<br>$type操作符：{key:{$type:number}}<br>常用：Double(1),String(2),Object(3),Array(4),Date(9),Null(10)等<br>实例：<br>查询col集合中title为String类型的数据：<br>db.col.find({“title”:{$type:2}})</p>
 <h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><p>语法格式：db.col.update(<query>,<update>,{upsert:<boolean>,multi:<boolean>,writeConcern:<document>});<br>参数说明：<br>query : update的查询条件，类似sql update查询内where后面的。<br>update : update的对象和一些更新的操作符（如$,$inc…）等，也可以理解为sql update查询内set后面的<br>upsert : 可选，默认false（不插入）。表示如果不存在update的记录，是否插入objNew,true为插入，<br>multi : 可选，默认false，表示只更新找到的第一条记录，true表示把按条件查出来多条记录全部更新。<br>writeConcern :可选，抛出异常的级别。</document></boolean></boolean></update></query></p>
 <p>常用：按指定条件修改：db.col.update({“条件字段名”：”字段值”},{$set:{“要修改的字段名”:”修改后的字段值”}});<br><img src="http://i.imgur.com/vj4W3b2.png" alt=""></p>
 <p>实例：<br>只更新第一条记录：db.col.update({“count”:{$gt:1}},{$set:{“test2”:”OK”}});<br>全部更新：db.col.update({“count”:{$gt:3}},{$set:{“test2”:”OK”}},false,true);<br>只添加第一条：db.col.update({“count”:{$gt:4}},{$set:{“test5”:”OK”}},true,false);<br>全部添加进去：db.col.update({“count”:{$gt:5}},{$set:{“test5”:”OK”}},true,true);<br>全部更新：db.col.update({“count”:{$gt:15}},{$inc:{“count”:1}},false,true);<br>值更新第一条记录：db.col.update({“count”:{$gt:10}},{$inc:{“count”:1}},false,false);</p>
 <h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><p>sort()排序，通过参数指定排序方式：1(升序,默认)，-1(降序)<br>db.col.find().sort({key:1})</p>
-<h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3><p>ensureIndex()方法创建索引，key为要创建的索引字段，1(升序),-1(降序)<br>db.col.ensureIndex({key:1})<br>实例：<br>db.col.ensureIndex({“title”:1})</p>
+<h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3><p>ensureIndex()方法创建索引，key为要创建的索引字段，1(升序),-1(降序)  <code>db.col.ensureIndex({key:1})</code><br>实例：<br>db.col.ensureIndex({“title”:1})</p>
 <h3 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h3><p>aggregate(),主要用于处理数据，如统计平均值，求和等，并返回计算后的结果。类似SQL中count(*)。（后期使用时再详细学习）</p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>查看数据库具体情况：db.stats();<br><img src="http://i.imgur.com/W1w1mKv.png" alt=""></p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>查看数据库具体情况：db.stats();<br><img src="http://i.imgur.com/W1w1mKv.png" alt=""><br>查看各collection的状态：db.printCollectionStats()</p>
 
       
     </div>
@@ -479,7 +466,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#库操作："><span class="nav-number">1.</span> <span class="nav-text">库操作：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入操作"><span class="nav-number">2.</span> <span class="nav-text">插入操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除"><span class="nav-number">3.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询"><span class="nav-number">4.</span> <span class="nav-text">查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改"><span class="nav-number">5.</span> <span class="nav-text">修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序"><span class="nav-number">6.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#索引"><span class="nav-number">7.</span> <span class="nav-text">索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#聚合"><span class="nav-number">8.</span> <span class="nav-text">聚合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">9.</span> <span class="nav-text">其他</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#库操作"><span class="nav-number">1.</span> <span class="nav-text">库操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入操作"><span class="nav-number">2.</span> <span class="nav-text">插入操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除"><span class="nav-number">3.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询"><span class="nav-number">4.</span> <span class="nav-text">查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改"><span class="nav-number">5.</span> <span class="nav-text">修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序"><span class="nav-number">6.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#索引"><span class="nav-number">7.</span> <span class="nav-text">索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#聚合"><span class="nav-number">8.</span> <span class="nav-text">聚合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">9.</span> <span class="nav-text">其他</span></a></li></ol></div>
             
           </div>
         </section>
