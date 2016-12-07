@@ -101,7 +101,8 @@
 <meta property="og:image" content="http://i.imgur.com/fRMgBCB.png">
 <meta property="og:image" content="http://i.imgur.com/AvwVv45.png">
 <meta property="og:image" content="http://i.imgur.com/e6txJVs.png">
-<meta property="og:updated_time" content="2016-12-05T06:43:10.652Z">
+<meta property="og:image" content="http://i.imgur.com/L4NIdzT.png">
+<meta property="og:updated_time" content="2016-12-07T08:43:30.436Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="window下安装MongoDB">
 <meta name="twitter:description" content="因为想在node.js搭建的聊天室的基础上，加上数据存储的功能，推荐较多的属MongoDB，所以自己就学习安装了一个MongoDB数据库，将过程记录下来，方便后续回顾总结。">
@@ -343,7 +344,8 @@ serviceName：安装Window服务时使用的服务器名
 </code></pre><p><img src="http://i.imgur.com/fRMgBCB.png" alt=""><br>打开mongo.log就可以看到有详细的日志输入了。<br>3、打开CMD命令行，输入service.msc,就可以看到MongoDB服务了。<br><img src="http://i.imgur.com/AvwVv45.png" alt=""></p>
 <p><img src="http://i.imgur.com/e6txJVs.png" alt=""></p>
 <p>至此，启动服务就成功注册了。</p>
-<h3 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h3><p>虽然很简单的安装，一开始也出现不少问题。如直接安装msi文件，导致目录层级过多，在安装服务时目录名称中包含空格导致不能识别命令，配置文件位置放错，或者在输入命令时不仔细导致错误等，希望以后都够细心注意。</p>
+<h3 id="四、其他"><a href="#四、其他" class="headerlink" title="四、其他"></a>四、其他</h3><p>bin文件下的各服务，在后期的使用中会用到，先列下来各功能：<br><img src="http://i.imgur.com/L4NIdzT.png" alt=""><br>mongo.exe：客户端，支持js语法<br>mongod.exe：服务端<br>mongodump.exe：备份工具<br>mongodrestore.exe：恢复工具<br>mongoexport.exe：导出工具<br>mongoimport.exe：导入工具<br>mongostat.exe：实时性能监控工具<br>mongotop.exe：跟踪MongoDB实例读写时间工具</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>虽然很简单的安装，一开始也出现不少问题。如直接安装msi文件，导致目录层级过多，在安装服务时目录名称中包含空格导致不能识别命令，配置文件位置放错，或者在输入命令时不仔细导致错误等，希望以后都够细心注意。</p>
 
       
     </div>
@@ -381,6 +383,10 @@ serviceName：安装Window服务时使用的服务器名
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/06/mongoDB-operation/" rel="prev" title="mongoDB常用命令行操作">
+                mongoDB常用命令行操作 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -448,7 +454,7 @@ serviceName：安装Window服务时使用的服务器名
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -494,7 +500,7 @@ serviceName：安装Window服务时使用的服务器名
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、MongoDB下载"><span class="nav-number">1.</span> <span class="nav-text">一、MongoDB下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、MongoDB安装"><span class="nav-number">2.</span> <span class="nav-text">二、MongoDB安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、将MongoDB作为Windows服务启动"><span class="nav-number">3.</span> <span class="nav-text">三、将MongoDB作为Windows服务启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、总结"><span class="nav-number">4.</span> <span class="nav-text">四、总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、MongoDB下载"><span class="nav-number">1.</span> <span class="nav-text">一、MongoDB下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、MongoDB安装"><span class="nav-number">2.</span> <span class="nav-text">二、MongoDB安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、将MongoDB作为Windows服务启动"><span class="nav-number">3.</span> <span class="nav-text">三、将MongoDB作为Windows服务启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、其他"><span class="nav-number">4.</span> <span class="nav-text">四、其他</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
           </div>
         </section>
