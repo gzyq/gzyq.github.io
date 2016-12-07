@@ -48,5 +48,16 @@ categories: note
 ![](http://i.imgur.com/e6txJVs.png)
 
 至此，启动服务就成功注册了。
-### 四、总结###
+### 四、其他 ###
+bin文件下的各服务，在后期的使用中会用到，先列下来各功能：
+![](http://i.imgur.com/L4NIdzT.png)
+mongo.exe：客户端，支持js语法
+mongod.exe：服务端
+mongodump.exe：备份工具
+mongodrestore.exe：恢复工具
+mongoexport.exe：导出工具
+mongoimport.exe：导入工具
+mongostat.exe：实时性能监控工具
+mongotop.exe：跟踪MongoDB实例读写时间工具
+### 总结###
 虽然很简单的安装，一开始也出现不少问题。如直接安装msi文件，导致目录层级过多，在安装服务时目录名称中包含空格导致不能识别命令，配置文件位置放错，或者在输入命令时不仔细导致错误等，希望以后都够细心注意。
