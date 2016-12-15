@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/12/15/about-mongoose-01/index.html">
 <meta property="og:site_name" content="GGirl">
 <meta property="og:description" content="刚开始接触mongoose，在使用过程中遇到一些疑惑，网上大多解释的比较简单，所以把这些总结一下，都是自己实践操作后的一些记录，比较通俗，适合小白，后面会随时更新。">
-<meta property="og:updated_time" content="2016-12-15T04:15:53.037Z">
+<meta property="og:updated_time" content="2016-12-15T04:20:41.422Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mongoose使用疑惑总结">
 <meta name="twitter:description" content="刚开始接触mongoose，在使用过程中遇到一些疑惑，网上大多解释的比较简单，所以把这些总结一下，都是自己实践操作后的一些记录，比较通俗，适合小白，后面会随时更新。">
@@ -311,7 +311,7 @@ module.exports = TestSchema
 发布为Model：model/demo.js：
 var mongoose = require(&apos;mongoose&apos;);
 var TestSchema= require(&apos;../schemas/demo&apos;);
-**var TestModel = mongoose.model(&quot;demoDb&quot;,TestSchema);** //重点部分
+var TestModel = mongoose.model(&quot;demoDb&quot;,TestSchema); //重点部分
 module.exports = TestModel;
 
 创建实体：app.js
@@ -323,9 +323,7 @@ var TestEntity = new TestModel({
         email: &quot;gzyq@qq.com&quot;
     });
 TestEntity.save();
-</code></pre><p>这是一个简单的新增数据的操作，关于我们的疑问，重点看粗体部分：<br><strong>var TestModel = mongoose.model(“demoDb”,TestSchema);</strong><br>其中.model()里面参数很重要，第二个TestSchema是之前定义的Schema，重点是引号内第一个参数，此处为demoDb。<br>当用TestModel创建实体TestEntity后，需要实现上述增加数据操作时：</p>
-<h5 id="情况一：数据库demo中不包含该表，会自动创建demodbs数据表-document-。"><a href="#情况一：数据库demo中不包含该表，会自动创建demodbs数据表-document-。" class="headerlink" title="情况一：数据库demo中不包含该表，会自动创建demodbs数据表(document)。"></a>情况一：数据库demo中不包含该表，会自动创建demodbs数据表(document)。</h5><p>注：名称 ——&gt; 数据表(document) 转换规则（其他情况暂时没有遇到）:<br>    以字母结尾，数据表名称会自动加s，如demodb ——&gt; demodbs;<br>    若包含大写，自动创建的数据表自动转换为小写,如demoDB ——&gt; demodbs;<br>    若以数字结尾，数据表名称不变，如demodb1 ——&gt; demodb1;</p>
-<p>#####情况二：数据库demo中包含该表，则直接在对应表中新增数据。#####<br>注：此例中，若demo数据库中包含demodbs数据表，则可以新增数据；若只包含demodb数据表，则会视为情况一处理。</p>
+</code></pre><p>这是一个简单的新增数据的操作，关于开始的疑问，重点看下面粗体部分（Model内）：<br><strong>var TestModel = mongoose.model(“demoDb”,TestSchema);</strong><br>其中，.model()里面参数很重要，第二个TestSchema是之前定义的Schema，重点是引号内第一个参数，此处为demoDb。<br>当用TestModel创建实体TestEntity后，需要实现上述增加数据操作时：<br><strong>情况一：数据库demo中不包含该表，会自动创建demodbs数据表(document)。</strong><br>注：名称 —&gt; 数据表(document) 转换规则（其他情况暂时没有遇到）:<br>    以字母结尾，数据表名称会自动加s，如demodb —&gt; demodbs；<br>    若包含大写，自动创建的数据表自动转换为小写,如demoDB —&gt; demodbs；<br>    若以数字结尾，数据表名称不变，如demodb1 —&gt; demodb1。<br><strong>情况二：数据库demo中包含该表，则直接在对应表中新增数据。</strong><br>注：此例中，若demo数据库中包含demodbs数据表，则可以新增数据；若只包含demodb数据表，则会视为情况一处理。</p>
 
       
     </div>
@@ -480,7 +478,7 @@ TestEntity.save();
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#mongoose操作的是哪些document"><span class="nav-number">1.</span> <span class="nav-text">mongoose操作的是哪些document</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#情况一：数据库demo中不包含该表，会自动创建demodbs数据表-document-。"><span class="nav-number">1.0.1.</span> <span class="nav-text">情况一：数据库demo中不包含该表，会自动创建demodbs数据表(document)。</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#mongoose操作的是哪些document"><span class="nav-number">1.</span> <span class="nav-text">mongoose操作的是哪些document</span></a></li></ol></div>
             
           </div>
         </section>
