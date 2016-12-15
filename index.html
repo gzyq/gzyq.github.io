@@ -258,103 +258,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/12/15/about-mongoose-01/" itemprop="url">
-                  mongoose使用疑惑总结
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-15T10:15:22+08:00" content="2016-12-15">
-              2016-12-15
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="mongoose操作对应的数据表"><a href="#mongoose操作对应的数据表" class="headerlink" title="mongoose操作对应的数据表"></a>mongoose操作对应的数据表</h3><p>才开始使用mongoose会有一些操作数据库的问题<br>值得实体是操作数据库的增删改查，但具体对应数据表是哪些不知道。</p>
-<p>`创建Schema：schema/demo.js：<br>var mongoose = require(“mongoose”);<br>var TestSchema = new mongoose.Schema({<br>        name : { type:String },//属性name,类型为String<br>        age   : { type:Number, default:0 },//属性age,类型为Number,默认为0<br>        time : { type:Date, default:Date.now },<br>        email: { type:String,default:’’}<br>    });<br>module.exports = TestSchema</p>
-<p>创建Model：model/demo.js：<br>var mongoose = require(‘mongoose’);<br>var TestSchema= require(‘../schemas/demo’);<br>var TestModel = mongoose.model(“test44”,TestSchema);<br>module.exports = TestModel;</p>
-<p>操作：app.js<br>var TestModel = require(‘./models/demo’);<br>var TestEntity = new TestModel({<br>        name : “Lara”,<br>        age  : 26,<br>        email: “Lara@qq.com”<br>    });<br>TestEntity.save();`</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/12/09/The-difference-between-the-JQuery-s-ready-function-and-JS-onload/" itemprop="url">
                   JQuery的ready函数与JS的onload的区别
                 </a>
@@ -1303,6 +1206,105 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/07/20/mvc-note/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-20T16:00:53+08:00" content="2016-07-20">
+              2016-07-20
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <hr>
+<p>title: MVC的JavaScript Web富应用开发(完整版)-笔记<br>date: 2016-08-04 11:15:32<br>tags: [note,JS,mvc]<br>categories: note</p>
+<h2 id="comments-false"><a href="#comments-false" class="headerlink" title="comments: false"></a>comments: false</h2><p>当使用JavaScript 开发应用时，那些经典的设计模式和最佳实践被抛在了脑后。开发者往往忽略架构模型，比如 MVC 模型，而常将应用中的 HTML 和 JavaScript 混杂在一起，看着像一个大杂烩。</p>
+<h1 id="什么是-MVC"><a href="#什么是-MVC" class="headerlink" title="什么是 MVC"></a>什么是 MVC</h1><p>MVC 是一种设计模式，它将应用划分为 3 个部分 ： 数据（模型） 、展现层（视图）和用户交互层（控制器）。<br>换句话说，一个事件的发生是这样的过程：<br>1． 用户和应用产生交互。<br>2． 控制器的事件处理器被触发。<br>3． 控制器从模型中请求数据，并将其交给视图。<br>4． 视图将数据呈现给用户。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/20/mvc-note/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -1348,7 +1350,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
