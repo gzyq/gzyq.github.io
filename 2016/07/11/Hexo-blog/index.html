@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="note,hexo," />
+  <meta name="keywords" content="hexo,note," />
 
 
 
@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/07/11/Hexo-blog/index.html">
 <meta property="og:site_name" content="GGirl">
 <meta property="og:description" content="初次使用hexo搭建博客，因为对github也不是很熟，网上找了不少资料，花了一个星期才把整个流程，包括后续更新修改搞明白，记录下来，方便查阅，后续有新的经验再更新。">
-<meta property="og:updated_time" content="2016-12-22T03:13:35.428Z">
+<meta property="og:updated_time" content="2016-12-22T03:17:55.493Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo Blog搭建流程">
 <meta name="twitter:description" content="初次使用hexo搭建博客，因为对github也不是很熟，网上找了不少资料，花了一个星期才把整个流程，包括后续更新修改搞明白，记录下来，方便查阅，后续有新的经验再更新。">
@@ -324,7 +324,6 @@
 <li>在想放置该博客目标的文件夹下，右击选择 Git Bash here,输入 <code>$ hexo init</code>，此处也可以在任意地方键入<code>$ hexo init &lt;folder&gt;</code>,此处<folder>指放置代码的位置，不输入默认为当前文件夹下。</folder></li>
 <li>接着，键入<code>$ npm install</code>  ，此处是安装依赖包。</li>
 <li><p>此时，键入<code>$ hexo server</code>,即可在浏览器中通过<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>看到初始化效果了。<br>至此，就搭建好了最基础的本地的Hexo网站了。</p>
-<!---readmore----->
 <h1 id="Github-Hexo"><a href="#Github-Hexo" class="headerlink" title="Github+Hexo"></a>Github+Hexo</h1><p>最终目标是要通过Hexo搭建一个别人可以看到的网站，所以需要和之前的Github一起，修改安装其他内容。<br>找到刚刚文件夹下面的 _config.yml 文件，该文件是网站的基本配置，包括标题，副标题，作者，语言等信息，可以根据自己需求修改。此处重点是要修改deploy处，找到deploy：，修改为下面这样：</p>
 <p> deploy:</p>
 <pre><code>type： git 
@@ -359,9 +358,9 @@ branch: master
       
         <div class="post-tags">
           
-            <a href="/tags/note/" rel="tag">#note</a>
-          
             <a href="/tags/hexo/" rel="tag">#hexo</a>
+          
+            <a href="/tags/note/" rel="tag">#note</a>
           
         </div>
       
