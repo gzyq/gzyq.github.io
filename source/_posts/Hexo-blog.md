@@ -20,7 +20,6 @@ comments: true
 4. 接着，键入`$ npm install`  ，此处是安装依赖包。
 5. 此时，键入`$ hexo server`,即可在浏览器中通过[http://localhost:4000/](http://localhost:4000/)看到初始化效果了。
 至此，就搭建好了最基础的本地的Hexo网站了。
-<!---readmore----->
 # Github+Hexo #
 最终目标是要通过Hexo搭建一个别人可以看到的网站，所以需要和之前的Github一起，修改安装其他内容。
 找到刚刚文件夹下面的 _config.yml 文件，该文件是网站的基本配置，包括标题，副标题，作者，语言等信息，可以根据自己需求修改。此处重点是要修改deploy处，找到deploy：，修改为下面这样：
