@@ -1,7 +1,6 @@
 ---
 title: canvas基础
 date: 2016-10-28 20:28:48
-updated: 2017-01-12 14:28:48
 tags: [html5,canvas]
 categories: html5
 comments:true
@@ -53,6 +52,8 @@ canvas直接给宽高，和js给宽高区别：
 
 	context.fillStyle = "#ffccff"; 
     context.fill();
+	
+fillStyle：
 
 #### 多边形 ####
 	
@@ -121,3 +122,83 @@ cxt.lineTo(x,y+height);
 	context.closePath();
 	context.stroke();
 
+演示地址：
+
+**.save()** 保存当前图形状态（包括所有状态）
+**.restore()** 返回save节点时canvas所有的状态
+
+在.save()和.restore()直接随意更改设置，不影响后面的绘制效果
+
+### 图形变换 ###
+1 .scale(sx,sy) 缩放
+**注**：对绘图进行缩放，所有之后的绘图也会被缩放。定位也会被缩放。
+
+如：scale(2,2)，那么绘图将定位于距离画布左上角两倍远的位置。
+以下面代码为例，第一个矩形：边框2，从(5,5)开始绘制，长25宽15；放大2后，第二个，边框4，从(10,10)开始绘制，长50宽30；
+	context.lineWidth=2；
+	context.strokeRect(5,5,25,15);
+	context.scale(2,2);
+	context.strokeRect(5,5,25,15);
+
+2 .rotate(deg)旋转当前的绘图
+	
+	context.rotate(20*Math.PI/180);
+	context.fillRect(5,5,25,15);
+
+3 .translate(x,y) 重新映射画布上的 (0,0) 位置
+**注**：在 translate() 之后调用诸如 fillRect() 之类的方法时，值会添加到 x 和 y 坐标值上。
+以下为例：在位置 (10,10) 处绘制一个矩形，将新的 (0,0) 位置设置为 (70,70)。再次绘制新的矩形（请注意现在矩形从位置 (80,80) 开始绘制）
+	
+	ctx.fillRect(10,10,100,50);
+	ctx.translate(70,70);
+	ctx.fillRect(10,10,100,50);
+
+ 
+4 .transform(a,b,c,d,e,f) 替换当前的变换矩阵
+**注**： 画布上的每个对象都拥有一个当前的变换矩阵；
+	    transform() 允许缩放、旋转、移动并倾斜当前的环境；
+		该变换只会影响 transform() 方法调用之后的绘图；
+		调用多次效果是级联的。
+
+	变换矩阵     其中：()为默认值
+	a  c  e     a 水平缩放(1)  c 垂直倾斜(0)  e 水平位移(0)
+	b  d  f     b 水平倾斜(0)  d 垂直缩放(1)  f 垂直位移(0)
+	0  0  1
+
+5 .setTransform()忽略掉之前所有的transform，将当前的变换矩阵设为单位矩阵，再进行后面。
+**注**：setTransform() 方法把当前的变换矩阵重置为单位矩阵，然后以相同的参数运行 transform()；
+setTransform() 允许您缩放、旋转、移动并倾斜当前的环境。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### 参考 ###
+[HTML 5 Canvas 参考手册](http://www.w3school.com.cn/tags/html_ref_canvas.asp)
