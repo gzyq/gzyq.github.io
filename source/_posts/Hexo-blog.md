@@ -38,6 +38,7 @@ comments: true
 1. 在配置deploy时注意，冒号：后面都有空格；
 2. 再向Github提交过程中，可能出现没有SSH key的情况，重新按步骤设置[SSH key](https://help.github.com/articles/generating-an-ssh-key/) 即可；
 3. 此时，在Github中看到是public文件下的内容，如果想在Github上部署前的源代码，即hexo其他内容，需要通过git add，commit等步骤提交。
+
 # Hexo日常使用 #
 参考网上多数教程里面优化部署，在hexo使用过程中，我是在github里面建立了两个分支，master和blog，master主要安置的内容是public，即网站及时更新后的内容，blog里面是源码，比较方便。  
 在日常修改或者添加文章等操作后，通过git status查找文件变化，git add，git commit以及git push origin blog后，再在blog分支下，进行hexo generate，hexo deploy操作以更新master里面的内容，再刷新username.github.io即可看到修改效果，同时也保证了再github中记录了文件变化更新。
