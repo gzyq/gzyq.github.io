@@ -5,9 +5,11 @@ tags: [html5,canvas]
 categories: html5
 comments:true
 ---
+
 本文主要记录canvas的基础知识和一些小例子，按自己的理解和学习记录，可能也一些凌乱，也在不断更新，希望在不断学习中能做出自己想要的效果。
 <!-- more --> 
-HTML5 <canvas> 标签用于绘制图像（通过脚本，通常是 JavaScript）。
+
+HTML5 canvas标签用于绘制图像（通过脚本，通常是 JavaScript）。
 canvas是基于状态的绘图，先有状态，后有绘制(先准备要画什么)。
 
 canvas直接给宽高，和js给宽高区别：
@@ -53,7 +55,53 @@ canvas直接给宽高，和js给宽高区别：
 	context.fillStyle = "#ffccff"; 
     context.fill();
 	
-fillStyle：
+fillStyle：填充样式：
+1、color
+2、渐变色gradient
+超过画布后，均是结尾色
+线性渐变色： （定义在两点之间）
+直线型
+	var grd = context.createLinearGradient(xstart,ystart,xend,yend);//渐变线：定义方向和尺度
+ 	grd.addColorStop(stop,color); //(起始位置,颜色）；可添加无数个
+	
+	(0,0,0,200)竖直渐变 数值可为负值
+	(0,0,200,0)水平渐变 修改查看效果
+
+以下例子：从左上角（0，0）黑色到右下角（200,200）白色线性渐变
+	var grd = context.createLinearGradient(0,0,200,200);
+	grd.addColorStop(0.0,'#000');
+	grd.addColorStop(1.0,'#fff');
+
+	context.fillStyle= grd;
+	context.fillRect(0,0,200,200);
+
+作用：景深、
+径向渐变色：（定义在同心园内）
+放射型
+	var grd = context.createRadialGradient(x0,y0,r0,x1,y1,r1); 
+	grd.addColorStop(stop,color);
+	
+以下例子：以中心（100,100）半径0即黑色点到（100,100）半径100白色的向外放射渐变
+	var grd = context.createRadialGradient(100,100,0,100,100,100);
+	grd.addColorStop(0.0,'#000');
+	grd.addColorStop(1.0,'#fff');
+	
+	context.fillStyle= grd;
+	context.fillRect(0,0,200,200);
+3、图片
+	createPattern(img,repeat-style);
+以下例子：以1.png重复铺满(200,200)的矩形
+	bgImg.src='img/1.png';
+	bgImg.onload = function(){
+		var pattern = context.createPattern(bgImg,'repeat');
+		context.fillStyle = pattern;
+		context.fillRect(0,0,200,200);
+	}
+4、画布
+	createPattern(canvas,repeat-style);
+
+5、video
+	createPattern(video,repeat-style);
 
 #### 多边形 ####
 	
@@ -65,8 +113,33 @@ fillStyle：
     context.fillStyle ='rgb(2,100,30)';
    	context.fill();  //设置或返回用于填充绘画的颜色、渐变或模式
 
-#### 弧线\圆形 ####
+#### 弧线\圆形\曲线 ####
+	context.arc(x,y,r,sAngle,eAngle,counterclockwise); //单位弧度
+![](http://i.imgur.com/9EKJazN.png)
+图片来源：[HTML5 canvas arc() 方法](http://www.w3school.com.cn/tags/canvas_arc.asp)
 
+
+	arcTo() 创建两切线之间的弧/曲线
+	context.moveTo(x0,y0);
+	context.arcTo(x1,y1,x2,y2,r);
+起始点（x0,y0）：之前线的终点，绘制起点，但不一定是切点，圆弧会找到切点开始绘制
+结束点：x2y2是与x1y1组成一条切线（辅助线），最终圆弧结束于切点的位置
+切点不一定在两条切线上
+
+	quadraticCurveTo() 创建二次贝塞尔曲线 
+
+	context.moveTo(x0,y0);
+	context.quadraticCurveTo(x1,y1,x2,y2);
+起点就是（x0，y0）,终点(x2,y2)同时也是切点;控制点(x1,y1)
+
+![](http://i.imgur.com/z41db1X.png)
+	
+	bezierCurveTo() 创建三次方贝塞尔曲线
+	
+	context.moveTo(x0,y0);
+	context.bezierCurveTo(x1,y1,x2,y2,x3,y3);
+
+x1,y1,x2,y2 控制点 ；,x3,y3结束点
 
 ### 实例 ###
 #### 七巧板demo ####
@@ -88,7 +161,7 @@ cxt.lineTo(x,y+height);
 **cxt.fillRect()**：直接用fillStyle绘制填充的矩形
 **cxt.strokeRect()**：//直接用strokeStyle绘制带框的矩形
 
-**.clearRect(x,y,width,height)**:清空给定矩形内的指定像素。
+**.clearRect(x,y,width,height)**:清空给定矩形内的指定像素。。//通常用于动画
 
 	ctx.beginPath();
 	ctx.lineWidth="6";
@@ -145,7 +218,7 @@ cxt.lineTo(x,y+height);
 	context.rotate(20*Math.PI/180);
 	context.fillRect(5,5,25,15);
 
-3 .translate(x,y) 重新映射画布上的 (0,0) 位置
+3 .translate(x,y) 重新映射画布上的 (0,0) 位置至（x,y）
 **注**：在 translate() 之后调用诸如 fillRect() 之类的方法时，值会添加到 x 和 y 坐标值上。
 以下为例：在位置 (10,10) 处绘制一个矩形，将新的 (0,0) 位置设置为 (70,70)。再次绘制新的矩形（请注意现在矩形从位置 (80,80) 开始绘制）
 	
@@ -169,36 +242,57 @@ cxt.lineTo(x,y+height);
 **注**：setTransform() 方法把当前的变换矩阵重置为单位矩阵，然后以相同的参数运行 transform()；
 setTransform() 允许您缩放、旋转、移动并倾斜当前的环境。
 
+### 文字 ###
+	context.font = 'font-style font-variant font-weight font-size font-family'
+	context.font ="20px sans-serif";//默认值
+	context.textAlign = 'left center right'
+	context.textBaseline = 'top middle bottom alphabetic(默认)'
+	context.fillText(string,x,y,[maxlen]); //填充 (文字，位置,[最宽，强行压缩短])  
+	
+	context.strokeText(string,x,y,[maxlen]); //描边
+	
+	文本度量：
+	context.measureText(string).width //返回渲染string的宽度
+
+阴影
+
+context.shadowColor  //阴影颜色
+context.shadowOffsetX //可正可负
+context.shadowOffsetY
+
+context.shadowBlur //虚化模糊
+
+context.globalAlpha //透明度，默认1，全局
+
+context.globalCompositeOperation="source-over";
+
+性设置或返回如何将一个源（新的）图像绘制到目标（已有）的图像上。
+源图像 source-= 打算放置到画布上的绘图。
+目标图像  destination = 已经放置在画布上的绘图。
+source-over
+source-atop
+source-in
+source-out
+
+destination-over ：先绘制的在后绘制的上
+destination-atop
+destination-in ：只绘制先绘制图形，但
+destination-out
+
+lighter
+copy
+xor
+**其他**
+剪辑区域
+context.clip()
+提示：一旦剪切了某个区域，则所有之后的绘图都会被限制在被剪切的区域内（不能访问画布上的其他区域）。您也可以在使用 clip() 方法前通过使用 save() 方法对当前画布区域进行保存，并在以后的任意时间对其进行恢复（通过 restore() 方法）。
+
+非零环绕原则
+context.isPointInPath(x,y); 方法返回 true，如果指定的点位于当前路径中；否则返回 false。
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### canvas图形库推荐 ###
 
 ### 参考 ###
 [HTML 5 Canvas 参考手册](http://www.w3school.com.cn/tags/html_ref_canvas.asp)
