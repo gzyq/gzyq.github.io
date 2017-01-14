@@ -5,10 +5,10 @@
   
 
 
-<html class="theme-next muse use-motion">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
@@ -63,7 +63,7 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
@@ -110,24 +110,35 @@
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Muse',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: "",
+      labels: ""
     }
   };
 </script>
 
 
 
-
   <link rel="canonical" href="http://yoursite.com/2016/12/05/install-MongoDB/"/>
+
+
+
+
 
   <title> window下安装MongoDB | GGirl </title>
 </head>
@@ -137,6 +148,16 @@
   
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c8749e1fdf857fce6baebd99ceeb3220";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -164,7 +185,9 @@
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">不是所有坚持都有结果，但是总有一些坚持，能从一寸冰封的土地里，培育出十万朵怒放的蔷薇</p>
+    
+      <p class="site-subtitle">不是所有坚持都有结果，但是总有一些坚持，能从一寸冰封的土地里，培育出十万朵怒放的蔷薇</p>
+    
 </div>
 
 <div class="site-nav-toggle">
@@ -239,6 +262,8 @@
   
 </nav>
 
+
+
  </div>
     </header>
 
@@ -252,13 +277,26 @@
     
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/05/install-MongoDB/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="gzyq">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/avatar2.JPG">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="GGirl">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="GGirl" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -277,37 +315,26 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-05T10:51:10+08:00" content="2016-12-05">
-              2016-12-05
-            </time>
+            
+
+            
+
+            
           </span>
 
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/note/" itemprop="url" rel="index">
-                    <span itemprop="name">note</span>
-                  </a>
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
                 </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
+                <a href="/2016/12/05/install-MongoDB/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/05/install-MongoDB/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -317,6 +344,9 @@
           
 
           
+
+          
+
         </div>
       </header>
     
@@ -353,6 +383,7 @@ serviceName：安装Window服务时使用的服务器名
     <div>
       
         
+
       
     </div>
 
@@ -363,11 +394,12 @@ serviceName：安装Window服务时使用的服务器名
       
     </div>
 
+
     <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/MongoDB/" rel="tag">#MongoDB</a>
+            <a href="/tags/MongoDB/" rel="tag"># MongoDB</a>
           
         </div>
       
@@ -381,6 +413,8 @@ serviceName：安装Window服务时使用的服务器名
               </a>
             
           </div>
+
+          <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
@@ -404,13 +438,17 @@ serviceName：安装Window服务时使用的服务器名
     </div>
   </div>
 
-
+          
           </div>
           
 
 
           
   <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/12/05/install-MongoDB/"
+           data-title="window下安装MongoDB" data-url="http://yoursite.com/2016/12/05/install-MongoDB/">
+      </div>
     
   </div>
 
@@ -443,7 +481,7 @@ serviceName：安装Window服务时使用的服务器名
         </ul>
       
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar2.JPG"
@@ -452,12 +490,15 @@ serviceName：安装Window服务时使用的服务器名
           <p class="site-description motion-element" itemprop="description">郭正瑜琼，hexo博客，学习笔记，其他</p>
         </div>
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">27</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
 
           
             <div class="site-state-item site-state-categories">
@@ -491,19 +532,27 @@ serviceName：安装Window服务时使用的服务器名
         
         
 
+        
+
+
       </section>
 
       
+      <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
+
             
               
             
+
             
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、MongoDB下载"><span class="nav-number">1.</span> <span class="nav-text">一、MongoDB下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、MongoDB安装"><span class="nav-number">2.</span> <span class="nav-text">二、MongoDB安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、将MongoDB作为Windows服务启动"><span class="nav-number">3.</span> <span class="nav-text">三、将MongoDB作为Windows服务启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、其他"><span class="nav-number">4.</span> <span class="nav-text">四、其他</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
+
           </div>
         </section>
+      <!--/noindex-->
       
 
     </div>
@@ -521,21 +570,12 @@ serviceName：安装Window服务时使用的服务器名
   &copy; 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fa fa-"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">gzyq</span>
 </div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
-</div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
 
         
 
@@ -565,6 +605,7 @@ serviceName：安装Window服务时使用的服务器名
 
 
   
+
 
 
 
@@ -614,20 +655,52 @@ serviceName：安装Window服务时使用的服务器名
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"gzyq"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
+  
+    
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
 
 
 
-  
+
+
+
+
+
+
+
+
   
   
 
   
 
   
+
+  
+
+  
+
 
 </body>
 </html>

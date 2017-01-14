@@ -5,10 +5,10 @@
   
 
 
-<html class="theme-next muse use-motion">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
@@ -63,7 +63,7 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
@@ -100,24 +100,35 @@
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Muse',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: "",
+      labels: ""
     }
   };
 </script>
 
 
 
-
   <link rel="canonical" href="http://yoursite.com/2016/07/21/backbone-note/"/>
+
+
+
+
 
   <title> backbone-note | GGirl </title>
 </head>
@@ -127,6 +138,16 @@
   
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c8749e1fdf857fce6baebd99ceeb3220";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -154,7 +175,9 @@
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">不是所有坚持都有结果，但是总有一些坚持，能从一寸冰封的土地里，培育出十万朵怒放的蔷薇</p>
+    
+      <p class="site-subtitle">不是所有坚持都有结果，但是总有一些坚持，能从一寸冰封的土地里，培育出十万朵怒放的蔷薇</p>
+    
 </div>
 
 <div class="site-nav-toggle">
@@ -229,6 +252,8 @@
   
 </nav>
 
+
+
  </div>
     </header>
 
@@ -242,13 +267,26 @@
     
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/21/backbone-note/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="gzyq">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/avatar2.JPG">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="GGirl">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="GGirl" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -267,35 +305,14 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-21T09:44:42+08:00" content="2016-07-21">
-              2016-07-21
-            </time>
+            
+
+            
+
+            
           </span>
 
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/note/" itemprop="url" rel="index">
-                    <span itemprop="name">note</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
 
           
 
@@ -305,6 +322,9 @@
           
 
           
+
+          
+
         </div>
       </header>
     
@@ -429,6 +449,7 @@ alert(musketeers.length);  //3
     <div>
       
         
+
       
     </div>
 
@@ -439,13 +460,14 @@ alert(musketeers.length);  //3
       
     </div>
 
+
     <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/note/" rel="tag">#note</a>
+            <a href="/tags/note/" rel="tag"># note</a>
           
-            <a href="/tags/backbone/" rel="tag">#backbone</a>
+            <a href="/tags/backbone/" rel="tag"># backbone</a>
           
         </div>
       
@@ -459,6 +481,8 @@ alert(musketeers.length);  //3
               </a>
             
           </div>
+
+          <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
@@ -482,7 +506,7 @@ alert(musketeers.length);  //3
     </div>
   </div>
 
-
+          
           </div>
           
 
@@ -517,7 +541,7 @@ alert(musketeers.length);  //3
         </ul>
       
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar2.JPG"
@@ -526,12 +550,15 @@ alert(musketeers.length);  //3
           <p class="site-description motion-element" itemprop="description">郭正瑜琼，hexo博客，学习笔记，其他</p>
         </div>
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">27</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
 
           
             <div class="site-state-item site-state-categories">
@@ -565,19 +592,27 @@ alert(musketeers.length);  //3
         
         
 
+        
+
+
       </section>
 
       
+      <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
+
             
               
             
+
             
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MVC模式"><span class="nav-number">1.</span> <span class="nav-text">MVC模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模式-：一种解决问题的通用方法"><span class="nav-number">1.1.</span> <span class="nav-text">模式 ##：一种解决问题的通用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC指"><span class="nav-number">1.2.</span> <span class="nav-text">MVC指:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC模式的思想"><span class="nav-number">1.3.</span> <span class="nav-text">MVC模式的思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web前端MVC模式"><span class="nav-number">1.4.</span> <span class="nav-text">Web前端MVC模式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#backbone的模块"><span class="nav-number">2.</span> <span class="nav-text">backbone的模块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Backbone入门"><span class="nav-number">3.</span> <span class="nav-text">Backbone入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本使用"><span class="nav-number">3.1.</span> <span class="nav-text">基本使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#具体"><span class="nav-number">3.2.</span> <span class="nav-text">具体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#具体-1"><span class="nav-number">3.3.</span> <span class="nav-text">具体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Backbone-Events（事件）"><span class="nav-number">3.4.</span> <span class="nav-text">Backbone.Events（事件）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Backbone-Model（模型）"><span class="nav-number">3.5.</span> <span class="nav-text">Backbone.Model（模型）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#extend"><span class="nav-number">3.5.1.</span> <span class="nav-text">extend</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#constructor-initialize"><span class="nav-number">3.5.2.</span> <span class="nav-text">constructor / initialize</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get"><span class="nav-number">3.5.3.</span> <span class="nav-text">get</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#set"><span class="nav-number">3.5.4.</span> <span class="nav-text">set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#has"><span class="nav-number">3.5.5.</span> <span class="nav-text">has</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#defaults"><span class="nav-number">3.5.6.</span> <span class="nav-text">defaults</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sync"><span class="nav-number">3.5.7.</span> <span class="nav-text">sync</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fetch"><span class="nav-number">3.5.8.</span> <span class="nav-text">fetch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#save"><span class="nav-number">3.5.9.</span> <span class="nav-text">save</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Backbone-Collection（集合）"><span class="nav-number">3.6.</span> <span class="nav-text">Backbone.Collection（集合）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#model"><span class="nav-number">3.6.1.</span> <span class="nav-text">model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#constructor-initialize-1"><span class="nav-number">3.6.2.</span> <span class="nav-text">constructor / initialize</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Underscore-方法-32"><span class="nav-number">3.6.3.</span> <span class="nav-text">Underscore 方法 (32)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#reset"><span class="nav-number">3.6.3.1.</span> <span class="nav-text">reset</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#set-1"><span class="nav-number">3.6.3.2.</span> <span class="nav-text">set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#get-1"><span class="nav-number">3.6.3.3.</span> <span class="nav-text">get</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#at"><span class="nav-number">3.6.3.4.</span> <span class="nav-text">at</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#where"><span class="nav-number">3.6.3.5.</span> <span class="nav-text">where</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#url"><span class="nav-number">3.6.3.6.</span> <span class="nav-text">url</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#clone"><span class="nav-number">3.6.3.7.</span> <span class="nav-text">clone</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fetch-1"><span class="nav-number">3.6.3.8.</span> <span class="nav-text">fetch</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Backbone-Router（路由）"><span class="nav-number">3.7.</span> <span class="nav-text">Backbone.Router（路由）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Backbone-history"><span class="nav-number">3.8.</span> <span class="nav-text">Backbone.history</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Backbone-sync（同步）"><span class="nav-number">3.9.</span> <span class="nav-text">Backbone.sync（同步）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Backbone-View（视图）"><span class="nav-number">3.10.</span> <span class="nav-text">Backbone.View（视图）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#extend-1"><span class="nav-number">3.10.1.</span> <span class="nav-text">extend</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#el"><span class="nav-number">3.10.2.</span> <span class="nav-text">el</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery"><span class="nav-number">3.10.3.</span> <span class="nav-text">$ (jQuery)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#template"><span class="nav-number">3.10.4.</span> <span class="nav-text">template</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#render"><span class="nav-number">3.10.5.</span> <span class="nav-text">render</span></a></li></ol></li></ol></li></ol></div>
             
+
           </div>
         </section>
+      <!--/noindex-->
       
 
     </div>
@@ -595,21 +630,12 @@ alert(musketeers.length);  //3
   &copy; 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fa fa-"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">gzyq</span>
 </div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
-</div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
 
         
 
@@ -639,6 +665,7 @@ alert(musketeers.length);  //3
 
 
   
+
 
 
 
@@ -688,20 +715,52 @@ alert(musketeers.length);  //3
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"gzyq"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
+  
+    
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
 
 
 
-  
+
+
+
+
+
+
+
+
   
   
 
   
 
   
+
+  
+
+  
+
 
 </body>
 </html>
