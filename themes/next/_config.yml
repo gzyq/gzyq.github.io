@@ -14,7 +14,7 @@ keywords: "note，hexo，学习"
 rss:
 
 # Specify the date when the site was setup
-#since: 2015
+since: 2016-2017
 
 # Canonical, set a canonical link tag in your hexo, you could use it for your SEO of blog.
 # See: https://support.google.com/webmasters/answer/139066
@@ -124,7 +124,6 @@ social:
   #LinkLabel: Link
 
 GitHub: https://github.com/gzyq
-
 # Social Links Icons
 # Icon Mapping:
 #   Map a menu item to a specific FontAwesome icon name.
@@ -135,8 +134,8 @@ social_icons:
   # Icon Mappings.
   # KeyMapsToSocalItemKey: NameOfTheIconFromFontAwesome
   GitHub: github
-  Twitter: twitter
-  Weibo: weibo
+  #Twitter: twitter
+  #Weibo: weibo
 
 
 # Sidebar Avatar

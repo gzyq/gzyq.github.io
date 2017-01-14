@@ -65,7 +65,11 @@ pagination_dir: page
 # disqus_shortname: gzyq
 duoshuo_shortname: gzyq
 
+# 百度统计
+baidu_analytics:c8749e1fdf857fce6baebd99ceeb3220
 
+# JiaThis 分享服务
+jiathis: true
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
