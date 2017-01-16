@@ -1,6 +1,6 @@
 ---
 title: canvas基础记录
-date: 2017-10-24 17:20:35
+date: 2016-10-24 17:20:35
 tags: [html5,canvas]
 categories: tools
 ---
