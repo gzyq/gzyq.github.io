@@ -1,90 +1,11 @@
-<!doctype html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
+  <meta charset="utf-8">
   
-  
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="note,JS,mvc," />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
-
-
-
-
-
-
-<meta name="description" content="当使用JavaScript 开发应用时，那些经典的设计模式和最佳实践被抛在了脑后。开发者往往忽略架构模型，比如 MVC 模型，而常将应用中的 HTML 和 JavaScript 混杂在一起，看着像一个大杂烩。">
+  <title>MVC的JavaScript Web富应用开发(完整版)-笔记 | GGirl</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="当使用JavaScript 开发应用时，那些经典的设计模式和最佳实践被抛在了脑后。开发者往往忽略架构模型，比如 MVC 模型，而常将应用中的 HTML 和 JavaScript 混杂在一起，看着像一个大杂烩。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MVC的JavaScript Web富应用开发(完整版)-笔记">
 <meta property="og:url" content="http://yoursite.com/2016/08/04/mvc-js-note/index.html">
@@ -94,256 +15,83 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MVC的JavaScript Web富应用开发(完整版)-笔记">
 <meta name="twitter:description" content="当使用JavaScript 开发应用时，那些经典的设计模式和最佳实践被抛在了脑后。开发者往往忽略架构模型，比如 MVC 模型，而常将应用中的 HTML 和 JavaScript 混杂在一起，看着像一个大杂烩。">
+  
+    <link rel="alternate" href="/atom.xml" title="GGirl" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
 
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: "",
-      labels: ""
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2016/08/04/mvc-js-note/"/>
-
-
-
-
-
-  <title> MVC的JavaScript Web富应用开发(完整版)-笔记 | GGirl </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-
-
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?c8749e1fdf857fce6baebd99ceeb3220";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
-
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">GGirl</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">GGirl</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">不是所有坚持都有结果，但是总有一些坚持，能从一寸冰封的土地里，培育出十万朵怒放的蔷薇</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
   </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-mvc-js-note" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/04/mvc-js-note/" class="article-date">
+  <time datetime="2016-08-04T07:11:14.000Z" itemprop="datePublished">2016-08-04</time>
+</a>
     
-      <p class="site-subtitle">不是所有坚持都有结果，但是总有一些坚持，能从一寸冰封的土地里，培育出十万朵怒放的蔷薇</p>
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/note/">note</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
     
-</div>
-
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/04/mvc-js-note/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="gzyq">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/avatar2.JPG">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="GGirl">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="GGirl" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                MVC的JavaScript Web富应用开发(完整版)-笔记
-              
-            
-          </h1>
-        
+  
+    <h1 class="article-title" itemprop="name">
+      MVC的JavaScript Web富应用开发(完整版)-笔记
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/08/04/mvc-js-note/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/04/mvc-js-note/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
       </header>
     
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
+    <div class="article-entry" itemprop="articleBody">
       
         <p>当使用JavaScript 开发应用时，那些经典的设计模式和最佳实践被抛在了脑后。开发者往往忽略架构模型，比如 MVC 模型，而常将应用中的 HTML 和 JavaScript 混杂在一起，看着像一个大杂烩。<br><a id="more"></a></p>
 <h1 id="什么是-MVC"><a href="#什么是-MVC" class="headerlink" title="什么是 MVC"></a>什么是 MVC</h1><p>MVC 是一种设计模式，它将应用划分为 3 个部分 ： 数据（模型） 、展现层（视图）和用户交互层（控制器）。<br>换句话说，一个事件的发生是这样的过程：<br>1． 用户和应用产生交互。<br>2． 控制器的事件处理器被触发。<br>3． 控制器从模型中请求数据，并将其交给视图。<br>4． 视图将数据呈现给用户。<br><!-- more --><br>如何发送新的聊天消息：<br>1． 用户提交一个新的聊天消息。<br>2． 控制器的事件处理器被触发。<br>3． 控制器创建了一个新的聊天模型（Chat Model）记录。<br>4． 然后控制器更新视图。  </p>
@@ -452,332 +200,143 @@ container.show();
 
       
     </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/note/" rel="tag"># note</a>
-          
-            <a href="/tags/JS/" rel="tag"># JS</a>
-          
-            <a href="/tags/mvc/" rel="tag"># mvc</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/07/22/ajaxLearn/" rel="next" title="ajax使用笔记">
-                <i class="fa fa-chevron-left"></i> ajax使用笔记
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/09/16/the-use-of-sublime-text3/" rel="prev" title="sublime text3常用插件">
-                sublime text3常用插件 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/04/mvc-js-note/" data-id="ciypjdbum003b9oa8coar6q2d" class="article-share-link">Partager</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mvc/">mvc</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/note/">note</a></li></ul>
+
     </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
   </div>
-
-          
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
-    
-      <div class="ds-thread" data-thread-key="2016/08/04/mvc-js-note/"
-           data-title="MVC的JavaScript Web富应用开发(完整版)-笔记" data-url="http://yoursite.com/2016/08/04/mvc-js-note/">
-      </div>
-    
-  </div>
-
-
-        </div>
-        
-          
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    
+<nav id="article-nav">
+  
+    <a href="/2016/09/16/the-use-of-sublime-text3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          sublime text3常用插件
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/07/22/ajaxLearn/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">ajax使用笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/note/">note</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tear/">tear</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a></li></ul>
     </div>
   </div>
 
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
 
-      
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5/">H5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JQuery/">JQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/">MongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/backbone/">backbone</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canvas/">canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5，css3/">html5，css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongoose/">mongoose</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mvc/">mvc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/note/">note</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动画/">动画</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客，文章/">博客，文章</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能优化/">性能优化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/插件/">插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
+    </div>
+  </div>
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JS/" style="font-size: 14px;">JS</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/backbone/" style="font-size: 10px;">backbone</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 16px;">css3</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/html5/" style="font-size: 12px;">html5</a> <a href="/tags/html5，css3/" style="font-size: 10px;">html5，css3</a> <a href="/tags/mongoose/" style="font-size: 12px;">mongoose</a> <a href="/tags/mvc/" style="font-size: 10px;">mvc</a> <a href="/tags/note/" style="font-size: 20px;">note</a> <a href="/tags/动画/" style="font-size: 18px;">动画</a> <a href="/tags/博客，文章/" style="font-size: 10px;">博客，文章</a> <a href="/tags/性能优化/" style="font-size: 10px;">性能优化</a> <a href="/tags/插件/" style="font-size: 10px;">插件</a> <a href="/tags/数据库/" style="font-size: 12px;">数据库</a> <a href="/tags/移动端/" style="font-size: 12px;">移动端</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/01/04/the-use-of-ejs/">the use of page</a>
           </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
+        
+          <li>
+            <a href="/2016/12/21/pc-lost-api-ms-win-crt-runtime-1-1-0-dll/">计算机丢失api-ms-win-crt-runtime-|1-1-0.dll</a>
           </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/uploads/avatar2.JPG"
-               alt="gzyq" />
-          <p class="site-author-name" itemprop="name">gzyq</p>
-          <p class="site-description motion-element" itemprop="description">郭正瑜琼，hexo博客，学习笔记，其他</p>
-        </div>
-        <nav class="site-state motion-element">
         
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">28</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            <div class="site-state-item site-state-categories">
-              <a href="/categories">
-                <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">20</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
+          <li>
+            <a href="/2016/12/16/about-mongoose/">mongoose基础文档</a>
+          </li>
         
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
+          <li>
+            <a href="/2016/12/15/about-mongoose-01/">mongoose使用疑惑总结</a>
+          </li>
         
+          <li>
+            <a href="/2016/12/09/The-difference-between-the-JQuery-s-ready-function-and-JS-onload/">JQuery的ready函数与JS的onload的区别</a>
+          </li>
         
-
-        
-        
-
-        
-
-
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是-MVC"><span class="nav-number">1.</span> <span class="nav-text">什么是 MVC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#组成："><span class="nav-number">1.1.</span> <span class="nav-text">组成：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类"><span class="nav-number">1.2.</span> <span class="nav-text">类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模型和数据"><span class="nav-number">2.</span> <span class="nav-text">模型和数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#控制器和状态"><span class="nav-number">3.</span> <span class="nav-text">控制器和状态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#视图和模板"><span class="nav-number">4.</span> <span class="nav-text">视图和模板</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#依赖管理"><span class="nav-number">5.</span> <span class="nav-text">依赖管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用文件"><span class="nav-number">6.</span> <span class="nav-text">使用文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#部署"><span class="nav-number">7.</span> <span class="nav-text">部署</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#性能"><span class="nav-number">7.1.</span> <span class="nav-text">性能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缓存"><span class="nav-number">7.2.</span> <span class="nav-text">缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源码压缩（Minification）"><span class="nav-number">7.3.</span> <span class="nav-text">源码压缩（Minification）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gzip-压缩"><span class="nav-number">7.4.</span> <span class="nav-text">Gzip 压缩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-CDN"><span class="nav-number">7.5.</span> <span class="nav-text">使用 CDN</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spine类库"><span class="nav-number">8.</span> <span class="nav-text">Spine类库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Backbone类库"><span class="nav-number">9.</span> <span class="nav-text">Backbone类库</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">gzyq</span>
-</div>
-
-
-
-        
-
-        
-      </div>
-    </footer>
-
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
+      </ul>
     </div>
   </div>
 
   
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
+</aside>
+        
+      </div>
+      <footer id="footer">
   
-
-
-
-
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 gzyq<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
   
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
+    <a href="/" class="mobile-nav-link">Home</a>
   
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
+    <a href="/archives" class="mobile-nav-link">Archives</a>
   
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
-
-
-
-  
-
-  
+</nav>
     
-  
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"gzyq"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-    
-    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
-  
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
+<script src="/js/script.js"></script>
 
-
-
-
-
-
-
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-
+  </div>
 </body>
 </html>

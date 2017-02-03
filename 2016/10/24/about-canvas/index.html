@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>canvas基础记录 | GGirl</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="本文主要记录canvas的基础知识和一些小例子，按自己的理解和学习记录，可能也一些凌乱，也在不断更新，希望在不断学习中能做出自己想要的效果。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="canvas基础记录">
+<meta property="og:url" content="http://yoursite.com/2016/10/24/about-canvas/index.html">
+<meta property="og:site_name" content="GGirl">
+<meta property="og:description" content="本文主要记录canvas的基础知识和一些小例子，按自己的理解和学习记录，可能也一些凌乱，也在不断更新，希望在不断学习中能做出自己想要的效果。">
+<meta property="og:image" content="http://i.imgur.com/9EKJazN.png">
+<meta property="og:image" content="http://i.imgur.com/z41db1X.png">
+<meta property="og:updated_time" content="2017-01-16T01:32:43.868Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="canvas基础记录">
+<meta name="twitter:description" content="本文主要记录canvas的基础知识和一些小例子，按自己的理解和学习记录，可能也一些凌乱，也在不断更新，希望在不断学习中能做出自己想要的效果。">
+<meta name="twitter:image" content="http://i.imgur.com/9EKJazN.png">
+  
+    <link rel="alternate" href="/atom.xml" title="GGirl" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">GGirl</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">不是所有坚持都有结果，但是总有一些坚持，能从一寸冰封的土地里，培育出十万朵怒放的蔷薇</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-about-canvas" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/24/about-canvas/" class="article-date">
+  <time datetime="2016-10-24T09:20:35.000Z" itemprop="datePublished">2016-10-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/tools/">tools</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      canvas基础记录
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文主要记录canvas的基础知识和一些小例子，按自己的理解和学习记录，可能也一些凌乱，也在不断更新，希望在不断学习中能做出自己想要的效果。<br><a id="more"></a> </p>
+<p>HTML5 canvas标签用于绘制图像（通过脚本，通常是 JavaScript）。<br>canvas是基于状态的绘图，先有状态，后有绘制(先准备要画什么)。</p>
+<p>canvas直接给宽高，和js给宽高区别：<br>不建议给css指定，css指定的是画布的显示的大小<br>而canvas还包括里面显示分辨率的大小</p>
+<p>也可以在js中设置宽高（后面会写到）</p>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><pre><code>JS：
+var canvas = document.getElementById(&apos;canvas&apos;);
+var context = canvas.getContext(&apos;2d&apos;); //使用context进行绘制
+</code></pre><h3 id="画线"><a href="#画线" class="headerlink" title="画线"></a>画线</h3><p><strong>.lineWidth</strong>：设置或返回画笔粗细<br><strong>.strokeStyle</strong>:设置或返回用于笔触的颜色、渐变或模式<br><strong>.lineCap</strong>:设置或返回线条的结束端点样式<br>——butt(默认，平直边缘)，round(末端为圆形)，square(正方形)<br><strong>.lineJoin</strong> 属性设置或返回所创建边角的类型，当两条线交汇时。<br>——miter(默认，创建尖角)，round(圆角)，bevel(斜角)<br><strong>miterLimit</strong>：只有当 lineJoin 属性为 “miter” 时，miterLimit 才有效</p>
+<p><strong>.beginPath()</strong>：开始一个全新的绘制,即起始一条路径，或重置当前路径<br><strong>.moveTo()</strong>:不从任何点开始，直接指定一个新的坐标点<br><strong>.lineTo()</strong>:从上一个坐标点一直画到当前lineTo表示的坐标点<br><strong>.stroke()</strong>:绘制已定义的路径<br><strong>.closePath()</strong>：创建从当前点到开始点的路径</p>
+<pre><code>context.lineWidth =5 ; //粗细
+context.strokeStyle = &apos;#005588&apos;;//颜色
+ctx.lineCap=&quot;round&quot;;
+
+context.moveTo(100,100); //笔尖放在（100,100）
+context.lineTo(700,700); //从（100,100）绘制到（700,700），以上操作，都为意图绘制并未开始画
+
+context.stroke(); //绘制线条
+</code></pre><h3 id="填充"><a href="#填充" class="headerlink" title="填充"></a>填充</h3><p><strong>.fillStyle</strong>=”color” 设置或返回用于填充绘画的颜色、渐变或模式<br><strong>.fill()</strong>; //填充</p>
+<pre><code>context.fillStyle = &quot;#ffccff&quot;; 
+context.fill();
+</code></pre><p>fillStyle：填充样式：<br>1、color<br>2、渐变色gradient<br>超过画布后，均是结尾色<br>线性渐变色： （定义在两点之间）<br>直线型<br>    var grd = context.createLinearGradient(xstart,ystart,xend,yend);//渐变线：定义方向和尺度<br>     grd.addColorStop(stop,color); //(起始位置,颜色）；可添加无数个</p>
+<pre><code>(0,0,0,200)竖直渐变 数值可为负值
+(0,0,200,0)水平渐变 修改查看效果
+</code></pre><p>以下例子：从左上角（0，0）黑色到右下角（200,200）白色线性渐变<br>    var grd = context.createLinearGradient(0,0,200,200);<br>    grd.addColorStop(0.0,’#000’);<br>    grd.addColorStop(1.0,’#fff’);</p>
+<pre><code>context.fillStyle= grd;
+context.fillRect(0,0,200,200);
+</code></pre><p>作用：景深、<br>径向渐变色：（定义在同心园内）<br>放射型<br>    var grd = context.createRadialGradient(x0,y0,r0,x1,y1,r1);<br>    grd.addColorStop(stop,color);</p>
+<p>以下例子：以中心（100,100）半径0即黑色点到（100,100）半径100白色的向外放射渐变<br>    var grd = context.createRadialGradient(100,100,0,100,100,100);<br>    grd.addColorStop(0.0,’#000’);<br>    grd.addColorStop(1.0,’#fff’);</p>
+<pre><code>context.fillStyle= grd;
+context.fillRect(0,0,200,200);
+</code></pre><p>3、图片<br>    createPattern(img,repeat-style);<br>以下例子：以1.png重复铺满(200,200)的矩形<br>    bgImg.src=’img/1.png’;<br>    bgImg.onload = function(){<br>        var pattern = context.createPattern(bgImg,’repeat’);<br>        context.fillStyle = pattern;<br>        context.fillRect(0,0,200,200);<br>    }<br>4、画布<br>    createPattern(canvas,repeat-style);</p>
+<p>5、video<br>    createPattern(video,repeat-style);</p>
+<h4 id="多边形"><a href="#多边形" class="headerlink" title="多边形"></a>多边形</h4><pre><code>context.moveTo(100,100); 
+context.lineTo(700,700); 
+context.lineTo(100,700);
+context.lineTo(100,100); //首尾相连
+
+context.fillStyle =&apos;rgb(2,100,30)&apos;;
+   context.fill();  //设置或返回用于填充绘画的颜色、渐变或模式
+</code></pre><h4 id="弧线-圆形-曲线"><a href="#弧线-圆形-曲线" class="headerlink" title="弧线\圆形\曲线"></a>弧线\圆形\曲线</h4><pre><code>context.arc(x,y,r,sAngle,eAngle,counterclockwise); //单位弧度
+</code></pre><p><img src="http://i.imgur.com/9EKJazN.png" alt=""><br>图片来源：<a href="http://www.w3school.com.cn/tags/canvas_arc.asp" target="_blank" rel="external">HTML5 canvas arc() 方法</a></p>
+<pre><code>arcTo() 创建两切线之间的弧/曲线
+context.moveTo(x0,y0);
+context.arcTo(x1,y1,x2,y2,r);
+</code></pre><p>起始点（x0,y0）：之前线的终点，绘制起点，但不一定是切点，圆弧会找到切点开始绘制<br>结束点：x2y2是与x1y1组成一条切线（辅助线），最终圆弧结束于切点的位置<br>切点不一定在两条切线上</p>
+<pre><code>quadraticCurveTo() 创建二次贝塞尔曲线 
+
+context.moveTo(x0,y0);
+context.quadraticCurveTo(x1,y1,x2,y2);
+</code></pre><p>起点就是（x0，y0）,终点(x2,y2)同时也是切点;控制点(x1,y1)</p>
+<p><img src="http://i.imgur.com/z41db1X.png" alt=""></p>
+<pre><code>bezierCurveTo() 创建三次方贝塞尔曲线
+
+context.moveTo(x0,y0);
+context.bezierCurveTo(x1,y1,x2,y2,x3,y3);
+</code></pre><p>x1,y1,x2,y2 控制点 ；,x3,y3结束点</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><h4 id="七巧板demo"><a href="#七巧板demo" class="headerlink" title="七巧板demo"></a>七巧板demo</h4><p>源码地址：<a href="https://github.com/gzyq/html5-canvas/tree/master/canvas-demo-1" target="_blank" rel="external">https://github.com/gzyq/html5-canvas/tree/master/canvas-demo-1</a></p>
+<h4 id="时钟demo"><a href="#时钟demo" class="headerlink" title="时钟demo"></a>时钟demo</h4><p>源码地址：<a href="https://github.com/gzyq/html5-canvas/tree/master/canvas-demo-1" target="_blank" rel="external">https://github.com/gzyq/html5-canvas/tree/master/canvas-demo-2</a></p>
+<p>绘制矩形：<br>方法一：<br>cxt.moveTo(x,y);<br>cxt.lineTo(x+width,y);<br>cxt.lineTo(x+width,y+height);<br>cxt.lineTo(x,y+height);</p>
+<p>方法二：<br><strong>cxt.rect(x,y,width,height)</strong>; //矩形路径</p>
+<p><strong>cxt.fillRect()</strong>：直接用fillStyle绘制填充的矩形<br><strong>cxt.strokeRect()</strong>：//直接用strokeStyle绘制带框的矩形</p>
+<p><strong>.clearRect(x,y,width,height)</strong>:清空给定矩形内的指定像素。。//通常用于动画</p>
+<pre><code>ctx.beginPath();
+ctx.lineWidth=&quot;6&quot;;
+ctx.strokeStyle=&quot;red&quot;;
+ctx.rect(5,5,290,140);
+ctx.stroke();
+</code></pre><p>绘制五角星：</p>
+<pre><code>&lt;canvas id=&quot;canvas&quot; width=&quot;200&quot; height=&quot;200&quot;&gt;
+    当前浏览器不支持canvas，请更换浏览器后再试。
+&lt;/canvas&gt;
+
+var canvas = document.getElementById(&apos;canvas&apos;);
+var context = canvas.getContext(&apos;2d&apos;);
+var R1 = 90;  //可更改看不同效果
+var R2 = 50;
+
+context.lineWidth = 3;
+context.beginPath();
+for(var i=0;i&lt;5;i++){
+    context.lineTo( Math.cos((18+i*72)/180*Math.PI)*R1+100,
+                    -Math.sin((18+i*72)/180*Math.PI)*R1+100); //外侧
+
+    context.lineTo( Math.cos((54+i*72)/180*Math.PI)*R2+100,
+                    -Math.sin((54+i*72)/180*Math.PI)*R2+100); //内侧
+    //()/180*Math.PI 将角度转换为弧度
+    //+100:将中点挪到（100,100）画布中间
+}
+
+context.closePath();
+context.stroke();
+</code></pre><p>演示地址：</p>
+<p><strong>.save()</strong> 保存当前图形状态（包括所有状态）<br><strong>.restore()</strong> 返回save节点时canvas所有的状态</p>
+<p>在.save()和.restore()直接随意更改设置，不影响后面的绘制效果</p>
+<h3 id="图形变换"><a href="#图形变换" class="headerlink" title="图形变换"></a>图形变换</h3><p>1 .scale(sx,sy) 缩放<br><strong>注</strong>：对绘图进行缩放，所有之后的绘图也会被缩放。定位也会被缩放。</p>
+<p>如：scale(2,2)，那么绘图将定位于距离画布左上角两倍远的位置。<br>以下面代码为例，第一个矩形：边框2，从(5,5)开始绘制，长25宽15；放大2后，第二个，边框4，从(10,10)开始绘制，长50宽30；<br>    context.lineWidth=2；<br>    context.strokeRect(5,5,25,15);<br>    context.scale(2,2);<br>    context.strokeRect(5,5,25,15);</p>
+<p>2 .rotate(deg)旋转当前的绘图</p>
+<pre><code>context.rotate(20*Math.PI/180);
+context.fillRect(5,5,25,15);
+</code></pre><p>3 .translate(x,y) 重新映射画布上的 (0,0) 位置至（x,y）<br><strong>注</strong>：在 translate() 之后调用诸如 fillRect() 之类的方法时，值会添加到 x 和 y 坐标值上。<br>以下为例：在位置 (10,10) 处绘制一个矩形，将新的 (0,0) 位置设置为 (70,70)。再次绘制新的矩形（请注意现在矩形从位置 (80,80) 开始绘制）</p>
+<pre><code>ctx.fillRect(10,10,100,50);
+ctx.translate(70,70);
+ctx.fillRect(10,10,100,50);
+</code></pre><p>4 .transform(a,b,c,d,e,f) 替换当前的变换矩阵<br><strong>注</strong>： 画布上的每个对象都拥有一个当前的变换矩阵；<br>        transform() 允许缩放、旋转、移动并倾斜当前的环境；<br>        该变换只会影响 transform() 方法调用之后的绘图；<br>        调用多次效果是级联的。</p>
+<pre><code>变换矩阵     其中：()为默认值
+a  c  e     a 水平缩放(1)  c 垂直倾斜(0)  e 水平位移(0)
+b  d  f     b 水平倾斜(0)  d 垂直缩放(1)  f 垂直位移(0)
+0  0  1
+</code></pre><p>5 .setTransform()忽略掉之前所有的transform，将当前的变换矩阵设为单位矩阵，再进行后面。<br><strong>注</strong>：setTransform() 方法把当前的变换矩阵重置为单位矩阵，然后以相同的参数运行 transform()；<br>setTransform() 允许您缩放、旋转、移动并倾斜当前的环境。</p>
+<h3 id="文字"><a href="#文字" class="headerlink" title="文字"></a>文字</h3><pre><code>context.font = &apos;font-style font-variant font-weight font-size font-family&apos;
+context.font =&quot;20px sans-serif&quot;;//默认值
+context.textAlign = &apos;left center right&apos;
+context.textBaseline = &apos;top middle bottom alphabetic(默认)&apos;
+context.fillText(string,x,y,[maxlen]); //填充 (文字，位置,[最宽，强行压缩短])  
+
+context.strokeText(string,x,y,[maxlen]); //描边
+
+文本度量：
+context.measureText(string).width //返回渲染string的宽度
+</code></pre><p>阴影</p>
+<p>context.shadowColor  //阴影颜色<br>context.shadowOffsetX //可正可负<br>context.shadowOffsetY</p>
+<p>context.shadowBlur //虚化模糊</p>
+<p>context.globalAlpha //透明度，默认1，全局</p>
+<p>context.globalCompositeOperation=”source-over”;</p>
+<p>性设置或返回如何将一个源（新的）图像绘制到目标（已有）的图像上。<br>源图像 source-= 打算放置到画布上的绘图。<br>目标图像  destination = 已经放置在画布上的绘图。<br>source-over<br>source-atop<br>source-in<br>source-out</p>
+<p>destination-over ：先绘制的在后绘制的上<br>destination-atop<br>destination-in ：只绘制先绘制图形，但<br>destination-out</p>
+<p>lighter<br>copy<br>xor<br><strong>其他</strong><br>剪辑区域<br>context.clip()<br>提示：一旦剪切了某个区域，则所有之后的绘图都会被限制在被剪切的区域内（不能访问画布上的其他区域）。您也可以在使用 clip() 方法前通过使用 save() 方法对当前画布区域进行保存，并在以后的任意时间对其进行恢复（通过 restore() 方法）。</p>
+<p>非零环绕原则<br>context.isPointInPath(x,y); 方法返回 true，如果指定的点位于当前路径中；否则返回 false。</p>
+<h3 id="canvas图形库推荐"><a href="#canvas图形库推荐" class="headerlink" title="canvas图形库推荐"></a>canvas图形库推荐</h3><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://www.w3school.com.cn/tags/html_ref_canvas.asp" target="_blank" rel="external">HTML 5 Canvas 参考手册</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/24/about-canvas/" data-id="ciypjdbr000099oa8826mst93" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/canvas/">canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html5/">html5</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/12/05/install-MongoDB/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          window下安装MongoDB
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/10/09/the-use-of-svn/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">SVN使用</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/note/">note</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tear/">tear</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5/">H5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JQuery/">JQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/">MongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/backbone/">backbone</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canvas/">canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5，css3/">html5，css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongoose/">mongoose</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mvc/">mvc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/note/">note</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动画/">动画</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客，文章/">博客，文章</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能优化/">性能优化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/插件/">插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JS/" style="font-size: 14px;">JS</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/backbone/" style="font-size: 10px;">backbone</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 16px;">css3</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/html5/" style="font-size: 12px;">html5</a> <a href="/tags/html5，css3/" style="font-size: 10px;">html5，css3</a> <a href="/tags/mongoose/" style="font-size: 12px;">mongoose</a> <a href="/tags/mvc/" style="font-size: 10px;">mvc</a> <a href="/tags/note/" style="font-size: 20px;">note</a> <a href="/tags/动画/" style="font-size: 18px;">动画</a> <a href="/tags/博客，文章/" style="font-size: 10px;">博客，文章</a> <a href="/tags/性能优化/" style="font-size: 10px;">性能优化</a> <a href="/tags/插件/" style="font-size: 10px;">插件</a> <a href="/tags/数据库/" style="font-size: 12px;">数据库</a> <a href="/tags/移动端/" style="font-size: 12px;">移动端</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/01/04/the-use-of-ejs/">the use of page</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/21/pc-lost-api-ms-win-crt-runtime-1-1-0-dll/">计算机丢失api-ms-win-crt-runtime-|1-1-0.dll</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/16/about-mongoose/">mongoose基础文档</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/15/about-mongoose-01/">mongoose使用疑惑总结</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/09/The-difference-between-the-JQuery-s-ready-function-and-JS-onload/">JQuery的ready函数与JS的onload的区别</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 gzyq<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
