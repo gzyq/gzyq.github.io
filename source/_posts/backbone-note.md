@@ -1,9 +1,9 @@
 ---
-title: backbone-note
+title: backbone基础认识
 date: 2016-07-21 09:44:42
-tags: [note,backbone]
+tags: [backbone]
 categories: note
-comments: false
+comments: true
 ---
 
 初探backbone:

@@ -1,7 +1,7 @@
 ---
 title: 计算机丢失api-ms-win-crt-runtime-|1-1-0.dll
 date: 2016-12-21 20:18:49
-tags: [note]
+categories: 其他
 ---
 
 在笔记本 win7系统 安装mongoDB时，报错“计算机无法启动此程序，因为计算机丢失api-ms-win-crt-runtime-|1-1-0.dll。尝试重新安装改程序以解决此问题。”。在网上找了很多解决方案，多数是说，下载api-ms-win-crt-runtime-l1-1-0.dll复制到对应系统文件中就行，经过尝试失败了，现在问题解决了，记录下来给遇到相同的问题的大家做参考。

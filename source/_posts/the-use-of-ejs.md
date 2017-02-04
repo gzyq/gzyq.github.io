@@ -1,9 +1,13 @@
 ---
-title: the use of page
+title: ejs使用语法
 date: 2017-01-04 23:26:59
-tags:
+tags: [ejs]
+categories: note
+comments: true
 ---
+
 准备
+<!-- more -->
 ### 安装 ###
 $ npm install ejs --save-dev
 ### 使用 ###

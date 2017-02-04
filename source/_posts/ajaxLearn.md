@@ -1,9 +1,9 @@
 ---
 title: ajax使用笔记
 date: 2016-07-22 16:32:55
-tags: [note,ajax]
+tags: [ajax]
 categories: note
-comments: false
+comments: true
 ---
 
 最开始接触Ajax是大三暑期实习的时候吧，就被告诉是无刷新请求，当时就知道会传给我数据的，我只要拿到我要的数据填到对应的地方就好，这就是最初的印象了。  

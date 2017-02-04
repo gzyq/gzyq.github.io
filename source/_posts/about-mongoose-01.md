@@ -1,7 +1,9 @@
 ---
 title: mongoose使用疑惑总结
 date: 2016-12-15 10:15:22
-tags: [note,mongoose,数据库]
+tags: [MongoDB]
+categories: note
+comments: true
 ---
 
 刚开始接触mongoose，在使用过程中遇到一些疑惑，网上大多解释的比较简单，所以把这些总结一下，都是自己实践操作后的一些记录，比较通俗，适合小白，后面会随时更新。

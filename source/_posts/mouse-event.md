@@ -1,7 +1,7 @@
 ---
 title: JS鼠标事件
 date: 2016-07-20 21:00:41
-tags: [note]
+tags: [JS]
 categories: note
 ---
 

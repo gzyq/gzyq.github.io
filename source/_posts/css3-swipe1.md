@@ -1,9 +1,9 @@
 ---
 title: H5滑屏
 date: 2016-07-18 20:26:44  
-tags: [note,css3,动画,H5]
+tags: [css3,动画,html5]
 categories: note
-comments: false
+comments: true
 ---
 
 swiper插件：[http://www.swiper.com.cn/](http://www.swiper.com.cn/)  

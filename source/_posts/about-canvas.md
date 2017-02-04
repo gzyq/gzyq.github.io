@@ -2,7 +2,7 @@
 title: canvas基础记录
 date: 2016-10-24 17:20:35
 tags: [html5,canvas]
-categories: tools
+categories: note
 ---
 本文主要记录canvas的基础知识和一些小例子，按自己的理解和学习记录，可能也一些凌乱，也在不断更新，希望在不断学习中能做出自己想要的效果。
 <!-- more --> 

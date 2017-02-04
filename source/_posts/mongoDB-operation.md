@@ -1,7 +1,8 @@
 ---
 title: mongoDB常用命令行操作
 date: 2016-12-06 10:25:32
-tags: 
+tags: [MongoDB]
+categories: note
 ---
 
 在MongoDB数据库中，collection(集合)即为通常所说的数据库中的表，文档（document）即数据库中的行,一个database中可以有多个collection（一个数据库可以有多个表），一个collection中又可以有多个document（一个表可以有多行数据）。

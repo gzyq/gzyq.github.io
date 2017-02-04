@@ -1,7 +1,7 @@
 ---
 title: MVC的JavaScript Web富应用开发(完整版)-笔记
 date: 2016-08-04 15:11:14
-tags: [note,JS,mvc]
+tags: [JS,mvc]
 categories: note
 ---
 
