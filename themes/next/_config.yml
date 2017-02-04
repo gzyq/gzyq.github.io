@@ -6,7 +6,11 @@
 favicon: /favicon.ico
 
 # Set default keywords (Use a comma to separate)
+<<<<<<< HEAD
 keywords: "Hexo, NexT"
+=======
+keywords: "note,hexo,学习"
+>>>>>>> 9f984e7238359f963c894efd0934ccc4fc9a385f
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
