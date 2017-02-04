@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="阅读全文 &amp;lt;!-- more --&amp;gt;">
+<meta name="description" content="Hexo next使日常使用中一些命令及理解，供大家参考。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo使用">
+<meta property="og:title" content="Hexo日常使用">
 <meta property="og:url" content="http://yoursite.com/2016/07/14/hexo-use/index.html">
 <meta property="og:site_name" content="GGirl">
-<meta property="og:description" content="阅读全文 &amp;lt;!-- more --&amp;gt;">
-<meta property="og:updated_time" content="2017-02-04T06:18:33.052Z">
+<meta property="og:description" content="Hexo next使日常使用中一些命令及理解，供大家参考。">
+<meta property="og:updated_time" content="2017-02-04T07:52:50.837Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo使用">
-<meta name="twitter:description" content="阅读全文 &amp;lt;!-- more --&amp;gt;">
+<meta name="twitter:title" content="Hexo日常使用">
+<meta name="twitter:description" content="Hexo next使日常使用中一些命令及理解，供大家参考。">
 
 
 
@@ -127,7 +127,7 @@
 
 
 
-  <title> Hexo使用 | GGirl </title>
+  <title> Hexo日常使用 | GGirl </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -294,7 +294,7 @@
             
             
               
-                Hexo使用
+                Hexo日常使用
               
             
           </h1>
@@ -377,7 +377,24 @@
       
 
       
-        <h2 id="阅读全文"><a href="#阅读全文" class="headerlink" title="阅读全文"></a>阅读全文</h2><p> <code>&lt;!-- more --&gt;</code><br><a id="more"></a></p>
+        <p>Hexo next使日常使用中一些命令及理解，供大家参考。<br><a id="more"></a></p>
+<h3 id="阅读全文图标"><a href="#阅读全文图标" class="headerlink" title="阅读全文图标"></a>阅读全文图标</h3><p>有些文章的内容较多，在首页展示时只想展示部分内容，其余部分隐藏，当点击阅读全文时调转至完整部分，在部分展示内容结尾处，增加以下代码即可。</p>
+<pre><code>&lt;!-- more --&gt;
+</code></pre><h3 id="更换网站ico图标"><a href="#更换网站ico图标" class="headerlink" title="更换网站ico图标"></a>更换网站ico图标</h3><p>将网站图标命名favicon.ico，放至根目录/source下， 在_config.yml中新增 <strong>favicon: /favicon.ico </strong>即可。</p>
+<pre><code>favicon: /favicon.ico
+</code></pre><h3 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h3><pre><code>hexo new &apos;postName&apos;    新建文章
+hexo new page &apos;pageName&apos;    新建页面（如关于页，标签页）
+</code></pre><h3 id="文章属性"><a href="#文章属性" class="headerlink" title="文章属性"></a>文章属性</h3><p>可以根据自己的需要，选择下面属性。</p>
+<pre><code>title: Hexo日常使用        //标题
+date: 2016/7/14 22:28:42  //创建时间
+tags: [hexo]              //标签,必须写在[]内，多个用,隔开
+categories: hexo          //分类
+comments: true            //是否允许评论
+description: Hexo日常使用Hexo日常使用  //描述
+</code></pre><h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><pre><code>hexo generate 生成静态页面至public目录下
+hexo deploy 将.deploy目录部署到github 
+</code></pre><h3 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h3><pre><code>hexo server  开启预览访问（默认端口4000）
+</code></pre><h3 id="更新流程"><a href="#更新流程" class="headerlink" title="更新流程"></a>更新流程</h3><p>平时使用最多的就是修改和新增文章，，以下是我自己使用hexo的理解，以我的博客为例：<br>1、按上面所说的hexo new即可，再选择平时常用的编辑器进行文章编辑，如Markdown。<br>2、对新建文章进行部署（deploy的过程，实际上更新了master分支的内容，一旦进行deploy在网站上（非本地）就可以看见效果了）。<br>3、如果是修改文章，在修改时可以利用编辑器的浏览器预览功能或者直接通过开启本地预览访问，通过访问本地端口，实时刷新查看修改效果至编辑满意为止。<br>4、更新github blog分支下内容，通过git status，git add，git commit，git push origin blog同步更新变化。</p>
 
       
     </div>
@@ -438,7 +455,7 @@
     <div class="post-spread">
       
         <div class="ds-share flat" data-thread-key="2016/07/14/hexo-use/"
-     data-title="Hexo使用"
+     data-title="Hexo日常使用"
      data-content=""
      data-url="http://yoursite.com/2016/07/14/hexo-use/">
   <div class="ds-share-inline">
@@ -468,7 +485,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/07/14/hexo-use/"
-           data-title="Hexo使用" data-url="http://yoursite.com/2016/07/14/hexo-use/">
+           data-title="Hexo日常使用" data-url="http://yoursite.com/2016/07/14/hexo-use/">
       </div>
     
   </div>
@@ -533,7 +550,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -579,7 +596,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#阅读全文"><span class="nav-number">1.</span> <span class="nav-text">阅读全文</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#阅读全文图标"><span class="nav-number">1.</span> <span class="nav-text">阅读全文图标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更换网站ico图标"><span class="nav-number">2.</span> <span class="nav-text">更换网站ico图标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建"><span class="nav-number">3.</span> <span class="nav-text">新建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章属性"><span class="nav-number">4.</span> <span class="nav-text">文章属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署"><span class="nav-number">5.</span> <span class="nav-text">部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地预览"><span class="nav-number">6.</span> <span class="nav-text">本地预览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新流程"><span class="nav-number">7.</span> <span class="nav-text">更新流程</span></a></li></ol></div>
             
 
           </div>
