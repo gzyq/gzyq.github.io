@@ -5,11 +5,14 @@
 # Site
 title: GGirl
 subtitle: 不是所有坚持都有结果，但是总有一些坚持，能从一寸冰封的土地里，培育出十万朵怒放的蔷薇
-description: 郭正瑜琼，hexo博客，学习笔记，其他
+description: hexo博客,学习笔记,其他
 author: gzyq
 language: zh-Hans
 timezone: PRC
 avatar: /uploads/avatar2.JPG
+
+# Place your favicon.ico to /source directory.
+favicon: /favicon.ico
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -66,15 +69,15 @@ pagination_dir: page
 duoshuo_shortname: gzyq
 
 # 百度统计
-baidu_analytics:c8749e1fdf857fce6baebd99ceeb3220
+baidu_analytics: c8749e1fdf857fce6baebd99ceeb3220
 
 # JiaThis 分享服务
-jiathis: true
+#jiathis: true
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
