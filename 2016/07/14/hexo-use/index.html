@@ -93,7 +93,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/07/14/hexo-use/index.html">
 <meta property="og:site_name" content="GGirl">
 <meta property="og:description" content="Hexo next使日常使用中一些命令及理解，供大家参考。">
-<meta property="og:updated_time" content="2017-03-14T02:36:12.949Z">
+<meta property="og:updated_time" content="2017-03-14T02:41:47.966Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo日常使用">
 <meta name="twitter:description" content="Hexo next使日常使用中一些命令及理解，供大家参考。">
@@ -402,7 +402,10 @@ description: Hexo日常使用Hexo日常使用  //描述
 </code></pre><h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><pre><code>hexo generate 生成静态页面至public目录下
 hexo deploy 将.deploy目录部署到github 
 </code></pre><h3 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h3><pre><code>hexo server  开启预览访问（默认端口4000）
-</code></pre><h3 id="更新流程"><a href="#更新流程" class="headerlink" title="更新流程"></a>更新流程</h3><p>平时使用最多的就是修改和新增文章，，以下是我自己使用hexo的理解，以我的博客为例：<br>1、按上面所说的hexo new即可，再选择平时常用的编辑器进行文章编辑，如Markdown。<br>2、对新建文章进行部署（deploy的过程，实际上更新了master分支的内容，一旦进行deploy，在网站上（或本地运行hexo server，通过<a href="http://localhost:4000/）就可以看见修改后的效果了）。" target="_blank" rel="external">http://localhost:4000/）就可以看见修改后的效果了）。</a><br><strong>注</strong>：部署的过程，实际上远程仓库的master分支同步更新。<br>3、如果是修改文章，在修改时可以利用编辑器的浏览器预览功能或者直接通过开启本地预览访问，通过访问本地端口，实时刷新查看修改效果至编辑满意为止。<br>4、因为日常使用，不一样一直是在一个电脑中操作，所以需要实时将网站源码保存到远程仓库，以防意外。在网站更新部署完成后，通常，会将blog分支下内容进行更新。<br>具体操作为：通过git status，git add，git commit，git push origin blog同步更新变化。</p>
+</code></pre><h3 id="更新流程"><a href="#更新流程" class="headerlink" title="更新流程"></a>更新流程</h3><p>平时使用最多的就是修改和新增文章，以下是我自己使用hexo的理解，以我的博客为例：<br>1、按上面所说的hexo new即可，再选择平时常用的编辑器进行文章编辑，如Markdown。</p>
+<p>2、对新建文章进行部署（deploy的过程，实际上更新了master分支的内容，一旦进行deploy，在网站上（或本地运行hexo server，通过<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> ）就可以看见修改后的效果了）。<br><strong>注</strong>：部署的过程，实际上远程仓库的master分支同步更新。</p>
+<p>3、如果是修改文章，在修改时可以利用编辑器的浏览器预览功能或者直接通过开启本地预览访问，通过访问本地端口，实时刷新查看修改效果至编辑满意为止。</p>
+<p>4、因为日常使用，不一样一直是在一个电脑中操作，所以需要实时将网站源码保存到远程仓库，以防意外。在网站更新部署完成后，通常，会将blog分支下内容进行更新。<br>具体操作为：通过git status，git add，git commit，git push origin blog同步更新变化。</p>
 
       
     </div>
@@ -561,6 +564,17 @@ hexo deploy 将.deploy目录部署到github
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/gzyq" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
         </div>
 
         
@@ -606,7 +620,7 @@ hexo deploy 将.deploy目录部署到github
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2016 - 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
