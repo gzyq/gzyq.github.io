@@ -93,7 +93,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/12/09/The-difference-between-the-JQuery-s-ready-function-and-JS-onload/index.html">
 <meta property="og:site_name" content="GGirl">
 <meta property="og:description" content="平时在使用JS或者Jquery过程中，通常都会遇到ready、load这些加载，特别是和其他项目人员整合代码过程中，用于用的不一，导致很多不必要的错误出现，现在主要整理出来JQuery的ready、JS的load、JQuery的load这些的区别和注意点，以便后面参考，会不断更新，希望大家指正。">
-<meta property="og:updated_time" content="2017-03-14T09:20:10.476Z">
+<meta property="og:updated_time" content="2017-03-14T09:34:53.981Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JQuery的ready、JS的load、JQuery的load使用区别">
 <meta name="twitter:description" content="平时在使用JS或者Jquery过程中，通常都会遇到ready、load这些加载，特别是和其他项目人员整合代码过程中，用于用的不一，导致很多不必要的错误出现，现在主要整理出来JQuery的ready、JS的load、JQuery的load这些的区别和注意点，以便后面参考，会不断更新，希望大家指正。">
@@ -404,7 +404,7 @@ $(ele).load(function(){})
 <pre><code>(function(){
     //do something
 })(jQuery)
-</code></pre><p>注：详细可参考另一篇文章 理解$(function(){})与(function($){})(jQuery)区别</p>
+</code></pre><p>注：详细可参考另一篇文章 <a href="https://gzyq.github.io/2017/02/14/jquery-001/" target="_blank" rel="external">理解$(function(){})与(function($){})(jQuery)区别</a></p>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>浏览器渲染顺序：<br>1、解析html<br>2、加载解析外部css和style文件<br>3、解析并执行js脚本代码<br>4、构造html dom模型（标签加载完毕，标签内部如链接资源、大图未加载完的情况则忽略）   （<strong>ready</strong>）<br>5、加载图片、video、flash等外部文件<br>6、页面加载完毕  （<strong>load</strong>）</p>
 
       
