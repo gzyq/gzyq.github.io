@@ -1004,29 +1004,14 @@
 
       
         
-          
-            <a id="more"></a>
-<h2 id="JQuery的ready函数与JS的load的区别"><a href="#JQuery的ready函数与JS的load的区别" class="headerlink" title="JQuery的ready函数与JS的load的区别"></a>JQuery的ready函数与JS的load的区别</h2><p>总体来说，window.onload必须等到页面包括图片的所有元素加载完毕后才能执行，$(document).ready()是DOM结构绘制完毕后就执行，不必等到加载完毕。ready（）执行时间早于onload。</p>
-<h3 id="写法"><a href="#写法" class="headerlink" title="写法"></a>写法</h3><pre><code>window.onload = function(){}
-
-$(document).ready(function(){}) 
-$(function(){});
-</code></pre><h3 id="个数"><a href="#个数" class="headerlink" title="个数"></a>个数</h3><p>onload 不能同时写多个，多个情况下，只会执行最后定义的一个（最后一个会覆盖之前定义的）<br>ready方法，可以编写多个，并且都会执行（顺序执行）</p>
-<h3 id="执行时间"><a href="#执行时间" class="headerlink" title="执行时间"></a>执行时间</h3><p>onload必须等到页面包括图片的所有元素加载完毕后才能执行，<br>ready是DOM结构绘制完毕后就执行，不必等到加载完毕。</p>
-<h2 id="JQuery的ready与load的区别"><a href="#JQuery的ready与load的区别" class="headerlink" title="JQuery的ready与load的区别"></a>JQuery的ready与load的区别</h2><p>load同js只中的load。<br>一般推荐使用写法如下：(不推荐使用body.onload())</p>
-<pre><code>$(window).load(function(){})
-$(ele).load(function(){})
-</code></pre><p>与原生js中执行一个不同，Jquery同时定义多个，顺序执行。</p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>当然，实际使用过程中需要结合具体情况做具体分析选择，下面是开发中遇到过的一些情况，需要注意。<br>（1）当在一个js里面，定义了onload和ready方法时，两者均有效，ready会先执行，onload后执行。</p>
-<p>（2）当需要页面所有东西都加载完毕后再执行想调用的函数的时候，应该使用load()。</p>
-<p>（3）在ready里面注册的事件，只要DOM就绪就会执行，此时可能元素的关联文件并未下载完成，比如，img的html已经下载完解析为DOM树，但img还未加载完毕，此时img的width或者height可能就为0。</p>
-<p>(4)有些情况下，可能需要DOM元素加载前执行Jquery代码</p>
-<pre><code>(function(){
-    //do something
-})(jQuery)
-</code></pre><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>浏览器渲染顺序：<br>1、解析html<br>2、加载解析外部css和style文件<br>3、解析并执行js脚本代码<br>4、构造html dom模型（标签加载完毕，标签内部如链接资源、大图未加载完的情况则忽略）   （<strong>ready</strong>）<br>5、加载图片、video、flash等外部文件<br>6、页面加载完毕  （<strong>load</strong>）</p>
-
-          
+          <p>平时在使用JS或者Jquery过程中，通常都会遇到ready、load这些加载，特别是和其他项目人员整合代码过程中，用于用的不一，导致很多不必要的错误出现，现在主要整理出来JQuery的ready、JS的load、JQuery的load这些的区别和注意点，以便后面参考，会不断更新，希望大家指正。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/12/09/The-difference-between-the-JQuery-s-ready-function-and-JS-onload/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
