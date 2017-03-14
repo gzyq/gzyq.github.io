@@ -118,9 +118,7 @@ categories: tools
 ##### 更新本地 #####
 	git fetch [remote] //下载远程仓库的所有变动
 
-
 ### demo ###
-
 	cd project
 	git init
 	git add .
@@ -134,4 +132,5 @@ categories: tools
 	git branch -d branch1
 
 ### 其他 ###
+
 ls 查看目录下的所有文件
