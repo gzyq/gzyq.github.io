@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="JS," />
 
 
 
@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="初次使用hexo搭建博客，因为对github也不是很熟，网上找了不少资料，花了一个星期才把整个流程，包括后续更新修改搞明白，记录下来，方便查阅，后续有新的经验再更新。">
+<meta name="description" content="本文主要是理解归纳$(function(){})与(function($){})(jQuery)的区别以及使用。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo Blog搭建流程">
-<meta property="og:url" content="http://yoursite.com/2016/07/11/Hexo-blog/index.html">
+<meta property="og:title" content="理解$(function(){})与(function($){})(jQuery)区别">
+<meta property="og:url" content="http://yoursite.com/2017/02/14/jquery-001/index.html">
 <meta property="og:site_name" content="GGirl">
-<meta property="og:description" content="初次使用hexo搭建博客，因为对github也不是很熟，网上找了不少资料，花了一个星期才把整个流程，包括后续更新修改搞明白，记录下来，方便查阅，后续有新的经验再更新。">
-<meta property="og:updated_time" content="2017-03-14T02:33:26.762Z">
+<meta property="og:description" content="本文主要是理解归纳$(function(){})与(function($){})(jQuery)的区别以及使用。">
+<meta property="og:updated_time" content="2017-03-14T09:13:59.423Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo Blog搭建流程">
-<meta name="twitter:description" content="初次使用hexo搭建博客，因为对github也不是很熟，网上找了不少资料，花了一个星期才把整个流程，包括后续更新修改搞明白，记录下来，方便查阅，后续有新的经验再更新。">
+<meta name="twitter:title" content="理解$(function(){})与(function($){})(jQuery)区别">
+<meta name="twitter:description" content="本文主要是理解归纳$(function(){})与(function($){})(jQuery)的区别以及使用。">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/07/11/Hexo-blog/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/02/14/jquery-001/"/>
 
 
 
 
 
-  <title> hexo Blog搭建流程 | GGirl </title>
+  <title> 理解$(function(){})与(function($){})(jQuery)区别 | GGirl </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -279,7 +279,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/11/Hexo-blog/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/14/jquery-001/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="gzyq">
@@ -300,7 +300,7 @@
             
             
               
-                hexo Blog搭建流程
+                理解$(function(){})与(function($){})(jQuery)区别
               
             
           </h1>
@@ -315,8 +315,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-11T19:37:30+08:00">
-                2016-07-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-14T15:21:06+08:00">
+                2017-02-14
               </time>
             
 
@@ -338,8 +338,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
                   </a>
                 </span>
 
@@ -356,8 +356,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/07/11/Hexo-blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/11/Hexo-blog/" itemprop="commentCount"></span>
+                <a href="/2017/02/14/jquery-001/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/14/jquery-001/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -383,30 +383,39 @@
       
 
       
-        <p>初次使用hexo搭建博客，因为对github也不是很熟，网上找了不少资料，花了一个星期才把整个流程，包括后续更新修改搞明白，记录下来，方便查阅，后续有新的经验再更新。<br><a id="more"></a></p>
-<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p>下载并安装Git，设置用户名邮件地址。<br>已初始化过的忽略此处</p>
-<h1 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h1><p>要使用<a href="https://github.com/" target="_blank" rel="external">GitHub Pages</a> + <a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a>搭建免费的博客,需要在自己的Github账号下创建一个新的仓库，且命名为 username.github.io（username是你的账号名)。<br>注：网上很多文章里面，直接写在GitHub账号下创建一个新的仓库即可，最终就可以通过 http(s)://username.github.io 方式访问，这种方法是不正确的，详细区别请了解GitHub Pages的两种类型，User/Organization Pages 和 Project Pages。</p>
-<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><ol>
-<li>保证电脑中已经安装Node.js和Git  </li>
-<li>开始Hexo安装，找到安装的Git，点击Git Bash，输入<code>$ npm install -g hexo-cli</code>。此时，安装完后可以在对应目录下找到安装的程序</li>
-<li>在想放置该博客目标的文件夹下，右击选择 Git Bash here,输入 <code>$ hexo init</code>，此处也可以在任意地方键入<code>$ hexo init &lt;folder&gt;</code>,此处<folder>指放置代码的位置，不输入默认为当前文件夹下。</folder></li>
-<li>接着，键入<code>$ npm install</code>  ，此处是安装依赖包。</li>
-<li>此时，键入<code>$ hexo server</code>,即可在浏览器中通过<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>看到初始化效果了。<br>至此，就搭建好了最基础的本地的Hexo网站了。</li>
-</ol>
-<h1 id="Github-Hexo"><a href="#Github-Hexo" class="headerlink" title="Github+Hexo"></a>Github+Hexo</h1><p>最终目标是要通过Hexo搭建一个别人可以看到的网站，所以需要和之前的Github一起，修改安装其他内容。<br>找到刚刚文件夹下面的 _config.yml 文件，该文件是网站的基本配置，包括标题，副标题，作者，语言等信息，可以根据自己需求修改。此处重点是要修改deploy处，找到deploy：，修改为下面这样：</p>
-<pre><code>deploy:
-    type： git 
-    repository: git@github.com:username/username.github.io.git  
-    branch: master
-</code></pre><p>因为需要把Hexo部署到GitHub上，需要安装一个插件：<br>  <code>$ npm install hexo-deployer-git --save</code><br>安装完成后，可以执行 $ hexo generate ,此时会生成一个public文件夹，里面是编译后的网站页面。<br>再输入<code>$ hexo deploy</code> ，即可完成在Github上部署。<br>此时，通过浏览器键入：username.github.io就可以看到效果了。<br>注：</p>
+        <p>本文主要是理解归纳$(function(){})与(function($){})(jQuery)的区别以及使用。<br><a id="more"></a></p>
+<h2 id="function"><a href="#function" class="headerlink" title="$(function(){})"></a>$(function(){})</h2><p>$(function(){})写法与以下几种相同：</p>
+<pre><code>$(function(){
+    //简写版...
+}); 
+
+$(document).ready(function(){
+    //...
+});
+</code></pre><h2 id="function-jQuery"><a href="#function-jQuery" class="headerlink" title="(function($){})(jQuery)"></a>(function($){})(jQuery)</h2><h3 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h3><p>可以理解为立即执行匿名函数(function(){})()，其中传递jQuery对象。<br>(function($){…})(jQuery)，是形参使用$(主要是为了不与其他库冲突)；而实参用jQuery。</p>
+<pre><code>(function($){
+    //...
+})(jQuery);
+
+var fn = function($){
+        //...
+    };
+fn(jQuery);
+
+function fn($){
+    //...
+};
+fn(jQuery);
+</code></pre><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>作用：形成闭包。<br>在(function($){…})(jQuery)内定义的函数和变量只能在此范围内有效。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="执行顺序"><a href="#执行顺序" class="headerlink" title="执行顺序"></a>执行顺序</h3><p>在以下几个都出现在js中时，执行先后顺序如下：</p>
 <ol>
-<li>在配置deploy时注意，冒号：后面都有空格；</li>
-<li>再向Github提交过程中，可能出现没有SSH key的情况，重新按步骤设置<a href="https://help.github.com/articles/generating-an-ssh-key/" target="_blank" rel="external">SSH key</a> 即可；</li>
-<li>此时，在Github中看到是public文件下的内容，如果想在Github上部署前的源代码，即hexo其他内容，需要通过git add，commit等步骤提交。</li>
+<li>(function($){})(jQuery)  //最先</li>
+<li>$(function(){});</li>
+<li>window.onload=function(){}; </li>
+<li>$(window).load(function(){});<br>详细顺序请查阅另一篇相关文章 <a href="https://gzyq.github.io/2016/12/09/The-difference-between-the-JQuery-s-ready-function-and-JS-onload/" target="_blank" rel="external">JQuery的ready、JS的load、JQuery的load使用区别 </a></li>
 </ol>
-<h1 id="hexo日常使用"><a href="#hexo日常使用" class="headerlink" title="hexo日常使用"></a>hexo日常使用</h1><p>参考网上多数教程里面优化部署，在hexo使用过程中，我是在github里面建立了两个分支，master和blog，master主要安置的内容是public，即网站及时更新后的内容，blog里面是源码，比较方便。<br>在日常修改或者添加文章等操作后，在blog分支下，进行hexo generate，hexo deploy操作以更新master里面的内容，再刷新username.github.io即可看到修改效果，再通过git status查找文件变化，git add，git commit以及git push origin blog后同时也保证了再github中记录了文件变化更新。<br>如果更换电脑后，需要git clone 源代码到本地后再进行其他操作。</p>
-<p>详细的日常使用，请参考另一篇文章<a href="https://gzyq.github.io/2016/07/14/hexo-use/" target="_blank" rel="external">《Hexo日常使用》</a>。</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="http://blog.fens.me/hexo-blog-github/" target="_blank" rel="external">Hexo在github上构建免费的Web应用</a><br><a href="http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more" target="_blank" rel="external">GitHub Pages + Hexo搭建博客</a></p>
+<h3 id="开发插件应用"><a href="#开发插件应用" class="headerlink" title="开发插件应用"></a>开发插件应用</h3><p>$(function(){});用于存放操作DOM对象的代码，执行代码时DOM对象已经存在，所以不能用于存放开发插件的代码。主要因为Jquery对象没有得到传递，外部通过jQuery.method也调用不了其中的方法函数。</p>
+<p>(function($){…})(jQuery)；可用于存放开发插件的代码。其执行时DOM不一定存在，使用时要注意。</p>
 
       
     </div>
@@ -430,7 +439,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/JS/" rel="tag"># JS</a>
           
         </div>
       
@@ -443,8 +452,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/01/the_Best_of_us/" rel="next" title="最好的我们">
-                <i class="fa fa-chevron-left"></i> 最好的我们
+              <a href="/2017/01/04/the-use-of-ejs/" rel="next" title="ejs使用语法">
+                <i class="fa fa-chevron-left"></i> ejs使用语法
               </a>
             
           </div>
@@ -452,10 +461,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/12/h5-01/" rel="prev" title="移动端注意点总结（一）">
-                移动端注意点总结（一） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -481,8 +486,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/11/Hexo-blog/"
-           data-title="hexo Blog搭建流程" data-url="http://yoursite.com/2016/07/11/Hexo-blog/">
+      <div class="ds-thread" data-thread-key="2017/02/14/jquery-001/"
+           data-title="理解$(function(){})与(function($){})(jQuery)区别" data-url="http://yoursite.com/2017/02/14/jquery-001/">
       </div>
     
   </div>
@@ -599,7 +604,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git"><span class="nav-number">1.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Github"><span class="nav-number">2.</span> <span class="nav-text">Github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo"><span class="nav-number">3.</span> <span class="nav-text">Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Github-Hexo"><span class="nav-number">4.</span> <span class="nav-text">Github+Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo日常使用"><span class="nav-number">5.</span> <span class="nav-text">hexo日常使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#function"><span class="nav-number">1.</span> <span class="nav-text">$(function(){})</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#function-jQuery"><span class="nav-number">2.</span> <span class="nav-text">(function($){})(jQuery)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#理解"><span class="nav-number">2.1.</span> <span class="nav-text">理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用"><span class="nav-number">2.2.</span> <span class="nav-text">作用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">3.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#执行顺序"><span class="nav-number">3.1.</span> <span class="nav-text">执行顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开发插件应用"><span class="nav-number">3.2.</span> <span class="nav-text">开发插件应用</span></a></li></ol></li></ol></div>
             
 
           </div>
