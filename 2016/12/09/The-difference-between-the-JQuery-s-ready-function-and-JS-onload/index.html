@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="总体来说，window.onload必须等到页面包括图片的所有元素加载完毕后才能执行，$(document).ready()是DOM结构绘制完毕后就执行，不必等到加载完毕。">
+<meta name="description" content="总体来说，window.onload必须等到页面包括图片的所有元素加载完毕后才能执行，$(document).ready()是DOM结构绘制完毕后就执行，不必等到加载完毕。ready（）执行时间早于onload。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JQuery的ready函数与JS的onload的区别">
 <meta property="og:url" content="http://yoursite.com/2016/12/09/The-difference-between-the-JQuery-s-ready-function-and-JS-onload/index.html">
 <meta property="og:site_name" content="GGirl">
-<meta property="og:description" content="总体来说，window.onload必须等到页面包括图片的所有元素加载完毕后才能执行，$(document).ready()是DOM结构绘制完毕后就执行，不必等到加载完毕。">
-<meta property="og:updated_time" content="2017-02-04T03:40:27.371Z">
+<meta property="og:description" content="总体来说，window.onload必须等到页面包括图片的所有元素加载完毕后才能执行，$(document).ready()是DOM结构绘制完毕后就执行，不必等到加载完毕。ready（）执行时间早于onload。">
+<meta property="og:updated_time" content="2017-03-14T03:26:43.050Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JQuery的ready函数与JS的onload的区别">
-<meta name="twitter:description" content="总体来说，window.onload必须等到页面包括图片的所有元素加载完毕后才能执行，$(document).ready()是DOM结构绘制完毕后就执行，不必等到加载完毕。">
+<meta name="twitter:description" content="总体来说，window.onload必须等到页面包括图片的所有元素加载完毕后才能执行，$(document).ready()是DOM结构绘制完毕后就执行，不必等到加载完毕。ready（）执行时间早于onload。">
 
 
 
@@ -383,7 +383,12 @@
       
 
       
-        <p>总体来说，window.onload必须等到页面包括图片的所有元素加载完毕后才能执行，$(document).ready()是DOM结构绘制完毕后就执行，不必等到加载完毕。</p>
+        <p>总体来说，window.onload必须等到页面包括图片的所有元素加载完毕后才能执行，$(document).ready()是DOM结构绘制完毕后就执行，不必等到加载完毕。ready（）执行时间早于onload。<br><a id="more"></a></p>
+<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><h3 id="写法"><a href="#写法" class="headerlink" title="写法"></a>写法</h3><p>window.onload</p>
+<p>$(document).ready(function(){}) $(function(){});</p>
+<h3 id="个数"><a href="#个数" class="headerlink" title="个数"></a>个数</h3><p>onload 不能同时写多个，多个情况下，只会执行最后定义的一个（最后一个会覆盖之前定义的）<br>ready方法，可以编写多个，并且都会执行（顺序执行）</p>
+<h3 id="执行时间"><a href="#执行时间" class="headerlink" title="执行时间"></a>执行时间</h3><p>onload必须等到页面包括图片的所有元素加载完毕后才能执行，<br>ready是DOM结构绘制完毕后就执行，不必等到加载完毕。</p>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>当在一个js里面，定义了onload和ready方法时，两者均有效，ready会先执行，onload后执行。</p>
 
       
     </div>
@@ -483,8 +488,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar2.JPG"
@@ -521,7 +535,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -557,6 +571,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#区别"><span class="nav-number">1.</span> <span class="nav-text">区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#写法"><span class="nav-number">1.1.</span> <span class="nav-text">写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#个数"><span class="nav-number">1.2.</span> <span class="nav-text">个数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行时间"><span class="nav-number">1.3.</span> <span class="nav-text">执行时间</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#说明"><span class="nav-number">2.</span> <span class="nav-text">说明</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
