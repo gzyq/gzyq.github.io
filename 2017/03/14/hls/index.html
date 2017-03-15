@@ -93,7 +93,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/03/14/hls/index.html">
 <meta property="og:site_name" content="GGirl">
 <meta property="og:description" content="参与的很多项目是关于直播点播视频这一块的，加上最近直播比较热，有很多小伙伴对前端在移动端及PC这块有兴趣，自己就接触的一些概念和实际项目中遇到的一些问题解决方案，供参考和交流。">
-<meta property="og:updated_time" content="2017-03-15T04:27:28.792Z">
+<meta property="og:updated_time" content="2017-03-15T04:30:31.960Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端直播协议使用总结">
 <meta name="twitter:description" content="参与的很多项目是关于直播点播视频这一块的，加上最近直播比较热，有很多小伙伴对前端在移动端及PC这块有兴趣，自己就接触的一些概念和实际项目中遇到的一些问题解决方案，供参考和交流。">
@@ -394,7 +394,7 @@
 <h2 id="直播流程"><a href="#直播流程" class="headerlink" title="直播流程"></a>直播流程</h2><p>采集（录制）：视频、音频<br>处理：水印、美颜、降噪等<br>编码：将原始视频通过H.264或者H.265编码压缩，满足实时传输需要<br>封装：类似容器的作用，直播中主要采用的就是 FLV 和 MPEG2-TS 格式，分别用于 RTMP/HTTP-FLV 和 HLS 协议。<br>推送：推送协议主要RTMP、WebRTC、基于UDP的私有协议等<br>网络传输：LiveNet、P2P、CDN<br>解码：解码器将不同封装格式的视频进行解包，并将其内容解码，然后将解码后的视频帧交给操作系统进行渲染，最终让终端用户看到<br>播放：在终端播放</p>
 <p>参考：<a href="http://blog.qiniu.com/archives/6606" target="_blank" rel="external">《视频直播技术详解》系列</a></p>
 <h2 id="前端视频直播协议"><a href="#前端视频直播协议" class="headerlink" title="前端视频直播协议"></a>前端视频直播协议</h2><p>常见的直播协议有RTMP、HLS、HTTP-FLV、RTP，自己对RTMP和HLS接触多一些，前端可选的视频直播协议大致只有两种：HLS和RTMP。下面具体说一下这两种，目前兼容最好的是HLS协议，但HLS比RTMP有较高的延迟。</p>
-<h3 id="HLS"><a href="#HLS" class="headerlink" title="HLS"></a>HLS</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>HLS（HTTP Live Streaming）是苹果公司针<br>对iPhone、iPod、iTouch和iPad等<strong>移动设备</strong>而开发的基于HTTP协议的流媒体解决方案，可实现流媒体的直播和点播。</p>
+<h3 id="HLS"><a href="#HLS" class="headerlink" title="HLS"></a>HLS</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>HLS（HTTP Live Streaming）是苹果公司针对iPhone、iPod、iTouch和iPad等<strong>移动设备</strong>而开发的基于HTTP协议的流媒体解决方案，可实现流媒体的直播和点播。</p>
 <h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p>原理：将视频流分片成一系列HTTP下载文件，即视频文件或视频流切分成小片(ts)并建立索引文件(m3u8)。支持的视频流编码为H.264，音频流编码为AAC。<br>简单地理解，当播放视频时，用户下载的是m3u8文件，m3u8里面是ts文件的索引地址，通过m3u8文件的索引地址找到对应的音视频文件的网络地址就可以播放具体的每个小段视频，连接起来就是一段完整的视频。</p>
 <h3 id="RTMP"><a href="#RTMP" class="headerlink" title="RTMP"></a>RTMP</h3><h4 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h4><p>RTMP（Real Time Messaging Protocol），实时消息传输协议，主要用来在Flash/AIR平台和支持RTMP协议的流媒体/交互服务器之间进行音视频和数据通信，RTMP是Adobe开发的协议，无法在iPhone中兼容。</p>
 <h4 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h4><p>原理：RTMP协议像一个用来装数据包的容器，以客户端向服务器端发送请求开始，服务器收到请求后进行响应，<br>经历握手，连接，建立流，最后播放。感兴趣的小伙伴可以在网上查阅具体文档。</p>

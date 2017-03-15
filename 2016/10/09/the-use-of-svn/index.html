@@ -87,16 +87,19 @@
 
 
 
-<meta name="description" content="svn使用常用记录">
+<meta name="description" content="和JAVA一起跑的项目中，多数还是使用svn进行日常的提交更新，参与的项目主要使用MyEclipse，记录一下用法，供和我一样的小白参考。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SVN日常使用">
+<meta property="og:title" content="MyEclipse中的svn使用">
 <meta property="og:url" content="http://yoursite.com/2016/10/09/the-use-of-svn/index.html">
 <meta property="og:site_name" content="GGirl">
-<meta property="og:description" content="svn使用常用记录">
-<meta property="og:updated_time" content="2017-03-14T02:57:41.146Z">
+<meta property="og:description" content="和JAVA一起跑的项目中，多数还是使用svn进行日常的提交更新，参与的项目主要使用MyEclipse，记录一下用法，供和我一样的小白参考。">
+<meta property="og:image" content="http://i.imgur.com/BQyHiBR.jpg">
+<meta property="og:image" content="http://i.imgur.com/SE5Dskz.png">
+<meta property="og:updated_time" content="2017-03-15T07:35:46.450Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SVN日常使用">
-<meta name="twitter:description" content="svn使用常用记录">
+<meta name="twitter:title" content="MyEclipse中的svn使用">
+<meta name="twitter:description" content="和JAVA一起跑的项目中，多数还是使用svn进行日常的提交更新，参与的项目主要使用MyEclipse，记录一下用法，供和我一样的小白参考。">
+<meta name="twitter:image" content="http://i.imgur.com/BQyHiBR.jpg">
 
 
 
@@ -130,7 +133,7 @@
 
 
 
-  <title> SVN日常使用 | GGirl </title>
+  <title> MyEclipse中的svn使用 | GGirl </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -300,7 +303,7 @@
             
             
               
-                SVN日常使用
+                MyEclipse中的svn使用
               
             
           </h1>
@@ -388,7 +391,13 @@
       
 
       
-        <p>svn使用常用记录<br><a id="more"></a></p>
+        <p>和JAVA一起跑的项目中，多数还是使用svn进行日常的提交更新，参与的项目主要使用MyEclipse，记录一下用法，供和我一样的小白参考。<br><a id="more"></a></p>
+<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><p>开始工作前，看看小伙伴有没有提交新的代码，及时更新，避免后期造成冲突。<br>(1)直接更新到服务器最新版本：Team Update to HEAD<br>(2)同步更新Team Synchrogaze with Repository ，如文中图二所示，蓝色标记表示本地需要更新，灰色标记表示本地有文件需要提交，红色标记表示文件冲突，有更新的文件选择team-update进行更新即可。<br><img src="http://i.imgur.com/BQyHiBR.jpg" alt=""></p>
+<h3 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h3><p>文件前符号：<br>如果对本地文件进行了修改，文件前会有 * 标识；<br>如果在本地新增了文件，文件前会有？标识，其上一级会出现 * 标识。</p>
+<p>选择需要提交的文件，右键，Team Commit，输入提交信息，一般包括版本号，修改更新信息</p>
+<h3 id="查看历史"><a href="#查看历史" class="headerlink" title="查看历史"></a>查看历史</h3><p>要想查看某个文件，历史提交版本右键，Team-Show History即可。</p>
+<h3 id="文件冲突"><a href="#文件冲突" class="headerlink" title="文件冲突"></a>文件冲突</h3><p>当你和其他人用时对一个文件进行了修改，并进行更新提交，在提交时就会产生冲突。</p>
+<p><img src="http://i.imgur.com/SE5Dskz.png" alt=""><br>如上图所示，如果有冲突，需要其中一个人对比版本，解决冲突后重新提交。<br>双击红色标识的文件，就会有Lcal File和Remote File的对比，看哪些修改不一致，根据业务需求，将远程更新，复制到本地代码里面，同时，也要保留自己的修改更新，无误后，对本地代码重新提交即可。</p>
 
       
     </div>
@@ -464,7 +473,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/10/09/the-use-of-svn/"
-           data-title="SVN日常使用" data-url="http://yoursite.com/2016/10/09/the-use-of-svn/">
+           data-title="MyEclipse中的svn使用" data-url="http://yoursite.com/2016/10/09/the-use-of-svn/">
       </div>
     
   </div>
@@ -488,8 +497,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar2.JPG"
@@ -562,6 +580,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#更新"><span class="nav-number">1.</span> <span class="nav-text">更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提交"><span class="nav-number">2.</span> <span class="nav-text">提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看历史"><span class="nav-number">3.</span> <span class="nav-text">查看历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件冲突"><span class="nav-number">4.</span> <span class="nav-text">文件冲突</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
