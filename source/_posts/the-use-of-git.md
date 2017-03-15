@@ -1,6 +1,7 @@
 ---
 title: Git常用命令
 date: 2016-10-08 11:38:47
+tags: [Git]
 categories: tools
 ---
 平时使用git管理自己这个小博客网站内容，结合经常用的一些操作，记录下来方便查阅参考，不定期修改，有错误的地方多多指正。
@@ -117,6 +118,7 @@ categories: tools
 	git pull [remote] [branch] //取回远程仓库的变化，并与本地分支合并
 ##### 更新本地 #####
 	git fetch [remote] //下载远程仓库的所有变动
+
 
 ### demo ###
 	cd project
