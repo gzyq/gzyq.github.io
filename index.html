@@ -280,6 +280,166 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/14/hls/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="gzyq">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar2.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GGirl">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/14/hls/" itemprop="url">
+                  mongoose使用疑惑总结
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-14T21:15:22+08:00">
+                2017-03-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/14/hls/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/14/hls/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>参与的很多项目是关于直播点播视频这一块的，加上最近直播比较热，有很多小伙伴对前端在移动端及PC这块有兴趣，自己就接触的一些概念和实际项目中遇到的一些问题解决方案，供参考和交流。<br>&lt;– more –&gt;</p>
+<h2 id="流媒体"><a href="#流媒体" class="headerlink" title="流媒体"></a>流媒体</h2><p>流媒体是指采用流式传输的方式在网络上传输的多媒体文件。<br>流技术是把视频和声音信息经过压缩处理后放在服务器上，一边下载一边观看收听，而不需要等整个压缩文件下载到自己的终端才能观看。</p>
+<h3 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h3><p>编码器：<br>转码器：<br>解码器：<br>服务器：</p>
+<h2 id="直播流程"><a href="#直播流程" class="headerlink" title="直播流程"></a>直播流程</h2><p>录制 编码 网络传输 解码 播放</p>
+<h2 id="前端视频直播协议"><a href="#前端视频直播协议" class="headerlink" title="前端视频直播协议"></a>前端视频直播协议</h2><p>前端可选的视频直播协议大致只有两种：HLS和RTMP。目前兼容最好的是HLS协议，HLS比RTMP有较高的延迟。</p>
+<h3 id="HLS"><a href="#HLS" class="headerlink" title="HLS"></a>HLS</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>HLS（HTTP Live Streaming）是苹果公司针对iPhone、iPod、iTouch和iPad等<strong>移动设备</strong>而开发的基于HTTP协议的流媒体解决方案，可实现流媒体的直播和点播。</p>
+<h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p>原理：将视频流分片成一系列HTTP下载文件，即视频文件或视频流切分成小片(ts)并建立索引文件(m3u8)。支持的视频流编码为H.264，音频流编码为AAC。</p>
+<p>简单地理解，当播放视频时，用户下载的是m3u8文件，m3u8里面是ts文件的索引地址，通过m3u8文件的索引地址找到对应的音视频文件的网络地址就可以播放具体的每个小段视频，连接起来就是一段完整的视频。</p>
+<h3 id="RTMP"><a href="#RTMP" class="headerlink" title="RTMP"></a>RTMP</h3><h4 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h4><p>RTMP（Real Time Messaging Protocol），实时消息传输协议，主要用来在Flash/AIR平台和支持RTMP协议的流媒体/交互服务器之间进行音视频和数据通信，RTMP是Adobe开发的协议，无法在iPhone中兼容。</p>
+<h4 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h4><p>原理：RTMP协议像一个用来装数据包的容器，</p>
+<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><p>从HLS的概念就可以知道，HLS主要用于移动端播放，而在PC端，Flash对RTMP支持友好，随着HTML5的兴起，最好是都能使用HLS播放更佳，毕竟Flash需要安装插件等（自己对Flash不熟悉）。现在，通过一些插件已经可以解决这些，下面具体总结一下HLS在移动及PC中的使用。</p>
+<h2 id="HLS在HTML5中使用"><a href="#HLS在HTML5中使用" class="headerlink" title="HLS在HTML5中使用"></a>HLS在HTML5中使用</h2>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/14/jquery-001/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1657,160 +1817,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/09/the-use-of-svn/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="gzyq">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar2.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="GGirl">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/09/the-use-of-svn/" itemprop="url">
-                  SVN日常使用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-09T11:40:23+08:00">
-                2016-10-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/tools/" itemprop="url" rel="index">
-                    <span itemprop="name">tools</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/10/09/the-use-of-svn/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/09/the-use-of-svn/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>svn使用常用记录<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/10/09/the-use-of-svn/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1860,7 +1866,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1882,7 +1888,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1956,6 +1962,22 @@
 
 
         
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
 
         
       </div>
