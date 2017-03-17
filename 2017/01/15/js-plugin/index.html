@@ -93,7 +93,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/01/15/js-plugin/index.html">
 <meta property="og:site_name" content="GGirl">
 <meta property="og:description" content="大部分前端应该用过很多别人的插件，经常用到效果，可以自己尝试封装成插件，可以减少很多复制粘贴的工作，大家可以多查看一些网上插件的写法，总结一套适合自己的构建起来，尝试一下，收获很多。">
-<meta property="og:updated_time" content="2017-03-16T10:07:04.234Z">
+<meta property="og:updated_time" content="2017-03-17T03:01:07.059Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS插件的写法总结">
 <meta name="twitter:description" content="大部分前端应该用过很多别人的插件，经常用到效果，可以自己尝试封装成插件，可以减少很多复制粘贴的工作，大家可以多查看一些网上插件的写法，总结一套适合自己的构建起来，尝试一下，收获很多。">
@@ -421,10 +421,24 @@ empty == { validate: true, limit: 5, name: &quot;bar&quot; }
 });
 
 $(&quot;div&quot;).alertClick(); //1
-</code></pre><h3 id="封装插件"><a href="#封装插件" class="headerlink" title="封装插件"></a>封装插件</h3><p>1、定义一个闭包区域，防止污染。<br>    (function($){})(jQuery);<br>2、jQuery.fn.extend()扩展jQuery方法，制作插件<br>    (function($){<br>        $.fn.extend({<br>            alertClick:function(options){<br>                alert(1);<br>            }<br>        });</p>
-<pre><code>})(jQuery);
-</code></pre><p>3、设置插件的默认参数<br>    (function($){<br>        $.fn.extend({<br>            alertClick:function(options){<br>                var options =  $.extend(defaults, options);</p>
-<pre><code>            this.each(function(){  //此处this指jQuery对象
+</code></pre><h3 id="封装插件"><a href="#封装插件" class="headerlink" title="封装插件"></a>封装插件</h3><p>1、定义一个闭包区域，防止污染。</p>
+<pre><code>(function($){})(jQuery);
+</code></pre><p>2、jQuery.fn.extend()扩展jQuery方法，制作插件</p>
+<pre><code>(function($){
+    $.fn.extend({
+        alertClick:function(options){
+            alert(1);
+        }
+    });
+
+})(jQuery);
+</code></pre><p>3、设置插件的默认参数</p>
+<pre><code>(function($){
+    $.fn.extend({      
+        alertClick:function(options){
+            var options =  $.extend(defaults, options);
+
+            this.each(function(){  //此处this指jQuery对象
                 //遍历，当调用此插件的是一个集合的时候。
                 var $this = $(this); //获取当前dom 的 jQuery对象，这里的this是当前循环的dom
                 //....
@@ -442,9 +456,15 @@ $(&quot;div&quot;).alertClick(); //1
 <pre><code>return this.each(function(){ 
             //...
         });
-</code></pre><p>5、扩展<br>公共方法：<br>    $.fn.alertClick.format = function (str) {<br>      return “<strong>“ + str + “</strong>“;<br>    }</p>
-<h3 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h3><h4 id="类方式"><a href="#类方式" class="headerlink" title="类方式"></a>类方式</h4><p>面向对象的思想，用类方式<br>    //自定义类<br>    function plugin(){}</p>
-<pre><code>//提供默认参数
+</code></pre><p>5、扩展<br>公共方法</p>
+<pre><code>$.fn.alertClick.format = function (str) {
+  return &quot;&lt;strong&gt;&quot; + str + &quot;&lt;/strong&gt;&quot;;
+}
+</code></pre><h3 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h3><h4 id="类方式"><a href="#类方式" class="headerlink" title="类方式"></a>类方式</h4><p>面向对象的思想，用类方式</p>
+<pre><code>//自定义类    
+function plugin(){}
+
+//提供默认参数
 plugin.prototype.str = &quot;default&quot;;
 
 //提供方法（如果不传参，则使用默认参数）
@@ -458,8 +478,9 @@ var p = new plugin();
 //调用方法
 p.firstFunc(&quot;hello&quot;); //hello
 p.firstFunc(); //default
-</code></pre><h4 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h4><p>使用自执行的匿名函数/闭包：<br>(function($){})(jQuery);</p>
-<p>好处：创建闭包避免全局依赖，兼容jQuery操作符$和jQuery,避免第三方破坏。</p>
+</code></pre><h4 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h4><p>使用自执行的匿名函数/闭包：</p>
+<pre><code>(function($){})(jQuery);
+</code></pre><p>好处：创建闭包避免全局依赖，兼容jQuery操作符$和jQuery,避免第三方破坏。</p>
 <pre><code> (function(){
     //定义一些默认参数
     var _options={
