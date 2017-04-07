@@ -95,11 +95,13 @@
 <meta property="og:site_name" content="GGirl">
 <meta property="og:description" content="在HTML5以前，在网页上观看视频一般都需要浏览器安装Flash播放插件，使用Flash通过\\,播放swf、flv等视频文件，而手机上很多不支持Flash导致无法播放视频，HTML5出现后，新增\标签可以直接在PC和手机上播放视频，不需要安装任何插件。
 当然，想要做出自己想要的更加完美的视频播放器，还是要了解很多参数的，下面就来详细记录一下video相关的属性和方法，以及如何打造自己的video">
-<meta property="og:updated_time" content="2017-03-20T08:48:45.316Z">
+<meta property="og:image" content="http://i.imgur.com/SwbmIRL.jpg">
+<meta property="og:updated_time" content="2017-03-23T01:56:51.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="构建自己的HTML5 video播放器">
 <meta name="twitter:description" content="在HTML5以前，在网页上观看视频一般都需要浏览器安装Flash播放插件，使用Flash通过\\,播放swf、flv等视频文件，而手机上很多不支持Flash导致无法播放视频，HTML5出现后，新增\标签可以直接在PC和手机上播放视频，不需要安装任何插件。
 当然，想要做出自己想要的更加完美的视频播放器，还是要了解很多参数的，下面就来详细记录一下video相关的属性和方法，以及如何打造自己的video">
+<meta name="twitter:image" content="http://i.imgur.com/SwbmIRL.jpg">
 
 
 
@@ -391,15 +393,24 @@
       
 
       
-        <p>在HTML5以前，在网页上观看视频一般都需要浏览器安装Flash播放插件，使用Flash通过\<object>\<embed>,播放swf、flv等视频文件，而手机上很多不支持Flash导致无法播放视频，HTML5出现后，新增\<video>标签可以直接在PC和手机上播放视频，不需要安装任何插件。</video></object></p>
-<p>当然，想要做出自己想要的更加完美的视频播放器，还是要了解很多参数的，下面就来详细记录一下video相关的属性和方法，以及如何打造自己的video播放器。</p>
+        <p>在HTML5以前，在网页上观看视频一般都需要浏览器安装Flash播放插件，使用Flash通过\<object\>\<embed\>,播放swf、flv等视频文件，而手机上很多不支持Flash导致无法播放视频，HTML5出现后，新增\<video\>标签可以直接在PC和手机上播放视频，不需要安装任何插件。</video\></embed\></object\></p>
+<p>当然，想要做出自己想要的更加完美的视频播放器，还是要了解很多参数的，下面就来详细记录一下video相关的属性和方法，以及如何打造自己的video播放器。<br><a id="more"></a></p>
 <h2 id="video标签的属性"><a href="#video标签的属性" class="headerlink" title="video标签的属性"></a>video标签的属性</h2><p>width video标签宽度<br>height video标签高度<br>poster 视频封面<br>src 视频播放地址的url<br>preload 预加载  页面加载时是否同时加载音视频<br>autoplay 自动播放 加载后自动播放<br>loop 循环播放<br>controls 控制条 显示播放控件</p>
-<h2 id="video-API属性"><a href="#video-API属性" class="headerlink" title="video API属性"></a>video API属性</h2><p>duration 返回视频的总时长（单位：s）<br>currentTime 当前播放时间（单位：s）<br>loop 是否循环播放<br>muted 是否静音<br>volume 音量值<br>paused 是否暂停<br>played 当前已经播放的时间范围</p>
+<h2 id="video-API属性"><a href="#video-API属性" class="headerlink" title="video API属性"></a>video API属性</h2><p>duration 返回视频的总时长（单位：s）<br>currentTime 当前播放时间（单位：s）<br>loop 是否循环播放<br>muted 是否静音<br>volume 音量值 范围[0,1]<br>paused 是否暂停<br>played 当前已经播放的时间范围</p>
 <p>startTime 一般为0<br>error 返回播放的错误状态<br>initialTime 返回初始播放的位置<br>buffered 返回缓存的时间范围<br>currentSrc 返回当前媒体的URL</p>
 <p>networkState 返回当前网络状态<br>playbackRate 播放的倍速（加速、减速播放）</p>
 <h2 id="video-方法"><a href="#video-方法" class="headerlink" title="video 方法"></a>video 方法</h2><p>play() 播放视频<br>pause() 暂停视频<br>load() 将全部属性恢复到默认值，重新开始状态<br>canPlayType() 判断是都支持当前类型的视频格式</p>
 <p>video.muted=true; //静音</p>
 <h2 id="video-事件"><a href="#video-事件" class="headerlink" title="video 事件"></a>video 事件</h2><p>loadedmetadata //成功获取资源长度<br>timeupdate //播放时间改变</p>
+<h2 id="播放器"><a href="#播放器" class="headerlink" title="播放器"></a>播放器</h2><h3 id="预览图"><a href="#预览图" class="headerlink" title="预览图"></a>预览图</h3><p><img src="http://i.imgur.com/SwbmIRL.jpg" alt=""></p>
+<h3 id="功能介绍"><a href="#功能介绍" class="headerlink" title="功能介绍"></a>功能介绍</h3><h4 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h4><p>通过video src属性，添加本地或者在线视频地址；<br>视频类型：普通+m3u8</p>
+<h4 id="播放"><a href="#播放" class="headerlink" title="播放"></a>播放</h4><p>默认状态：暂停，表示视频未播放；<br>点击则为播放，表示视频正在播放；<br>可切换</p>
+<h4 id="视频进度条"><a href="#视频进度条" class="headerlink" title="视频进度条"></a>视频进度条</h4><p>随着视频播放，进度条已播放和进度控制点会自动同步。<br><strong>鼠标点击视频进度条上任意位置</strong><br>鼠标点击进度条上任意位置，已播放和进度控制点会随之移动到点击处，同时，已播放视频时间改变为点击处视频对应时间点；<br>若点击之前，视频为暂停状态，则点击后视频为播放状态。<br><strong>鼠标拖动进度控制点位置</strong><br>视频进度根据进度控制点拖动的范围随之变化，相应的视频时间也会对应变化。</p>
+<h4 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h4><p>正在播放处时间 / 视频总长<br>注：暂时只考虑了短视频，00:00 (分：秒)，后续会更新小时</p>
+<h4 id="音量"><a href="#音量" class="headerlink" title="音量"></a>音量</h4><p><strong>点击音量图标</strong><br>默认状态为非静音，声音为100；<br>点击则为静音，声音为0；<br>可切换</p>
+<p><strong>点击音量设置条上任意位置</strong><br>若之前是静音状态：先取消静音设置，再根据鼠标点击位置，计算对应音量显示在数字位置，同时音量进度颜色条以及音量控制点移至点击位置；<br>若之前是非静音状态：直接根据鼠标点击位置，进行后续步骤即可。</p>
+<p><strong>鼠标拖动音量控制点位置：</strong><br>音量进度条根据音量控制点拖动的范围随之变化，相应的显示的音量值也对应变化。</p>
+<h4 id="全屏"><a href="#全屏" class="headerlink" title="全屏"></a>全屏</h4><p>默认状态为非全屏<br>点击则进入全屏<br>可切换</p>
 
       
     </div>
@@ -530,7 +541,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">39</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -552,7 +563,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -598,7 +609,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#video标签的属性"><span class="nav-number">1.</span> <span class="nav-text">video标签的属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#video-API属性"><span class="nav-number">2.</span> <span class="nav-text">video API属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#video-方法"><span class="nav-number">3.</span> <span class="nav-text">video 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#video-事件"><span class="nav-number">4.</span> <span class="nav-text">video 事件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#video标签的属性"><span class="nav-number">1.</span> <span class="nav-text">video标签的属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#video-API属性"><span class="nav-number">2.</span> <span class="nav-text">video API属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#video-方法"><span class="nav-number">3.</span> <span class="nav-text">video 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#video-事件"><span class="nav-number">4.</span> <span class="nav-text">video 事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#播放器"><span class="nav-number">5.</span> <span class="nav-text">播放器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#预览图"><span class="nav-number">5.1.</span> <span class="nav-text">预览图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#功能介绍"><span class="nav-number">5.2.</span> <span class="nav-text">功能介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#视频"><span class="nav-number">5.2.1.</span> <span class="nav-text">视频</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#播放"><span class="nav-number">5.2.2.</span> <span class="nav-text">播放</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#视频进度条"><span class="nav-number">5.2.3.</span> <span class="nav-text">视频进度条</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时间"><span class="nav-number">5.2.4.</span> <span class="nav-text">时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#音量"><span class="nav-number">5.2.5.</span> <span class="nav-text">音量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全屏"><span class="nav-number">5.2.6.</span> <span class="nav-text">全屏</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
