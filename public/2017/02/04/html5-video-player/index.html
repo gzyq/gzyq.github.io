@@ -1,0 +1,802 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JS,html5,视频,插件," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="在HTML5以前，在网页上观看视频一般都需要浏览器安装Flash播放插件，使用Flash通过\\,播放swf、flv等视频文件，而手机上很多不支持Flash导致无法播放视频，HTML5出现后，新增\标签可以直接在PC和手机上播放视频，不需要安装任何插件。
+当然，想要做出自己想要的更加完美的视频播放器，还是要了解很多参数的，下面就来详细记录一下video相关的属性和方法，以及如何打造自己的video">
+<meta property="og:type" content="article">
+<meta property="og:title" content="构建自己的HTML5 video播放器">
+<meta property="og:url" content="http://yoursite.com/2017/02/04/html5-video-player/index.html">
+<meta property="og:site_name" content="GGirl">
+<meta property="og:description" content="在HTML5以前，在网页上观看视频一般都需要浏览器安装Flash播放插件，使用Flash通过\\,播放swf、flv等视频文件，而手机上很多不支持Flash导致无法播放视频，HTML5出现后，新增\标签可以直接在PC和手机上播放视频，不需要安装任何插件。
+当然，想要做出自己想要的更加完美的视频播放器，还是要了解很多参数的，下面就来详细记录一下video相关的属性和方法，以及如何打造自己的video">
+<meta property="og:image" content="http://i.imgur.com/SwbmIRL.jpg">
+<meta property="og:updated_time" content="2017-03-23T01:56:51.904Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="构建自己的HTML5 video播放器">
+<meta name="twitter:description" content="在HTML5以前，在网页上观看视频一般都需要浏览器安装Flash播放插件，使用Flash通过\\,播放swf、flv等视频文件，而手机上很多不支持Flash导致无法播放视频，HTML5出现后，新增\标签可以直接在PC和手机上播放视频，不需要安装任何插件。
+当然，想要做出自己想要的更加完美的视频播放器，还是要了解很多参数的，下面就来详细记录一下video相关的属性和方法，以及如何打造自己的video">
+<meta name="twitter:image" content="http://i.imgur.com/SwbmIRL.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/02/04/html5-video-player/"/>
+
+
+
+
+
+  <title> 构建自己的HTML5 video播放器 | GGirl </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c8749e1fdf857fce6baebd99ceeb3220";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">GGirl</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不是所有坚持都有结果，但是总有一些坚持，能从一寸冰封的土地里，培育出十万朵怒放的蔷薇</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/04/html5-video-player/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="gzyq">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar2.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GGirl">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                构建自己的HTML5 video播放器
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-04T15:44:11+08:00">
+                2017-02-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/04/html5-video-player/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/04/html5-video-player/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在HTML5以前，在网页上观看视频一般都需要浏览器安装Flash播放插件，使用Flash通过\<object\>\<embed\>,播放swf、flv等视频文件，而手机上很多不支持Flash导致无法播放视频，HTML5出现后，新增\<video\>标签可以直接在PC和手机上播放视频，不需要安装任何插件。</video\></embed\></object\></p>
+<p>当然，想要做出自己想要的更加完美的视频播放器，还是要了解很多参数的，下面就来详细记录一下video相关的属性和方法，以及如何打造自己的video播放器。<br><a id="more"></a></p>
+<h2 id="video标签的属性"><a href="#video标签的属性" class="headerlink" title="video标签的属性"></a>video标签的属性</h2><p>width video标签宽度<br>height video标签高度<br>poster 视频封面<br>src 视频播放地址的url<br>preload 预加载  页面加载时是否同时加载音视频<br>autoplay 自动播放 加载后自动播放<br>loop 循环播放<br>controls 控制条 显示播放控件</p>
+<h2 id="video-API属性"><a href="#video-API属性" class="headerlink" title="video API属性"></a>video API属性</h2><p>duration 返回视频的总时长（单位：s）<br>currentTime 当前播放时间（单位：s）<br>loop 是否循环播放<br>muted 是否静音<br>volume 音量值 范围[0,1]<br>paused 是否暂停<br>played 当前已经播放的时间范围</p>
+<p>startTime 一般为0<br>error 返回播放的错误状态<br>initialTime 返回初始播放的位置<br>buffered 返回缓存的时间范围<br>currentSrc 返回当前媒体的URL</p>
+<p>networkState 返回当前网络状态<br>playbackRate 播放的倍速（加速、减速播放）</p>
+<h2 id="video-方法"><a href="#video-方法" class="headerlink" title="video 方法"></a>video 方法</h2><p>play() 播放视频<br>pause() 暂停视频<br>load() 将全部属性恢复到默认值，重新开始状态<br>canPlayType() 判断是都支持当前类型的视频格式</p>
+<p>video.muted=true; //静音</p>
+<h2 id="video-事件"><a href="#video-事件" class="headerlink" title="video 事件"></a>video 事件</h2><p>loadedmetadata //成功获取资源长度<br>timeupdate //播放时间改变</p>
+<h2 id="播放器"><a href="#播放器" class="headerlink" title="播放器"></a>播放器</h2><h3 id="预览图"><a href="#预览图" class="headerlink" title="预览图"></a>预览图</h3><p><img src="http://i.imgur.com/SwbmIRL.jpg" alt=""></p>
+<h3 id="功能介绍"><a href="#功能介绍" class="headerlink" title="功能介绍"></a>功能介绍</h3><h4 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h4><p>通过video src属性，添加本地或者在线视频地址；<br>视频类型：普通+m3u8</p>
+<h4 id="播放"><a href="#播放" class="headerlink" title="播放"></a>播放</h4><p>默认状态：暂停，表示视频未播放；<br>点击则为播放，表示视频正在播放；<br>可切换</p>
+<h4 id="视频进度条"><a href="#视频进度条" class="headerlink" title="视频进度条"></a>视频进度条</h4><p>随着视频播放，进度条已播放和进度控制点会自动同步。<br><strong>鼠标点击视频进度条上任意位置</strong><br>鼠标点击进度条上任意位置，已播放和进度控制点会随之移动到点击处，同时，已播放视频时间改变为点击处视频对应时间点；<br>若点击之前，视频为暂停状态，则点击后视频为播放状态。<br><strong>鼠标拖动进度控制点位置</strong><br>视频进度根据进度控制点拖动的范围随之变化，相应的视频时间也会对应变化。</p>
+<h4 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h4><p>正在播放处时间 / 视频总长<br>注：暂时只考虑了短视频，00:00 (分：秒)，后续会更新小时</p>
+<h4 id="音量"><a href="#音量" class="headerlink" title="音量"></a>音量</h4><p><strong>点击音量图标</strong><br>默认状态为非静音，声音为100；<br>点击则为静音，声音为0；<br>可切换</p>
+<p><strong>点击音量设置条上任意位置</strong><br>若之前是静音状态：先取消静音设置，再根据鼠标点击位置，计算对应音量显示在数字位置，同时音量进度颜色条以及音量控制点移至点击位置；<br>若之前是非静音状态：直接根据鼠标点击位置，进行后续步骤即可。</p>
+<p><strong>鼠标拖动音量控制点位置：</strong><br>音量进度条根据音量控制点拖动的范围随之变化，相应的显示的音量值也对应变化。</p>
+<h4 id="全屏"><a href="#全屏" class="headerlink" title="全屏"></a>全屏</h4><p>默认状态为非全屏<br>点击则进入全屏<br>可切换</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JS/" rel="tag"># JS</a>
+          
+            <a href="/tags/html5/" rel="tag"># html5</a>
+          
+            <a href="/tags/视频/" rel="tag"># 视频</a>
+          
+            <a href="/tags/插件/" rel="tag"># 插件</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/15/js-plugin/" rel="next" title="JS插件的写法总结">
+                <i class="fa fa-chevron-left"></i> JS插件的写法总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/14/jquery-001/" rel="prev" title="理解$(function(){})与(function($){})(jQuery)区别">
+                理解$(function(){})与(function($){})(jQuery)区别 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/02/04/html5-video-player/"
+           data-title="构建自己的HTML5 video播放器" data-url="http://yoursite.com/2017/02/04/html5-video-player/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar2.JPG"
+               alt="gzyq" />
+          <p class="site-author-name" itemprop="name">gzyq</p>
+           
+              <p class="site-description motion-element" itemprop="description">hexo博客,学习笔记,其他</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/gzyq" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#video标签的属性"><span class="nav-number">1.</span> <span class="nav-text">video标签的属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#video-API属性"><span class="nav-number">2.</span> <span class="nav-text">video API属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#video-方法"><span class="nav-number">3.</span> <span class="nav-text">video 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#video-事件"><span class="nav-number">4.</span> <span class="nav-text">video 事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#播放器"><span class="nav-number">5.</span> <span class="nav-text">播放器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#预览图"><span class="nav-number">5.1.</span> <span class="nav-text">预览图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#功能介绍"><span class="nav-number">5.2.</span> <span class="nav-text">功能介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#视频"><span class="nav-number">5.2.1.</span> <span class="nav-text">视频</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#播放"><span class="nav-number">5.2.2.</span> <span class="nav-text">播放</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#视频进度条"><span class="nav-number">5.2.3.</span> <span class="nav-text">视频进度条</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时间"><span class="nav-number">5.2.4.</span> <span class="nav-text">时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#音量"><span class="nav-number">5.2.5.</span> <span class="nav-text">音量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全屏"><span class="nav-number">5.2.6.</span> <span class="nav-text">全屏</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">gzyq</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"gzyq"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
