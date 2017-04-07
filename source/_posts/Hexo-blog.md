@@ -1,7 +1,7 @@
 ---
 title: hexo Blog搭建流程
 date: 2016-07-11 19:37:30
-tags: [hexo]
+tags: [hexo,GitHub,Git]
 categories: hexo
 comments: true
 ---
