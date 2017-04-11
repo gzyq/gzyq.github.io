@@ -93,13 +93,13 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/06/js-progress/index.html">
 <meta property="og:site_name" content="GGirl">
 <meta property="og:description" content="HTML5中新增了进度条标签progress，但还是有一定的局限性也不美观。本文主要记录用原生JS实现进度条、滑动条、拖拽移动的具体思路及实现，也顺便复习下鼠标事件的用法，有兴趣的小伙伴可以看下，多提宝贵意见。">
-<meta property="og:image" content="http://i.imgur.com/y5OrpmL.jpg">
+<meta property="og:image" content="http://i.imgur.com/PZoEGYY.jpg">
 <meta property="og:image" content="http://i.imgur.com/K6cRbUH.jpg">
-<meta property="og:updated_time" content="2017-04-07T09:50:09.452Z">
+<meta property="og:updated_time" content="2017-04-11T05:54:37.171Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS滑动条、进度条、拖拽">
 <meta name="twitter:description" content="HTML5中新增了进度条标签progress，但还是有一定的局限性也不美观。本文主要记录用原生JS实现进度条、滑动条、拖拽移动的具体思路及实现，也顺便复习下鼠标事件的用法，有兴趣的小伙伴可以看下，多提宝贵意见。">
-<meta name="twitter:image" content="http://i.imgur.com/y5OrpmL.jpg">
+<meta name="twitter:image" content="http://i.imgur.com/PZoEGYY.jpg">
 
 
 
@@ -394,7 +394,7 @@
         <p>HTML5中新增了进度条标签progress，但还是有一定的局限性也不美观。本文主要记录用原生JS实现进度条、滑动条、拖拽移动的具体思路及实现，也顺便复习下鼠标事件的用法，有兴趣的小伙伴可以看下，多提宝贵意见。<br><a id="more"></a></p>
 <h2 id="基础须知"><a href="#基础须知" class="headerlink" title="基础须知"></a>基础须知</h2><h3 id="HTML5-progress"><a href="#HTML5-progress" class="headerlink" title="HTML5 progress"></a>HTML5 progress</h3><p>HTML5中新增的进度条和度量的用法，只想使用这个功能的表示，不需要拖动等的可以直接使用这个标签，方便快捷。</p>
 <pre><code>&lt;progress value=&quot;33&quot; max=&quot;100&quot;&gt;&lt;/progress&gt;
-</code></pre><h3 id="JS-clientX相关"><a href="#JS-clientX相关" class="headerlink" title="JS clientX相关"></a>JS clientX相关</h3><p>这次的效果涉及到clientX、offsetLeft、offsetWidth三个距离概念，需要知道，下图小做了解。<br>详细更多解读，请参考另一篇文章《<a href="https://gzyq.github.io/2017/04/09/JS-clientX/" target="_blank" rel="external">JS clientX\offsetLeft\scrollHeight等相关解读</a>》。<br><img src="http://i.imgur.com/y5OrpmL.jpg" alt=""></p>
+</code></pre><h3 id="JS-clientX相关"><a href="#JS-clientX相关" class="headerlink" title="JS clientX相关"></a>JS clientX相关</h3><p>这次的效果涉及到clientX、offsetLeft、offsetWidth三个距离概念，需要知道，下图小做了解。<br>详细更多解读，请参考另一篇文章《<a href="https://gzyq.github.io/2017/04/09/JS-clientX/" target="_blank" rel="external">JS clientX\offsetLeft\scrollHeight等相关解读</a>》。<br><img src="http://i.imgur.com/PZoEGYY.jpg" alt=""></p>
 <h4 id="JS-鼠标事件"><a href="#JS-鼠标事件" class="headerlink" title="JS 鼠标事件"></a>JS 鼠标事件</h4><p>滑动条、拖拽等涉及鼠标事件主要是：mousedown、mousemove、mouseup，所以应对这三个事件有一定的了解，不清楚的请先阅读相关文章<a href="https://gzyq.github.io/2016/07/20/mouse-event/" target="_blank" rel="external">《JS鼠标事件总汇》</a>。</p>
 <h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>不管是进度条、滑动条还是拖拽，最终改变的就是元素的位置坐标或者是长宽，这一点要时刻记得。下面我们来依次看看具体实现。</p>
 <h3 id="进度条"><a href="#进度条" class="headerlink" title="进度条"></a>进度条</h3><p>进度条属于最简单的了，只涉及到width值，当然也可以使用left值来做，我们主要看width方法。</p>
