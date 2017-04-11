@@ -87,13 +87,21 @@
 
 
 
+<meta name="description" content="原生JS里面有很多看起来很相似的概念，不搞明白的话，容易用错，最好自己动手写写demo，画画图，更容易弄明白。本文主要记录clientX、offsetTop、clientHeight、scrollHeight等这一系列相关的几个概念，主要参考了网上一些概念加自己理解。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS clientX\offsetLeft\scrollHeight等相关解读">
 <meta property="og:url" content="http://yoursite.com/2017/03/05/JS-clientX/index.html">
 <meta property="og:site_name" content="GGirl">
-<meta property="og:updated_time" content="2017-04-07T09:05:47.299Z">
+<meta property="og:description" content="原生JS里面有很多看起来很相似的概念，不搞明白的话，容易用错，最好自己动手写写demo，画画图，更容易弄明白。本文主要记录clientX、offsetTop、clientHeight、scrollHeight等这一系列相关的几个概念，主要参考了网上一些概念加自己理解。">
+<meta property="og:image" content="http://i.imgur.com/DbDqWLh.gif">
+<meta property="og:image" content="http://i.imgur.com/OQvgizJ.jpg">
+<meta property="og:image" content="http://i.imgur.com/LWj22un.jpg">
+<meta property="og:image" content="http://i.imgur.com/szxLPY1.jpg">
+<meta property="og:updated_time" content="2017-04-11T03:33:45.929Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS clientX\offsetLeft\scrollHeight等相关解读">
+<meta name="twitter:description" content="原生JS里面有很多看起来很相似的概念，不搞明白的话，容易用错，最好自己动手写写demo，画画图，更容易弄明白。本文主要记录clientX、offsetTop、clientHeight、scrollHeight等这一系列相关的几个概念，主要参考了网上一些概念加自己理解。">
+<meta name="twitter:image" content="http://i.imgur.com/DbDqWLh.gif">
 
 
 
@@ -385,7 +393,17 @@
       
 
       
-        <a id="more"></a>
+        <p>原生JS里面有很多看起来很相似的概念，不搞明白的话，容易用错，最好自己动手写写demo，画画图，更容易弄明白。本文主要记录clientX、offsetTop、clientHeight、scrollHeight等这一系列相关的几个概念，主要参考了网上一些概念加自己理解。<br><a id="more"></a></p>
+<h2 id="初识"><a href="#初识" class="headerlink" title="初识"></a>初识</h2><p>相信大家对下面一张图，并不陌生，一搜索offsetTop相关就有，如果都能搞明白的就不需要往下看了。<br><img src="http://i.imgur.com/DbDqWLh.gif" alt=""></p>
+<blockquote>
+<p>注：图片转自参考文章《<a href="http://www.jb51.net/article/43981.htm" target="_blank" rel="external">浅析offsetLeft,Left,clientLeft之间的区别</a>》</p>
+<h2 id="深入"><a href="#深入" class="headerlink" title="深入"></a>深入</h2><p>下面具体分情况表示各值，主要涉及的就是上图里面的概念。<br>其实主要是对上面漂亮的图的手抄版，字很丑，但经过自己动手，就很清楚明了。</p>
+<h3 id="简单版"><a href="#简单版" class="headerlink" title="简单版"></a>简单版</h3><p>正常文档流下，各值分开示意图：<br><img src="http://i.imgur.com/OQvgizJ.jpg" alt=""><br>脱离文档流情况下，最主要区别是offsetTop和offsetLeft，主要依靠父元素定位，offsetTop是子元素距离父元素的高度，如下图：<br><img src="http://i.imgur.com/LWj22un.jpg" alt=""><br><strong>注</strong>：<br><br>clientX/clientY是相对于浏览器可视窗口来计算。<br><br>pageX/pageY,offsetTop/offsetLeft是相对于页面（文档）来计算。</p>
+<h3 id="升级版"><a href="#升级版" class="headerlink" title="升级版"></a>升级版</h3><p>正常文档流下，综合示意图：<br><img src="http://i.imgur.com/szxLPY1.jpg" alt=""></p>
+<h3 id="在线demo"><a href="#在线demo" class="headerlink" title="在线demo"></a>在线demo</h3><p><a href="http://gzyq.github.io/DEMOs/offsetTop-clientX-more/index-normal.html" target="_blank" rel="external">正常文档流demo</a><br><br><a href="http://gzyq.github.io/DEMOs/offsetTop-clientX-more/index-absolute.html" target="_blank" rel="external">脱离文档流demo</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.jb51.net/article/43981.htm" target="_blank" rel="external">浅析offsetLeft,Left,clientLeft之间的区别</a></p>
+</blockquote>
+
       
     </div>
 
@@ -484,8 +502,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar2.JPG"
@@ -558,6 +585,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#初识"><span class="nav-number">1.</span> <span class="nav-text">初识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深入"><span class="nav-number">2.</span> <span class="nav-text">深入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单版"><span class="nav-number">2.1.</span> <span class="nav-text">简单版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#升级版"><span class="nav-number">2.2.</span> <span class="nav-text">升级版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在线demo"><span class="nav-number">2.3.</span> <span class="nav-text">在线demo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
